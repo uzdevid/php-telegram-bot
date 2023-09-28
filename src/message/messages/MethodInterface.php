@@ -46,4 +46,9 @@ interface MethodInterface {
      * @return array
      */
     public function getPayload(): array;
+
+    /**
+     * @return string
+     */
+    public function response(): string;
 }

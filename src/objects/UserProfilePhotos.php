@@ -14,4 +14,13 @@ use uzdevid\telegram\bot\BaseObject;
  * @property int $totalCount
  * @property PhotoSize[][] $photos
  */
-class UserProfilePhotos extends BaseObject { }
+class UserProfilePhotos extends BaseObject {
+    /**
+     * @return array
+     */
+    public function makeObjects(): array {
+        return [
+            'photos' => [[PhotoSize::class]]
+        ];
+    }
+}

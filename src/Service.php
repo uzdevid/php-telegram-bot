@@ -2,7 +2,7 @@
 
 namespace uzdevid\telegram\bot;
 
-use uzdevid\telegram\bot\objects\Response;
+use uzdevid\telegram\bot\message\messages\MethodInterface;
 
 class Service {
     public static function camelToSnake(string $string): string {
@@ -19,7 +19,7 @@ class Service {
         return ltrim($string, '_');
     }
 
-    public static function buildResponse(array $responseBody): Response {
+    public static function buildResponse(array $responseBody, MethodInterface $method): object {
         $data['ok'] = $responseBody['ok'];
 
         if (is_array($responseBody['result'])) {
@@ -28,6 +28,7 @@ class Service {
             $data['result'] = $responseBody['result'];
         }
 
-        return new Response($data);
+        $response = $method->response();
+        return new $response($data);
     }
 }

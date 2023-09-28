@@ -2,6 +2,7 @@
 
 namespace uzdevid\telegram\bot\message\managers;
 
+use GuzzleHttp\Exception\GuzzleException;
 use uzdevid\telegram\bot\message\Manager;
 use uzdevid\telegram\bot\message\ManagerInterface;
 use uzdevid\telegram\bot\objects\Response;
@@ -56,6 +57,7 @@ class Editor extends Manager implements ManagerInterface {
 
     /**
      * @return Response
+     * @throws GuzzleException
      */
     public function delete(): Response {
         $query = ['chat_id' => $this->chatIdOrUsername(), 'message_id' => $this->messageId];
@@ -66,6 +68,6 @@ class Editor extends Manager implements ManagerInterface {
 
         $responseBody = json_decode($response->getBody()->getContents(), true);
 
-        return Service::buildResponse($responseBody);
+        return Service::buildResponse($responseBody, $this->method);
     }
 }

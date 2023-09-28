@@ -5,7 +5,6 @@ namespace uzdevid\telegram\bot\message\managers;
 use GuzzleHttp\Exception\GuzzleException;
 use uzdevid\telegram\bot\message\Manager;
 use uzdevid\telegram\bot\message\ManagerInterface;
-use uzdevid\telegram\bot\objects\Response;
 use uzdevid\telegram\bot\Service;
 
 class Sender extends Manager implements ManagerInterface {
@@ -16,13 +15,13 @@ class Sender extends Manager implements ManagerInterface {
     /**
      * @throws GuzzleException
      */
-    public function send(): Response {
+    public function send(): object {
         $query = array_merge(['chat_id' => $this->chatIdOrUsername()], $this->method->getPayload());
 
         $response = $this->httpClient->get($this->methodUrl(), ['query' => $query]);
 
         $responseBody = json_decode($response->getBody()->getContents(), true);
 
-        return Service::buildResponse($responseBody);
+        return Service::buildResponse($responseBody, $this->method);
     }
 }

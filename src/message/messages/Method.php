@@ -5,6 +5,7 @@ namespace uzdevid\telegram\bot\message\messages;
 use uzdevid\telegram\bot\BaseBot;
 use uzdevid\telegram\bot\message\messages\entity\MessageEntityInterface;
 use uzdevid\telegram\bot\message\messages\keyboard\ReplyMarkupInterface;
+use uzdevid\telegram\bot\objects\Response;
 
 class Method extends BaseBot {
     /**
@@ -86,5 +87,12 @@ class Method extends BaseBot {
      */
     public function getPayload(): array {
         return $this->attributes;
+    }
+
+    /**
+     * @return string
+     */
+    public function response(): string {
+        return Response::class;
     }
 }

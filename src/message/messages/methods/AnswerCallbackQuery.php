@@ -4,6 +4,7 @@ namespace uzdevid\telegram\bot\message\messages\methods;
 
 use uzdevid\telegram\bot\message\messages\Method;
 use uzdevid\telegram\bot\message\messages\MethodInterface;
+use uzdevid\telegram\bot\objects\Response;
 
 class AnswerCallbackQuery extends Method implements MethodInterface {
     protected static string $__callback_query_id = 'callback_query_id';
