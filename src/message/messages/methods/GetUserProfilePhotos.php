@@ -4,6 +4,7 @@ namespace uzdevid\telegram\bot\message\messages\methods;
 
 use uzdevid\telegram\bot\message\messages\Method;
 use uzdevid\telegram\bot\message\messages\MethodInterface;
+use uzdevid\telegram\bot\objects\UserProfilePhotos;
 
 class GetUserProfilePhotos extends Method implements MethodInterface {
 
@@ -33,5 +34,9 @@ class GetUserProfilePhotos extends Method implements MethodInterface {
     public function limit(int $limit): self {
         $this->addAttribute(self::$__limit, $limit);
         return $this;
+    }
+
+    public function response(): string {
+        return UserProfilePhotos::class;
     }
 }
