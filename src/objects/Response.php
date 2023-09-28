@@ -12,6 +12,7 @@ use uzdevid\telegram\bot\BaseObject;
  * @property bool $ok
  * @property int $messageId
  * @property User $from
+ * @property User $user
  * @property Chat $chat
  * @property int $date
  * @property string $text
@@ -23,6 +24,7 @@ class Response extends BaseObject {
     public function makeObjects(): array {
         return [
             'from' => User::class,
+            'user' => User::class,
             'chat' => Chat::class,
         ];
     }
