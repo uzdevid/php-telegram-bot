@@ -1,0 +1,28 @@
+{
+  "name": "uzdevid/php-telegram-bot",
+  "description": "Telegram messenjerida bot yaratish uchun PHP kutubxonasi",
+  "type": "library",
+  "keywords": [
+    "php",
+    "extension",
+    "telegram",
+    "bot"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ibragimov Diyorbek",
+      "email": "uzdevid@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.0",
+    "guzzlehttp/guzzle": "^7.7",
+    "ext-curl": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "uzdevid\\telegram\\bot\\": "src"
+    }
+  }
+}
