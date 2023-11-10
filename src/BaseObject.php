@@ -32,7 +32,7 @@ class BaseObject extends Component {
         return new $className($data);
     }
 
-    protected function arrayableObject($className, $data) {
+    protected function arrayableObject($className, $data): array {
         if ($this->arrayableDepth == 0) {
             $this->makeObject($className, $data);
         }
