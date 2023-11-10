@@ -51,20 +51,13 @@ class Editor extends Manager implements ManagerInterface {
     }
 
     /**
-     * @return void
-     */
-    public function edit() { }
-
-    /**
      * @return Response
      * @throws GuzzleException
      */
-    public function delete(): Response {
-        $query = ['chat_id' => $this->chatIdOrUsername(), 'message_id' => $this->messageId];
+    public function edit(): object {
+        $query = array_merge(['chat_id' => $this->chatIdOrUsername()], $this->method->getPayload());
 
-        $options = ['query' => $query];
-
-        $response = $this->httpClient->get($this->methodUrl('deleteMessage'), $options);
+        $response = $this->httpClient->get($this->methodUrl(), ['query' => $query]);
 
         $responseBody = json_decode($response->getBody()->getContents(), true);
 
