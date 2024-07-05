@@ -17,12 +17,10 @@ class Editor extends Manager implements ManagerInterface {
     private int|null $_messageId = null;
 
     /**
-     * @param string|null $method
-     *
      * @return string
      */
-    public function methodUrl(string|null $method = null): string {
-        return self::$apiUrl . $this->token . '/' . $method ?? $this->method->methodName();
+    public function methodUrl(): string {
+        return self::$apiUrl . $this->token . '/' . $this->method->methodName();
     }
 
     /**
