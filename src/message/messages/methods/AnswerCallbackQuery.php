@@ -13,13 +13,21 @@ class AnswerCallbackQuery extends Method implements MethodInterface {
     protected static string $__url = 'url';
     protected static string $__cache_time = 'cache_time';
 
-    public function methodName(): string {
-        return "answerCallbackQuery";
-    }
 
+    /**
+     * @param string $callbackQueryId
+     * @param array $attributes
+     */
     public function __construct(string $callbackQueryId, array $attributes = []) {
         parent::__construct($attributes);
         $this->addAttribute(self::$__callback_query_id, $callbackQueryId);
+    }
+
+    /**
+     * @return string
+     */
+    public function methodName(): string {
+        return "answerCallbackQuery";
     }
 
     /**

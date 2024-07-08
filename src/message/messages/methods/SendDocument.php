@@ -11,6 +11,10 @@ class SendDocument extends Method implements MethodInterface {
     protected static string $__caption = 'caption';
     protected static string $__disableContentTypeDetection = 'disable_content_type_detection';
 
+    /**
+     * @param string $document
+     * @param array $attributes
+     */
     public function __construct(string $document, array $attributes = []) {
         parent::__construct($attributes);
         $this->addAttribute(self::$__document, $document);

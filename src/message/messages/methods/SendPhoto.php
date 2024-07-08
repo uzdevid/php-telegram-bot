@@ -10,6 +10,10 @@ class SendPhoto extends Method implements MethodInterface {
     protected static string $__caption = 'caption';
     protected static string $__hasSpoiler = 'has_spoiler';
 
+    /**
+     * @param string $photo
+     * @param array $attributes
+     */
     public function __construct(string $photo, array $attributes = []) {
         parent::__construct($attributes);
         $this->addAttribute(self::$__photo, $photo);

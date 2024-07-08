@@ -13,6 +13,10 @@ class SendAudio extends Method implements MethodInterface {
     protected static string $__title = 'title';
     protected static string $__thumbnail = 'thumbnail';
 
+    /**
+     * @param string $audio
+     * @param array $attributes
+     */
     public function __construct(string $audio, array $attributes = []) {
         parent::__construct($attributes);
         $this->addAttribute(self::$__audio, $audio);

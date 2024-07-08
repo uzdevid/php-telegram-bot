@@ -15,6 +15,10 @@ class SendVideo extends Method implements MethodInterface {
     protected static string $__hasSpoiler = 'has_spoiler';
     protected static string $__supportsStreaming = 'supports_streaming';
 
+    /**
+     * @param string $video
+     * @param array $attributes
+     */
     public function __construct(string $video, array $attributes = []) {
         parent::__construct($attributes);
         $this->addAttribute(self::$__video, $video);

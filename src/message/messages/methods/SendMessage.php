@@ -13,6 +13,10 @@ class SendMessage extends Method implements MethodInterface {
     protected static string $__disableWebPagePreview = 'disable_web_page_preview';
     protected static string $__protectContent = 'protect_content';
 
+    /**
+     * @param string $text
+     * @param array $attributes
+     */
     public function __construct(string $text, array $attributes = []) {
         parent::__construct($attributes);
         $this->addAttribute(self::$__text, $text);
