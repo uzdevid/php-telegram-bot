@@ -5,6 +5,11 @@ namespace uzdevid\telegram\bot\message\messages\methods;
 use uzdevid\telegram\bot\message\messages\Method;
 use uzdevid\telegram\bot\message\messages\MethodInterface;
 
+/**
+ * Use this method to edit text and game messages.
+ * On success, if the edited message is not an inline message, the edited Message is returned, otherwise True is returned.
+ * Note that business messages that were not sent by the bot and do not contain an inline keyboard can only be edited within 48 hours from the time they were sent.
+ */
 class EditMessageText extends Method implements MethodInterface {
     protected static string $__business_connection_id = 'business_connection_id';
     protected static string $__message_id = 'message_id';
