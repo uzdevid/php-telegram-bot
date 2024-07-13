@@ -17,9 +17,6 @@ use Yiisoft\Hydrator\Hydrator;
  * Class Handler
  *
  * @package UzDevid\Telegram\Bot\Handler
- *
- * @property-write array $allowedInterfaces
- * @property-read string $handlersString
  */
 class Handler {
     private bool $isHandled = false;
