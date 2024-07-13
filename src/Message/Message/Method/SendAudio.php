@@ -6,20 +6,12 @@ use UzDevid\Telegram\Bot\Message\Message\Method;
 use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
 
 class SendAudio extends Method implements MethodInterface {
-    protected static string $__audio = 'audio';
-    protected static string $__caption = 'caption';
-    protected static string $__duration = 'duration';
-    protected static string $__performer = 'performer';
-    protected static string $__title = 'title';
-    protected static string $__thumbnail = 'thumbnail';
-
     /**
      * @param string $audio
-     * @param array $attributes
      */
-    public function __construct(string $audio, array $attributes = []) {
-        parent::__construct($attributes);
-        $this->addAttribute(self::$__audio, $audio);
+    public function __construct(string $audio) {
+        parent::__construct();
+        $this->addAttribute('audio', $audio);
     }
 
     /**
@@ -35,7 +27,7 @@ class SendAudio extends Method implements MethodInterface {
      * @return $this
      */
     public function caption(string $caption): static {
-        $this->addAttribute(self::$__caption, $caption);
+        $this->addAttribute('caption', $caption);
         return $this;
     }
 
@@ -45,7 +37,7 @@ class SendAudio extends Method implements MethodInterface {
      * @return $this
      */
     public function duration(int $duration): static {
-        $this->addAttribute(self::$__duration, $duration);
+        $this->addAttribute('duration', $duration);
         return $this;
     }
 
@@ -55,7 +47,7 @@ class SendAudio extends Method implements MethodInterface {
      * @return $this
      */
     public function performer(string $performer): static {
-        $this->addAttribute(self::$__performer, $performer);
+        $this->addAttribute('performer', $performer);
         return $this;
     }
 
@@ -65,7 +57,7 @@ class SendAudio extends Method implements MethodInterface {
      * @return $this
      */
     public function title(string $title): static {
-        $this->addAttribute(self::$__title, $title);
+        $this->addAttribute('title', $title);
         return $this;
     }
 
@@ -75,7 +67,7 @@ class SendAudio extends Method implements MethodInterface {
      * @return $this
      */
     public function thumbnail(string $thumbnail): static {
-        $this->addAttribute(self::$__thumbnail, $thumbnail);
+        $this->addAttribute('thumbnail', $thumbnail);
         return $this;
     }
 }

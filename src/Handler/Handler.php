@@ -2,10 +2,13 @@
 
 namespace UzDevid\Telegram\Bot\Handler;
 
+use UzDevid\Telegram\Bot\Exception\NotSupportedException;
 use UzDevid\Telegram\Bot\Handler\Update\Callback\CallbackQueryUpdate;
 use uzdevid\telegram\Bot\Handler\Update\Callback\CallbackQueryUpdateInterface;
 use UzDevid\Telegram\Bot\Handler\Update\Inline\InlineQueryUpdate;
 use uzdevid\telegram\Bot\Handler\Update\Inline\InlineQueryUpdateInterface;
+use UzDevid\Telegram\Bot\Handler\Update\Message\FilterMessageTypeInterface;
+use UzDevid\Telegram\Bot\Handler\Update\Message\FilterMessageTypesInterface;
 use UzDevid\Telegram\Bot\Handler\Update\Message\MessageUpdate;
 use UzDevid\Telegram\Bot\Handler\Update\Message\MessageUpdateInterface;
 use Yiisoft\Hydrator\Hydrator;
@@ -33,17 +36,26 @@ class Handler {
      * @param MessageUpdateInterface|CallbackQueryUpdateInterface|InlineQueryUpdateInterface $handler
      *
      * @return $this
+     * @throws NotSupportedException
      */
     public function on(MessageUpdateInterface|CallbackQueryUpdateInterface|InlineQueryUpdateInterface $handler): static {
+        if (!$this->isHandled) return $this;
+
         $updateName = $this->getUpdateName($handler);
 
-        if (!$this->isHandled && !$this->match($updateName)) {
-            return $this;
-        }
+        if (!$this->match($updateName)) return $this;
 
         $updateClass = $this->getUpdate($handler);
 
         $update = $this->buildUpdate($updateClass);
+
+        if ($handler instanceof FilterMessageTypeInterface && $update instanceof MessageUpdate && !$update->is($handler->allowedType())) {
+            return $this;
+        }
+
+        if ($handler instanceof FilterMessageTypesInterface && $update instanceof MessageUpdate && !$update->isOneOf($handler->allowedTypes())) {
+            return $this;
+        }
 
         if (!$handler->canHandle($update)) {
             return $this;

@@ -7,19 +7,12 @@ use UzDevid\Telegram\Bot\Message\Message\Method;
 use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
 
 class SendMessage extends Method implements MethodInterface {
-    protected static string $__text = 'text';
-    protected static string $__parseMode = 'parse_mode';
-    protected static string $__entities = 'entities';
-    protected static string $__disableWebPagePreview = 'disable_web_page_preview';
-    protected static string $__protectContent = 'protect_content';
-
     /**
      * @param string $text
-     * @param array $attributes
      */
-    public function __construct(string $text, array $attributes = []) {
-        parent::__construct($attributes);
-        $this->addAttribute(self::$__text, $text);
+    public function __construct(string $text) {
+        parent::__construct();
+        $this->addAttribute('text', $text);
     }
 
     /**
@@ -35,7 +28,7 @@ class SendMessage extends Method implements MethodInterface {
      * @return $this
      */
     public function parseMode(string $mode): static {
-        $this->addAttribute(self::$__parseMode, $mode);
+        $this->addAttribute('parse_mode', $mode);
         return $this;
     }
 
@@ -45,7 +38,7 @@ class SendMessage extends Method implements MethodInterface {
      * @return $this
      */
     public function addEntity(MessageEntityInterface $entity): static {
-        $this->addMessageEntity(self::$__entities, $entity);
+        $this->addMessageEntity('entities', $entity);
         return $this;
     }
 
@@ -55,7 +48,7 @@ class SendMessage extends Method implements MethodInterface {
      * @return $this
      */
     public function disableWebPagePreview(bool $disableWebPagePreview): static {
-        $this->addAttribute(self::$__disableWebPagePreview, $disableWebPagePreview);
+        $this->addAttribute('disable_web_page_preview', $disableWebPagePreview);
         return $this;
     }
 
@@ -65,7 +58,7 @@ class SendMessage extends Method implements MethodInterface {
      * @return $this
      */
     public function protectContent(bool $protectContent): static {
-        $this->addAttribute(self::$__protectContent, $protectContent);
+        $this->addAttribute('protect_content', $protectContent);
         return $this;
     }
 }

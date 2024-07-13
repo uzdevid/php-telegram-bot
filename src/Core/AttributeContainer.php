@@ -14,7 +14,6 @@ trait AttributeContainer {
 
     /**
      * @param array $attributes
-     *
      * @return void
      */
     public function setAttributes(array $attributes): void {
@@ -24,7 +23,6 @@ trait AttributeContainer {
     /**
      * @param string $name
      * @param mixed $value
-     *
      * @return void
      */
     public function addAttribute(string $name, mixed $value): void {
@@ -34,7 +32,6 @@ trait AttributeContainer {
     /**
      * @param string $name
      * @param mixed $value
-     *
      * @return void
      */
     public function pushAttribute(string $name, mixed $value): void {
@@ -46,6 +43,15 @@ trait AttributeContainer {
     }
 
     /**
+     * @param string $name
+     * @param array $values
+     * @return void
+     */
+    public function mergeAttribute(string $name, array $values): void {
+        $this->addAttribute($name, array_merge($this->getAttribute($name), $values));
+    }
+
+    /**
      * @return array
      */
     public function getAttributes(): array {
@@ -54,10 +60,17 @@ trait AttributeContainer {
 
     /**
      * @param string $name
-     *
      * @return mixed
      */
     public function getAttribute(string $name): mixed {
         return $this->attributes[$name] ?? null;
+    }
+
+    /**
+     * @param string $name
+     * @return bool
+     */
+    public function hasAttribute(string $name): bool {
+        return isset($this->attributes[$name]);
     }
 }

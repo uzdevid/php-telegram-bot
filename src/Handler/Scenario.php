@@ -3,8 +3,6 @@
 namespace UzDevid\Telegram\Bot\Handler;
 
 use UzDevid\Telegram\Bot\Bot;
-use Yii;
-use yii\base\InvalidConfigException;
 
 class Scenario {
     protected Bot $botInstance;
@@ -31,12 +29,6 @@ class Scenario {
 
     /**
      * @return Handler
-     * @throws InvalidConfigException
      */
-    public function handler(): Handler {
-        /** @var Handler $handler */
-        $handler = Yii::createObject($this->botInstance->handler, [$this->botInstance, $this->data, $this]);
-
-        return $handler;
-    }
+    public function handler(): Handler { }
 }

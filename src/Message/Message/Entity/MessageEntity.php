@@ -46,7 +46,7 @@ class MessageEntity {
      * @param array $params
      */
     public function __construct(array $params = []) {
-        $this->params = $params;
+        $this->_params = $params;
     }
 
     /**

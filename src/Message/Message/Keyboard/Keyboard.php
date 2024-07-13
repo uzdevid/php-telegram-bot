@@ -6,7 +6,7 @@ use UzDevid\Telegram\Bot\Core\AttributeContainer;
 
 abstract class Keyboard {
     use AttributeContainer;
-
+    
     protected string $name;
 
     /**

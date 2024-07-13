@@ -6,22 +6,12 @@ use UzDevid\Telegram\Bot\Message\Message\Method;
 use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
 
 class SendVideo extends Method implements MethodInterface {
-    protected static string $__video = 'video';
-    protected static string $__duration = 'duration';
-    protected static string $__width = 'width';
-    protected static string $__height = 'height';
-    protected static string $__thumbnail = 'thumbnail';
-    protected static string $__caption = 'caption';
-    protected static string $__hasSpoiler = 'has_spoiler';
-    protected static string $__supportsStreaming = 'supports_streaming';
-
     /**
      * @param string $video
-     * @param array $attributes
      */
-    public function __construct(string $video, array $attributes = []) {
-        parent::__construct($attributes);
-        $this->addAttribute(self::$__video, $video);
+    public function __construct(string $video) {
+        parent::__construct();
+        $this->addAttribute('video', $video);
     }
 
     /**
@@ -37,7 +27,7 @@ class SendVideo extends Method implements MethodInterface {
      * @return $this
      */
     public function duration(int $duration): static {
-        $this->addAttribute(self::$__duration, $duration);
+        $this->addAttribute('duration', $duration);
         return $this;
     }
 
@@ -47,7 +37,7 @@ class SendVideo extends Method implements MethodInterface {
      * @return $this
      */
     public function width(int $width): static {
-        $this->addAttribute(self::$__width, $width);
+        $this->addAttribute('width', $width);
         return $this;
     }
 
@@ -57,7 +47,7 @@ class SendVideo extends Method implements MethodInterface {
      * @return $this
      */
     public function height(int $height): static {
-        $this->addAttribute(self::$__height, $height);
+        $this->addAttribute('height', $height);
         return $this;
     }
 
@@ -67,7 +57,7 @@ class SendVideo extends Method implements MethodInterface {
      * @return $this
      */
     public function thumbnail(string $thumbnail): static {
-        $this->addAttribute(self::$__thumbnail, $thumbnail);
+        $this->addAttribute('thumbnail', $thumbnail);
         return $this;
     }
 
@@ -77,7 +67,7 @@ class SendVideo extends Method implements MethodInterface {
      * @return $this
      */
     public function caption(string $caption): static {
-        $this->addAttribute(self::$__caption, $caption);
+        $this->addAttribute('caption', $caption);
         return $this;
     }
 
@@ -87,7 +77,7 @@ class SendVideo extends Method implements MethodInterface {
      * @return $this
      */
     public function hasSpoiler(bool $hasSpoiler): static {
-        $this->addAttribute(self::$__hasSpoiler, $hasSpoiler);
+        $this->addAttribute('has_spoiler', $hasSpoiler);
         return $this;
     }
 }

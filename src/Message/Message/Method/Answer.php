@@ -2,9 +2,11 @@
 
 namespace UzDevid\Telegram\Bot\Message\Message\Method;
 
+use JsonException;
 use UzDevid\Telegram\Bot\Core\AttributeContainer;
 use UzDevid\Telegram\Bot\Message\Answer\AnswerInterface;
 use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
+use UzDevid\Telegram\Bot\Type\Response;
 
 class Answer implements MethodInterface {
     use AttributeContainer {
@@ -67,14 +69,18 @@ class Answer implements MethodInterface {
 
     /**
      * @return array
+     * @throws JsonException
      */
     public function getPayload(): array {
-        $this->addAttribute('results', json_encode($this->getAttribute('results'), JSON_UNESCAPED_UNICODE));
+        $this->addAttribute('results', json_encode($this->getAttribute('results'), JSON_THROW_ON_ERROR | JSON_UNESCAPED_UNICODE));
 
         return $this->attributes;
     }
 
+    /**
+     * @return string
+     */
     public function response(): string {
-
+        return Response::class;
     }
 }

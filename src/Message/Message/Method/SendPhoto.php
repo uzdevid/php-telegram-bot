@@ -12,11 +12,10 @@ class SendPhoto extends Method implements MethodInterface {
 
     /**
      * @param string $photo
-     * @param array $attributes
      */
-    public function __construct(string $photo, array $attributes = []) {
-        parent::__construct($attributes);
-        $this->addAttribute(self::$__photo, $photo);
+    public function __construct(string $photo) {
+        parent::__construct();
+        $this->addAttribute('photo', $photo);
     }
 
     /**
@@ -32,7 +31,7 @@ class SendPhoto extends Method implements MethodInterface {
      * @return $this
      */
     public function caption(string $caption): static {
-        $this->addAttribute(self::$__caption, $caption);
+        $this->addAttribute('caption', $caption);
         return $this;
     }
 
@@ -42,7 +41,7 @@ class SendPhoto extends Method implements MethodInterface {
      * @return $this
      */
     public function hasSpoiler(bool $hasSpoiler = true): static {
-        $this->addAttribute(self::$__hasSpoiler, $hasSpoiler);
+        $this->addAttribute('has_spoiler', $hasSpoiler);
         return $this;
     }
 }

@@ -1,17 +1,15 @@
 <?php
 
-namespace UzDevid\Telegram\Bot\Message\Message\Keyboard\force;
+namespace UzDevid\Telegram\Bot\Message\Message\Keyboard\Force;
 
+use JsonException;
 use UzDevid\Telegram\Bot\Core\AttributeContainer;
 use UzDevid\Telegram\Bot\Message\Message\Keyboard\ReplyMarkupInterface;
 
 class ForceReply implements ReplyMarkupInterface {
-    use AttributeContainer {
-        AttributeContainer::__construct as private __attributeConstruct;
-    }
+    use AttributeContainer;
 
-    public function __construct(array $attributes = []) {
-        $this->__attributeConstruct($attributes);
+    public function __construct() {
         $this->addAttribute('force_reply', true);
     }
 
@@ -20,8 +18,7 @@ class ForceReply implements ReplyMarkupInterface {
      *
      * @return $this
      */
-    public
-    function inputFieldPlaceholder(string $inputFieldPlaceholder): self {
+    public function inputFieldPlaceholder(string $inputFieldPlaceholder): self {
         $this->addAttribute('input_field_placeholder', $inputFieldPlaceholder);
         return $this;
     }
@@ -31,9 +28,15 @@ class ForceReply implements ReplyMarkupInterface {
      *
      * @return $this
      */
-    public
-    function selective(bool $selective = true): self {
+    public function selective(bool $selective = true): self {
         $this->addAttribute('selective', $selective);
         return $this;
+    }
+
+    /**
+     * @throws JsonException
+     */
+    public function __toString(): string {
+        return json_encode($this->attributes, JSON_THROW_ON_ERROR | JSON_UNESCAPED_UNICODE);
     }
 }

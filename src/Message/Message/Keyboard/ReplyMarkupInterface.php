@@ -2,4 +2,12 @@
 
 namespace UzDevid\Telegram\Bot\Message\Message\Keyboard;
 
-interface ReplyMarkupInterface { }
+use JsonException;
+
+interface ReplyMarkupInterface {
+    /**
+     * @return string
+     * @throws JsonException
+     */
+    public function __toString(): string;
+}

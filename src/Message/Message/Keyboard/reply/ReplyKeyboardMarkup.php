@@ -1,7 +1,8 @@
 <?php
 
-namespace UzDevid\Telegram\Bot\Message\Message\Keyboard\reply;
+namespace UzDevid\Telegram\Bot\Message\Message\Keyboard\Reply;
 
+use JsonException;
 use UzDevid\Telegram\Bot\Message\Message\Keyboard\Keyboard;
 use UzDevid\Telegram\Bot\Message\Message\Keyboard\ReplyMarkupInterface;
 
@@ -56,5 +57,13 @@ class ReplyKeyboardMarkup extends Keyboard implements ReplyMarkupInterface {
     public function setSelective(bool $selective): self {
         $this->addAttribute('selective', $selective);
         return $this;
+    }
+
+    /**
+     * @return string
+     * @throws JsonException
+     */
+    public function __toString(): string {
+        return json_encode($this->attributes, JSON_THROW_ON_ERROR | JSON_UNESCAPED_UNICODE);
     }
 }

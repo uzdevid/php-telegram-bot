@@ -1,6 +1,6 @@
 <?php
 
-namespace UzDevid\Telegram\Bot\Message\Message\Keyboard\inline;
+namespace UzDevid\Telegram\Bot\Message\Message\Keyboard\Inline;
 
 use UzDevid\Telegram\Bot\Core\AttributeContainer;
 use UzDevid\Telegram\Bot\Message\Message\Keyboard\ButtonInterface;

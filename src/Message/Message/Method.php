@@ -6,14 +6,12 @@ use UzDevid\Telegram\Bot\Core\AttributeContainer;
 use UzDevid\Telegram\Bot\Message\Message\Entity\MessageEntityInterface;
 use UzDevid\Telegram\Bot\Message\Message\Keyboard\ReplyMarkupInterface;
 use UzDevid\Telegram\Bot\Type\Response;
-use yii\base\BaseObject;
-use yii\helpers\Json;
 
 /**
  *
  * @property-read array $payload
  */
-class Method extends BaseObject {
+class Method {
     use AttributeContainer;
 
     /**
@@ -85,8 +83,7 @@ class Method extends BaseObject {
      * @return static
      */
     public function addReplyMarkup(ReplyMarkupInterface $replyMarkup): static {
-        $serialized = Json::encode($replyMarkup->getAttributes(), JSON_UNESCAPED_UNICODE);
-        $this->addAttribute('reply_markup', $serialized);
+        $this->addAttribute('reply_markup', (string)$replyMarkup);
         return $this;
     }
 

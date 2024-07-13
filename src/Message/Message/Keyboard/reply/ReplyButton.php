@@ -1,6 +1,6 @@
 <?php
 
-namespace UzDevid\Telegram\Bot\Message\Message\Keyboard\reply;
+namespace UzDevid\Telegram\Bot\Message\Message\Keyboard\Reply;
 
 use UzDevid\Telegram\Bot\Core\AttributeContainer;
 use UzDevid\Telegram\Bot\Message\Message\Keyboard\ButtonInterface;

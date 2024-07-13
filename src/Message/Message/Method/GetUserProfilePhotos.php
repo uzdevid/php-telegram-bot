@@ -7,18 +7,12 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
 use UzDevid\Telegram\Bot\Type\UserProfilePhotos;
 
 class GetUserProfilePhotos extends Method implements MethodInterface {
-
-    protected static string $__userId = 'user_id';
-    protected static string $__offset = 'offset';
-    protected static string $__limit = 'limit';
-
     /**
      * @param int $userId
-     * @param array $attributes
      */
-    public function __construct(int $userId, array $attributes = []) {
-        parent::__construct($attributes);
-        $this->addAttribute(self::$__userId, $userId);
+    public function __construct(int $userId) {
+        parent::__construct();
+        $this->addAttribute('user_id', $userId);
     }
 
     /**
@@ -29,22 +23,12 @@ class GetUserProfilePhotos extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $userId
-     *
-     * @return $this
-     */
-    public function userId(int $userId): self {
-        $this->addAttribute(self::$__userId, $userId);
-        return $this;
-    }
-
-    /**
      * @param int $offset
      *
      * @return $this
      */
     public function offset(int $offset): self {
-        $this->addAttribute(self::$__offset, $offset);
+        $this->addAttribute('offset', $offset);
         return $this;
     }
 
@@ -54,7 +38,7 @@ class GetUserProfilePhotos extends Method implements MethodInterface {
      * @return $this
      */
     public function limit(int $limit): self {
-        $this->addAttribute(self::$__limit, $limit);
+        $this->addAttribute('limit', $limit);
         return $this;
     }
 

@@ -1,14 +1,15 @@
 <?php
 
-namespace UzDevid\Telegram\Bot\Message\Manager;
+namespace UzDevid\Telegram\Bot\Manager;
 
 use GuzzleHttp\Exception\GuzzleException;
-use UzDevid\Telegram\Bot\Message\Manager;
+use JsonException;
 use UzDevid\Telegram\Bot\Service;
 
-class Sender extends Manager {
+final class Sender extends Manager implements SenderInterface {
     /**
      * @return object
+     * @throws JsonException
      * @throws GuzzleException
      */
     public function send(): object {

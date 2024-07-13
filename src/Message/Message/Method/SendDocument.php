@@ -6,18 +6,13 @@ use UzDevid\Telegram\Bot\Message\Message\Method;
 use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
 
 class SendDocument extends Method implements MethodInterface {
-    protected static string $__document = 'document';
-    protected static string $__thumbnail = 'thumbnail';
-    protected static string $__caption = 'caption';
-    protected static string $__disableContentTypeDetection = 'disable_content_type_detection';
-
     /**
      * @param string $document
      * @param array $attributes
      */
     public function __construct(string $document, array $attributes = []) {
         parent::__construct($attributes);
-        $this->addAttribute(self::$__document, $document);
+        $this->addAttribute('document', $document);
     }
 
     /**
@@ -33,7 +28,7 @@ class SendDocument extends Method implements MethodInterface {
      * @return $this
      */
     public function thumbnail(string $thumbnail): static {
-        $this->addAttribute(self::$__thumbnail, $thumbnail);
+        $this->addAttribute('thumbnail', $thumbnail);
         return $this;
     }
 
@@ -43,7 +38,7 @@ class SendDocument extends Method implements MethodInterface {
      * @return $this
      */
     public function caption(string $caption): static {
-        $this->addAttribute(self::$__caption, $caption);
+        $this->addAttribute('caption', $caption);
         return $this;
     }
 
@@ -53,7 +48,7 @@ class SendDocument extends Method implements MethodInterface {
      * @return $this
      */
     public function disableContentTypeDetection(bool $disableContentTypeDetection): static {
-        $this->addAttribute(self::$__disableContentTypeDetection, $disableContentTypeDetection);
+        $this->addAttribute('disable_content_type_detection', $disableContentTypeDetection);
         return $this;
     }
 }
