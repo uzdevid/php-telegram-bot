@@ -2,6 +2,8 @@
 
 namespace UzDevid\Telegram\Bot\Handler\Update\Inline;
 
+use UzDevid\Telegram\Bot\Type\InlineQueryUpdate;
+
 interface InlineQueryUpdateInterface {
     /**
      * @param InlineQueryUpdate $query

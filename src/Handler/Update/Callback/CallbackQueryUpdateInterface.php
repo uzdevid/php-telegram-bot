@@ -2,6 +2,8 @@
 
 namespace UzDevid\Telegram\Bot\Handler\Update\Callback;
 
+use UzDevid\Telegram\Bot\Type\CallbackQueryUpdate;
+
 interface CallbackQueryUpdateInterface {
     /**
      * @param CallbackQueryUpdate $query

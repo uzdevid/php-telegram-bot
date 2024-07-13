@@ -2,6 +2,7 @@
 
 namespace UzDevid\Telegram\Bot\Handler\Update\Message;
 
+use UzDevid\Telegram\Bot\Type\MessageUpdate;
 
 interface MessageUpdateInterface {
     /**
