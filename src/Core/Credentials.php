@@ -3,13 +3,22 @@
 namespace UzDevid\Telegram\Bot\Core;
 
 trait Credentials {
-    public string|null $token = null;
-    public int|null $chatId = null;
-    public string|null $username = null;
+    use AttributeContainer;
+
+    protected readonly string $endpoint;
+    protected readonly string $token;
+
+    /**
+     * @param string $url
+     * @return $this
+     */
+    public function endpoint(string $url): static {
+        $this->endpoint = $url;
+        return $this;
+    }
 
     /**
      * @param string $token
-     *
      * @return $this
      */
     public function token(string $token): static {
@@ -18,22 +27,20 @@ trait Credentials {
     }
 
     /**
-     * @param int $chatId
-     *
+     * @param string|int $chatId
      * @return $this
      */
-    public function chatId(int $chatId): static {
-        $this->chatId = $chatId;
+    public function chatId(string|int $chatId): static {
+        $this->addAttribute('chat_id', $chatId);
         return $this;
     }
 
     /**
      * @param string $username
-     *
      * @return $this
      */
     public function username(string $username): static {
-        $this->username = $username;
+        $this->addAttribute('username', $username);
         return $this;
     }
 }

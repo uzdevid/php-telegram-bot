@@ -2,7 +2,6 @@
 
 namespace UzDevid\Telegram\Bot;
 
-use UzDevid\Telegram\Bot\Core\PayloadFormatter;
 use UzDevid\Telegram\Bot\Handler\Handler;
 use UzDevid\Telegram\Bot\Manager\SenderInterface;
 
@@ -27,7 +26,7 @@ readonly class Bot {
      * @return Handler
      */
     public function handler(array $payload): Handler {
-        $reformattedPayload = PayloadFormatter::reformat($payload);
+        $reformattedPayload = Service::reformat($payload);
         return new Handler($reformattedPayload);
     }
 

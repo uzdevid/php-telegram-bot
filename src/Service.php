@@ -26,6 +26,26 @@ class Service {
     }
 
     /**
+     * @param array $payload
+     *
+     * @return array
+     */
+    public static function reformat(array $payload): array {
+        foreach ($payload as $key => $value) {
+            unset($payload[$key]);
+            $camelCaseName = self::snakeToCamel($key);
+
+            if (is_array($value)) {
+                $value = self::reformat($value);
+            }
+
+            $payload[$camelCaseName] = $value;
+        }
+
+        return $payload;
+    }
+
+    /**
      * @param array $responseBody
      * @param MethodInterface $method
      *

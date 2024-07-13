@@ -7,22 +7,17 @@ use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\ServerException;
 use JsonException;
+use UzDevid\Telegram\Bot\Core\Credentials;
 use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
 
 /**
- * Class Message
+ * Class Manager
  *
  * @package UzDevid\Telegram\Bot\Manager
- *
- * @property-read string $url
- * @property-read array $params
- * @property MethodInterface $method
  */
 abstract class Manager {
-    protected readonly string $endpoint;
-    protected readonly string $token;
+    use Credentials;
     protected MethodInterface $method;
-    protected array $params = [];
 
     /**
      * @param ClientInterface $httpClient
@@ -30,34 +25,6 @@ abstract class Manager {
     public function __construct(
         protected readonly ClientInterface $httpClient
     ) {
-    }
-
-    /**
-     * @param string $url
-     * @return $this
-     */
-    public function endpoint(string $url): static {
-        $this->endpoint = $url;
-        return $this;
-    }
-
-    /**
-     * @param string $token
-     * @return $this
-     */
-    public function token(string $token): static {
-        $this->token = $token;
-        return $this;
-    }
-
-    /**
-     * @param string|int $chatId
-     *
-     * @return $this
-     */
-    public function chatId(string|int $chatId): static {
-        $this->params['chat_id'] = $chatId;
-        return $this;
     }
 
     /**
@@ -77,7 +44,7 @@ abstract class Manager {
      * @throws GuzzleException|ServerException|ClientException
      */
     protected function sendRequest(array $params = []): array|null {
-        $query = array_merge($this->params, $this->method->getPayload(), $params);
+        $query = array_merge($this->getAttributes(), $this->method->getPayload(), $params);
 
         $url = sprintf($this->endpoint, $this->token, $this->method->methodName());
 
