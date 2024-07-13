@@ -2,6 +2,7 @@
 
 namespace UzDevid\Telegram\Bot;
 
+use UzDevid\Telegram\Bot\Core\Service;
 use UzDevid\Telegram\Bot\Handler\Handler;
 use UzDevid\Telegram\Bot\Manager\SenderInterface;
 

@@ -2,8 +2,8 @@
 
 namespace UzDevid\Telegram\Bot\Handler\Update\Message;
 
+use UzDevid\Telegram\Bot\Core\Service;
 use UzDevid\Telegram\Bot\Exception\NotSupportedException;
-use UzDevid\Telegram\Bot\Service;
 use UzDevid\Telegram\Bot\Type\Message;
 
 /**

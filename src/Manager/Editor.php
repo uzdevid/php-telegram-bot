@@ -7,8 +7,8 @@ use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\ServerException;
 use JsonException;
 use UzDevid\Telegram\Bot\Core\AttributeContainer;
+use UzDevid\Telegram\Bot\Core\Service;
 use UzDevid\Telegram\Bot\Exception\MissedAttributesException;
-use UzDevid\Telegram\Bot\Service;
 
 final class Editor extends Manager implements EditorInterface {
     use AttributeContainer;

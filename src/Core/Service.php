@@ -1,6 +1,6 @@
 <?php
 
-namespace UzDevid\Telegram\Bot;
+namespace UzDevid\Telegram\Bot\Core;
 
 use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
 
