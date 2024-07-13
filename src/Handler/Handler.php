@@ -3,14 +3,14 @@
 namespace UzDevid\Telegram\Bot\Handler;
 
 use UzDevid\Telegram\Bot\Exception\NotSupportedException;
-use UzDevid\Telegram\Bot\Handler\Update\Callback\CallbackQueryUpdate;
-use uzdevid\telegram\Bot\Handler\Update\Callback\CallbackQueryUpdateInterface;
-use UzDevid\Telegram\Bot\Handler\Update\Inline\InlineQueryUpdate;
-use uzdevid\telegram\Bot\Handler\Update\Inline\InlineQueryUpdateInterface;
+use UzDevid\Telegram\Bot\Handler\Update\Callback\CallbackQueryUpdateInterface;
+use UzDevid\Telegram\Bot\Handler\Update\Inline\InlineQueryUpdateInterface;
 use UzDevid\Telegram\Bot\Handler\Update\Message\FilterMessageTypeInterface;
 use UzDevid\Telegram\Bot\Handler\Update\Message\FilterMessageTypesInterface;
-use UzDevid\Telegram\Bot\Handler\Update\Message\MessageUpdate;
 use UzDevid\Telegram\Bot\Handler\Update\Message\MessageUpdateInterface;
+use UzDevid\Telegram\Bot\Type\CallbackQueryUpdate;
+use UzDevid\Telegram\Bot\Type\InlineQueryUpdate;
+use UzDevid\Telegram\Bot\Type\MessageUpdate;
 use Yiisoft\Hydrator\Hydrator;
 
 /**

@@ -1,15 +1,17 @@
 <?php
 
-namespace UzDevid\Telegram\Bot\Handler\Update\Message;
+namespace UzDevid\Telegram\Bot\Type;
 
 use UzDevid\Telegram\Bot\Core\Service;
 use UzDevid\Telegram\Bot\Exception\NotSupportedException;
-use UzDevid\Telegram\Bot\Type\Message;
 
 /**
  * Class MessageUpdate
  */
 final class MessageUpdate {
+    public int $updateId;
+    public Message $message;
+
     // @formatter:off
     private array $messageTypes = [
         'text',                      'photo',                     'voice',                      'video',
@@ -28,15 +30,6 @@ final class MessageUpdate {
     ];
     // @formatter:on
 
-    /**
-     * @param int $updateId
-     * @param Message $message
-     */
-    public function __construct(
-        public int     $updateId,
-        public Message $message
-    ) {
-    }
 
     /**
      * @return string
