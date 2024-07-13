@@ -36,7 +36,7 @@ class Handler {
      * @throws NotSupportedException
      */
     public function on(MessageUpdateInterface|CallbackQueryUpdateInterface|InlineQueryUpdateInterface $handler): static {
-        if (!$this->isHandled) return $this;
+        if ($this->isHandled) return $this;
 
         $updateName = $this->getUpdateName($handler);
 
