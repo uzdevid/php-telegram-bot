@@ -5,6 +5,7 @@ namespace UzDevid\Telegram\Bot;
 use UzDevid\Telegram\Bot\Core\Service;
 use UzDevid\Telegram\Bot\Handler\Handler;
 use UzDevid\Telegram\Bot\Manager\SenderInterface;
+use UzDevid\Telegram\Bot\Scenario\Scenario;
 
 /**
  * Class Bot
@@ -29,6 +30,15 @@ readonly class Bot {
     public function handler(array $payload): Handler {
         $reformattedPayload = Service::reformat($payload);
         return new Handler($reformattedPayload);
+    }
+
+    /**
+     * @param array $payload
+     * @return Scenario
+     */
+    public function scenario(array $payload): Scenario {
+        $reformattedPayload = Service::reformat($payload);
+        return new Scenario($payload);
     }
 
     /**
