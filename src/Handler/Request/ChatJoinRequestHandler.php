@@ -22,9 +22,9 @@ abstract class ChatJoinRequestHandler {
     }
 
     /**
-     * @param ChatJoinRequest $update
+     * @param ChatJoinRequest $request
      *
      * @return void
      */
-    abstract public function handle(ChatJoinRequest $update): void;
+    abstract public function handle(ChatJoinRequest $request): void;
 }
