@@ -4,7 +4,7 @@ namespace UzDevid\Telegram\Bot\Handler\Request;
 
 use UzDevid\Telegram\Bot\Type\ChatJoinRequest;
 
-interface ChatRequestInterface {
+interface ChatJoinRequestInterface {
     /**
      * @param ChatJoinRequest $request
      *
