@@ -13,5 +13,5 @@ use UzDevid\Telegram\Bot\Core\Type;
  */
 class ChatJoinRequestUpdate extends Type {
     public int $updateId;
-    public ChatJoinRequest $inlineQuery;
+    public ChatJoinRequest $chatJoinRequest;
 }
