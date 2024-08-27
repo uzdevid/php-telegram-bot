@@ -2,7 +2,7 @@
 
 namespace UzDevid\Telegram\Bot\Handler\Callback;
 
-use UzDevid\Telegram\Bot\Type\CallbackQueryUpdate;
+use UzDevid\Telegram\Bot\Update\CallbackQueryUpdate;
 use Yiisoft\Hydrator\Hydrator;
 
 abstract class CallbackQueryHandler {
@@ -15,14 +15,14 @@ abstract class CallbackQueryHandler {
 
     /**
      * @param array $payload
-     * @return CallbackQueryUpdate
+     * @return \UzDevid\Telegram\Bot\Update\CallbackQueryUpdate
      */
     public function getType(array $payload): CallbackQueryUpdate {
         return (new Hydrator())->create(CallbackQueryUpdate::class, $payload);
     }
 
     /**
-     * @param CallbackQueryUpdate $update
+     * @param \UzDevid\Telegram\Bot\Update\CallbackQueryUpdate $update
      *
      * @return bool
      */

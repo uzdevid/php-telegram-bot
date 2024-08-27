@@ -2,7 +2,7 @@
 
 namespace UzDevid\Telegram\Bot\Handler\Request;
 
-use UzDevid\Telegram\Bot\Type\ChatJoinRequestUpdate;
+use UzDevid\Telegram\Bot\Update\ChatJoinRequestUpdate;
 use Yiisoft\Hydrator\Hydrator;
 
 abstract class ChatJoinRequestHandler {
@@ -15,14 +15,14 @@ abstract class ChatJoinRequestHandler {
 
     /**
      * @param array $payload
-     * @return ChatJoinRequestUpdate
+     * @return \UzDevid\Telegram\Bot\Update\ChatJoinRequestUpdate
      */
     public function getType(array $payload): ChatJoinRequestUpdate {
         return (new Hydrator())->create(ChatJoinRequestUpdate::class, $payload);
     }
 
     /**
-     * @param ChatJoinRequestUpdate $request
+     * @param \UzDevid\Telegram\Bot\Update\ChatJoinRequestUpdate $request
      *
      * @return void
      */

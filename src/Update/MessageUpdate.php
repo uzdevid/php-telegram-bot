@@ -1,9 +1,10 @@
 <?php
 
-namespace UzDevid\Telegram\Bot\Type;
+namespace UzDevid\Telegram\Bot\Update;
 
 use UzDevid\Telegram\Bot\Core\Service;
 use UzDevid\Telegram\Bot\Exception\NotSupportedException;
+use UzDevid\Telegram\Bot\Type\Message;
 
 /**
  * Class MessageUpdate

@@ -1,6 +1,8 @@
 <?php
 
-namespace UzDevid\Telegram\Bot\Type;
+namespace UzDevid\Telegram\Bot\Update;
+
+use UzDevid\Telegram\Bot\Type\InlineQuery;
 
 /**
  * Class InlineQueryUpdate

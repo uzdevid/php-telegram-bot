@@ -2,7 +2,7 @@
 
 namespace UzDevid\Telegram\Bot\Handler\Callback;
 
-use UzDevid\Telegram\Bot\Type\CallbackQueryUpdate;
+use UzDevid\Telegram\Bot\Update\CallbackQueryUpdate;
 
 interface CallbackQueryUpdateInterface {
     /**

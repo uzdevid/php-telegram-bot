@@ -1,8 +1,9 @@
 <?php
 
-namespace UzDevid\Telegram\Bot\Type;
+namespace UzDevid\Telegram\Bot\Update;
 
 use UzDevid\Telegram\Bot\Core\Type;
+use UzDevid\Telegram\Bot\Type\ChatJoinRequest;
 
 /**
  * Type ChatJoinRequest
@@ -11,7 +12,7 @@ use UzDevid\Telegram\Bot\Core\Type;
  *
  * Represents a join request sent to a chat.
  */
-class ChatJoinRequestUpdate extends Type {
+final class ChatJoinRequestUpdate extends Type {
     public int $updateId;
     public ChatJoinRequest $chatJoinRequest;
 }

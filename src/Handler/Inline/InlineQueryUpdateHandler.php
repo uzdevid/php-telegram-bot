@@ -2,7 +2,7 @@
 
 namespace UzDevid\Telegram\Bot\Handler\Inline;
 
-use UzDevid\Telegram\Bot\Type\InlineQueryUpdate;
+use UzDevid\Telegram\Bot\Update\InlineQueryUpdate;
 use Yiisoft\Hydrator\Hydrator;
 
 abstract class InlineQueryUpdateHandler {

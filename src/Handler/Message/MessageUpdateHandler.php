@@ -2,7 +2,7 @@
 
 namespace UzDevid\Telegram\Bot\Handler\Message;
 
-use UzDevid\Telegram\Bot\Type\MessageUpdate;
+use UzDevid\Telegram\Bot\Update\MessageUpdate;
 use Yiisoft\Hydrator\Hydrator;
 
 abstract class MessageUpdateHandler {
@@ -15,21 +15,21 @@ abstract class MessageUpdateHandler {
 
     /**
      * @param array $payload
-     * @return MessageUpdate
+     * @return \UzDevid\Telegram\Bot\Update\MessageUpdate
      */
     public function getType(array $payload): MessageUpdate {
         return (new Hydrator())->create(MessageUpdate::class, $payload);
     }
 
     /**
-     * @param MessageUpdate $update
+     * @param \UzDevid\Telegram\Bot\Update\MessageUpdate $update
      *
      * @return bool
      */
     abstract public static function canHandle(MessageUpdate $update): bool;
 
     /**
-     * @param MessageUpdate $update
+     * @param \UzDevid\Telegram\Bot\Update\MessageUpdate $update
      *
      * @return void
      */
