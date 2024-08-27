@@ -10,7 +10,7 @@ abstract class ChatJoinRequestHandler {
      * @return string
      */
     public function getName(): string {
-        return 'chat_join_request';
+        return 'chatJoinRequest';
     }
 
     /**
