@@ -3,15 +3,12 @@
 namespace UzDevid\Telegram\Bot\Handler;
 
 use UzDevid\Telegram\Bot\Exception\NotSupportedException;
-use UzDevid\Telegram\Bot\Handler\Callback\CallbackQueryUpdateInterface;
-use UzDevid\Telegram\Bot\Handler\Inline\InlineQueryUpdateInterface;
+use UzDevid\Telegram\Bot\Handler\Callback\CallbackQueryHandler;
+use UzDevid\Telegram\Bot\Handler\Inline\InlineQueryUpdateHandler;
 use UzDevid\Telegram\Bot\Handler\Message\FilterMessageTypeInterface;
 use UzDevid\Telegram\Bot\Handler\Message\FilterMessageTypesInterface;
-use UzDevid\Telegram\Bot\Handler\Message\MessageUpdateInterface;
-use UzDevid\Telegram\Bot\Type\CallbackQueryUpdate;
-use UzDevid\Telegram\Bot\Type\InlineQueryUpdate;
-use UzDevid\Telegram\Bot\Type\MessageUpdate;
-use Yiisoft\Hydrator\Hydrator;
+use UzDevid\Telegram\Bot\Handler\Message\MessageUpdateHandler;
+use UzDevid\Telegram\Bot\Handler\Request\ChatJoinRequest;
 
 /**
  * Class Handler
@@ -30,35 +27,32 @@ class Handler {
     }
 
     /**
-     * @param MessageUpdateInterface|CallbackQueryUpdateInterface|InlineQueryUpdateInterface $handler
-     *
-     * @return $this
+     * @param MessageUpdateHandler $handler
+     * @return Handler
      * @throws NotSupportedException
      */
-    public function on(MessageUpdateInterface|CallbackQueryUpdateInterface|InlineQueryUpdateInterface $handler): static {
+    public function onMessage(MessageUpdateHandler $handler): static {
         if ($this->isHandled) return $this;
 
-        $updateName = $this->getUpdateName($handler);
+        $name = $handler->getName();
 
-        if (!$this->match($updateName)) return $this;
+        if (!$this->match($name)) return $this;
 
-        $updateClass = $this->getUpdate($handler);
+        $type = $handler->getType($this->payload);
 
-        $update = $this->buildUpdate($updateClass);
-
-        if ($handler instanceof FilterMessageTypeInterface && $update instanceof MessageUpdate && !$update->is($handler->allowedType())) {
+        if ($handler instanceof FilterMessageTypeInterface && !$type->is($handler->allowedType())) {
             return $this;
         }
 
-        if ($handler instanceof FilterMessageTypesInterface && $update instanceof MessageUpdate && !$update->isOneOf($handler->allowedTypes())) {
+        if ($handler instanceof FilterMessageTypesInterface && !$type->isOneOf($handler->allowedTypes())) {
             return $this;
         }
 
-        if (!$handler->canHandle($update)) {
+        if (!$handler->canHandle($type)) {
             return $this;
         }
 
-        $handler->handle($update);
+        $handler->handle($type);
 
         $this->isHandled = true;
 
@@ -66,38 +60,71 @@ class Handler {
     }
 
     /**
-     * @param string $updateClass
-     *
-     * @return MessageUpdate|CallbackQueryUpdate|InlineQueryUpdate
+     * @param CallbackQueryHandler $handler
+     * @return $this
      */
-    protected function buildUpdate(string $updateClass): InlineQueryUpdate|MessageUpdate|CallbackQueryUpdate {
-        return (new Hydrator())->create($updateClass, $this->payload);
+    public function onCallbackQuery(CallbackQueryHandler $handler): static {
+        if ($this->isHandled) return $this;
+
+        $name = $handler->getName();
+
+        if (!$this->match($name)) return $this;
+
+        $type = $handler->getType($this->payload);
+
+        if (!$handler->canHandle($type)) {
+            return $this;
+        }
+
+        $handler->handle($type);
+
+        $this->isHandled = true;
+
+        return $this;
     }
 
     /**
-     * @param MessageUpdateInterface|CallbackQueryUpdateInterface|InlineQueryUpdateInterface $handler
-     *
-     * @return string
+     * @param InlineQueryUpdateHandler $handler
+     * @return $this
      */
-    protected function getUpdateName(MessageUpdateInterface|CallbackQueryUpdateInterface|InlineQueryUpdateInterface $handler): string {
-        return match (true) {
-            $handler instanceof MessageUpdateInterface => 'message',
-            $handler instanceof CallbackQueryUpdateInterface => 'callbackQuery',
-            $handler instanceof InlineQueryUpdateInterface => 'inlineQuery',
-        };
+    public function onInlineQuery(InlineQueryUpdateHandler $handler): static {
+        if ($this->isHandled) return $this;
+
+        $name = $handler->getName();
+
+        if (!$this->match($name)) return $this;
+
+        $type = $handler->getType($this->payload);
+
+        if (!$handler->canHandle($type)) {
+            return $this;
+        }
+
+        $handler->handle($type);
+
+        $this->isHandled = true;
+
+        return $this;
     }
 
     /**
-     * @param MessageUpdateInterface|CallbackQueryUpdateInterface|InlineQueryUpdateInterface $handler
-     *
-     * @return string
+     * @param ChatJoinRequest $handler
+     * @return $this
      */
-    protected function getUpdate(MessageUpdateInterface|CallbackQueryUpdateInterface|InlineQueryUpdateInterface $handler): string {
-        return match (true) {
-            $handler instanceof MessageUpdateInterface => MessageUpdate::class,
-            $handler instanceof CallbackQueryUpdateInterface => CallbackQueryUpdate::class,
-            $handler instanceof InlineQueryUpdateInterface => InlineQueryUpdate::class,
-        };
+    public function onRequest(ChatJoinRequest $handler): static {
+        if ($this->isHandled) return $this;
+
+        $name = $handler->getName();
+
+        if (!$this->match($name)) return $this;
+
+        $type = $handler->getType($this->payload);
+
+        $handler->handle($type);
+
+        $this->isHandled = true;
+
+        return $this;
     }
 
     /**
