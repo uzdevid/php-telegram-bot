@@ -9,6 +9,7 @@ use UzDevid\Telegram\Bot\Handler\Message\FilterMessageTypeInterface;
 use UzDevid\Telegram\Bot\Handler\Message\FilterMessageTypesInterface;
 use UzDevid\Telegram\Bot\Handler\Message\MessageUpdateHandler;
 use UzDevid\Telegram\Bot\Handler\Request\ChatJoinRequest;
+use UzDevid\Telegram\Bot\Handler\Request\ChatJoinRequestHandler;
 
 /**
  * Class Handler
@@ -108,10 +109,10 @@ class Handler {
     }
 
     /**
-     * @param ChatJoinRequest $handler
+     * @param ChatJoinRequestHandler $handler
      * @return $this
      */
-    public function onRequest(ChatJoinRequest $handler): static {
+    public function onRequest(ChatJoinRequestHandler $handler): static {
         if ($this->isHandled) return $this;
 
         $name = $handler->getName();
