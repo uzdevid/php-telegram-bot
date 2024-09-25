@@ -5,7 +5,9 @@ namespace UzDevid\Telegram\Bot\Handler\Request;
 use UzDevid\Telegram\Bot\Update\ChatJoinRequestUpdate;
 use Yiisoft\Hydrator\Hydrator;
 
-abstract class ChatJoinRequest {
+abstract class ChatJoinRequest implements RequestInterface {
+    protected ChatJoinRequestUpdate $request;
+
     /**
      * @return string
      */
@@ -15,16 +17,15 @@ abstract class ChatJoinRequest {
 
     /**
      * @param array $payload
-     * @return ChatJoinRequestUpdate
+     * @return void
      */
-    public function getType(array $payload): ChatJoinRequestUpdate {
-        return (new Hydrator())->create(ChatJoinRequestUpdate::class, $payload);
+    public function buildRequest(array $payload): void {
+        $this->request = (new Hydrator)->create(ChatJoinRequestUpdate::class, $payload);
     }
 
     /**
-     * @param ChatJoinRequestUpdate $request
      *
      * @return void
      */
-    abstract public function handle(ChatJoinRequestUpdate $request): void;
+    abstract public function handle(): void;
 }

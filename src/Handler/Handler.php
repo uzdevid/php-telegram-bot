@@ -8,8 +8,7 @@ use UzDevid\Telegram\Bot\Handler\Inline\InlineQueryUpdateHandler;
 use UzDevid\Telegram\Bot\Handler\Message\FilterMessageTypeInterface;
 use UzDevid\Telegram\Bot\Handler\Message\FilterMessageTypesInterface;
 use UzDevid\Telegram\Bot\Handler\Message\MessageUpdateHandler;
-use UzDevid\Telegram\Bot\Handler\Request\ChatJoinRequest;
-use UzDevid\Telegram\Bot\Handler\Request\ChatJoinRequest;
+use UzDevid\Telegram\Bot\Handler\Request\RequestInterface;
 
 /**
  * Class Handler
@@ -109,19 +108,19 @@ class Handler {
     }
 
     /**
-     * @param ChatJoinRequest $handler
+     * @param RequestInterface $handler
      * @return $this
      */
-    public function onRequest(ChatJoinRequest $handler): static {
+    public function onRequest(RequestInterface $handler): static {
         if ($this->isHandled) return $this;
 
         $name = $handler->getName();
 
         if (!$this->match($name)) return $this;
 
-        $type = $handler->getType($this->payload);
+        $handler->buildRequest($this->payload);
 
-        $handler->handle($type);
+        $handler->handle();
 
         $this->isHandled = true;
 
