@@ -5,6 +5,7 @@ namespace UzDevid\Telegram\Bot\Message\Message\Method;
 use UzDevid\Telegram\Bot\Message\Message\Method;
 use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
 use UzDevid\Telegram\Bot\Type\LabeledPrice;
+use yii\helpers\Json;
 
 class SendInvoice extends Method implements MethodInterface {
     /**
@@ -66,5 +67,16 @@ class SendInvoice extends Method implements MethodInterface {
     public function addPrice(LabeledPrice $price): static {
         $this->pushAttribute('prices', $price);
         return $this;
+    }
+
+    /**
+     * @return array
+     */
+    public function getPayload(): array {
+        $payload = parent::getPayload();
+
+        $payload['prices'] = json_encode($payload['prices'], JSON_UNESCAPED_UNICODE);
+
+        return $payload;
     }
 }
