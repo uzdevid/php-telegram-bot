@@ -12,7 +12,7 @@ abstract class PreCheckoutQuery implements RequestInterface {
      * @return string
      */
     public function getName(): string {
-        return 'PreCheckoutQuery';
+        return 'preCheckoutQuery';
     }
 
     /**
