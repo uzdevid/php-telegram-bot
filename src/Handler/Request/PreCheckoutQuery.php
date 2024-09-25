@@ -7,7 +7,7 @@ use Yiisoft\Hydrator\Hydrator;
 
 abstract class PreCheckoutQuery implements RequestInterface {
     protected PreCheckoutQueryUpdate $request;
-    
+
     /**
      * @return string
      */
