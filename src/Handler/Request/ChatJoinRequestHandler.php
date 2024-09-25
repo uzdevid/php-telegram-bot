@@ -15,14 +15,14 @@ abstract class ChatJoinRequestHandler {
 
     /**
      * @param array $payload
-     * @return \UzDevid\Telegram\Bot\Update\ChatJoinRequestUpdate
+     * @return ChatJoinRequestUpdate
      */
     public function getType(array $payload): ChatJoinRequestUpdate {
         return (new Hydrator())->create(ChatJoinRequestUpdate::class, $payload);
     }
 
     /**
-     * @param \UzDevid\Telegram\Bot\Update\ChatJoinRequestUpdate $request
+     * @param ChatJoinRequestUpdate $request
      *
      * @return void
      */
