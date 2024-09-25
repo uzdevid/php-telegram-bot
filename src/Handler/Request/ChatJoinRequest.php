@@ -5,7 +5,7 @@ namespace UzDevid\Telegram\Bot\Handler\Request;
 use UzDevid\Telegram\Bot\Update\ChatJoinRequestUpdate;
 use Yiisoft\Hydrator\Hydrator;
 
-abstract class ChatJoinRequestHandler {
+abstract class ChatJoinRequest {
     /**
      * @return string
      */
