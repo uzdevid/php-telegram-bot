@@ -14,5 +14,11 @@ use UzDevid\Telegram\Bot\Core\Type;
  * @property string $url
  */
 class WebAppInfo extends Type {
-    public string $url;
+    /**
+     * @param string $url
+     */
+    public function __construct(
+        public string $url
+    ) {
+    }
 }
