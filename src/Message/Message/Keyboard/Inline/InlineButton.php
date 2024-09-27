@@ -4,6 +4,7 @@ namespace UzDevid\Telegram\Bot\Message\Message\Keyboard\Inline;
 
 use UzDevid\Telegram\Bot\Core\AttributeContainer;
 use UzDevid\Telegram\Bot\Message\Message\Keyboard\ButtonInterface;
+use UzDevid\Telegram\Bot\Type\WebAppInfo;
 
 class InlineButton implements ButtonInterface {
     use AttributeContainer;
@@ -35,6 +36,15 @@ class InlineButton implements ButtonInterface {
      */
     public function url(string $url): static {
         $this->addAttribute('url', $url);
+        return $this;
+    }
+
+    /**
+     * @param WebAppInfo $webAppInfo
+     * @return $this
+     */
+    public function webApp(WebAppInfo $webAppInfo): static {
+        $this->addAttribute('web_app', $webAppInfo);
         return $this;
     }
 }
