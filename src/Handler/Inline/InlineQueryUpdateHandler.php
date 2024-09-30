@@ -10,7 +10,7 @@ abstract class InlineQueryUpdateHandler {
      * @return string
      */
     public function getName(): string {
-        return 'inline_query';
+        return 'inlineQuery';
     }
 
     /**

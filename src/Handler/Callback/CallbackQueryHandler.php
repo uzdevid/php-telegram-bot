@@ -10,19 +10,19 @@ abstract class CallbackQueryHandler {
      * @return string
      */
     public function getName(): string {
-        return 'callback_query';
+        return 'callbackQuery';
     }
 
     /**
      * @param array $payload
-     * @return \UzDevid\Telegram\Bot\Update\CallbackQueryUpdate
+     * @return CallbackQueryUpdate
      */
     public function getType(array $payload): CallbackQueryUpdate {
         return (new Hydrator())->create(CallbackQueryUpdate::class, $payload);
     }
 
     /**
-     * @param \UzDevid\Telegram\Bot\Update\CallbackQueryUpdate $update
+     * @param CallbackQueryUpdate $update
      *
      * @return bool
      */
