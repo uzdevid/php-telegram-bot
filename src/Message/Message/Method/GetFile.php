@@ -5,6 +5,8 @@ namespace UzDevid\Telegram\Bot\Message\Message\Method;
 use UzDevid\Telegram\Bot\Message\Message\Method;
 use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
 use UzDevid\Telegram\Bot\Type\File;
+use UzDevid\Telegram\Bot\Type\UserProfilePhotos;
+use Yiisoft\Hydrator\Hydrator;
 
 class GetFile extends Method implements MethodInterface {
     /**
@@ -24,9 +26,10 @@ class GetFile extends Method implements MethodInterface {
     }
 
     /**
-     * @return string
+     * @param array $data
+     * @return File
      */
-    public function response(): string {
-        return File::class;
+    public function response(array $data): File {
+        return (new Hydrator())->create(File::class, $data['result']);
     }
 }

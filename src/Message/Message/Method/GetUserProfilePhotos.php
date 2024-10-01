@@ -5,6 +5,7 @@ namespace UzDevid\Telegram\Bot\Message\Message\Method;
 use UzDevid\Telegram\Bot\Message\Message\Method;
 use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
 use UzDevid\Telegram\Bot\Type\UserProfilePhotos;
+use Yiisoft\Hydrator\Hydrator;
 
 class GetUserProfilePhotos extends Method implements MethodInterface {
     /**
@@ -43,9 +44,10 @@ class GetUserProfilePhotos extends Method implements MethodInterface {
     }
 
     /**
-     * @return string
+     * @param array $data
+     * @return UserProfilePhotos
      */
-    public function response(): string {
-        return UserProfilePhotos::class;
+    public function response(array $data): UserProfilePhotos {
+        return (new Hydrator())->create(UserProfilePhotos::class, $data['result']);
     }
 }
