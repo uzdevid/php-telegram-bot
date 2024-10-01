@@ -5,7 +5,6 @@ namespace UzDevid\Telegram\Bot\Message\Message;
 use UzDevid\Telegram\Bot\Core\AttributeContainer;
 use UzDevid\Telegram\Bot\Message\Message\Entity\MessageEntityInterface;
 use UzDevid\Telegram\Bot\Message\Message\Keyboard\ReplyMarkupInterface;
-use UzDevid\Telegram\Bot\Type\Response;
 
 /**
  *
@@ -95,9 +94,10 @@ class Method {
     }
 
     /**
+     * @param array $data
      * @return string
      */
-    public function response(): string {
-        return Response::class;
+    public function response(array $data): mixed {
+        return $data;
     }
 }

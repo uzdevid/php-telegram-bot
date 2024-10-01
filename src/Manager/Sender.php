@@ -4,7 +4,6 @@ namespace UzDevid\Telegram\Bot\Manager;
 
 use GuzzleHttp\Exception\GuzzleException;
 use JsonException;
-use UzDevid\Telegram\Bot\Core\Service;
 
 final class Sender extends Manager implements SenderInterface {
     /**
@@ -12,7 +11,9 @@ final class Sender extends Manager implements SenderInterface {
      * @throws JsonException
      * @throws GuzzleException
      */
-    public function send(): object {
-        return Service::buildResponse($this->sendRequest(), $this->method);
+    public function send(): mixed {
+        $response = $this->sendRequest();
+
+        return $this->method->response($response);
     }
 }

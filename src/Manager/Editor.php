@@ -7,7 +7,6 @@ use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\ServerException;
 use JsonException;
 use UzDevid\Telegram\Bot\Core\AttributeContainer;
-use UzDevid\Telegram\Bot\Core\Service;
 use UzDevid\Telegram\Bot\Exception\MissedAttributesException;
 
 final class Editor extends Manager implements EditorInterface {
@@ -33,6 +32,8 @@ final class Editor extends Manager implements EditorInterface {
             throw new MissedAttributesException('Attribute `messageId` must be set');
         }
 
-        return Service::buildResponse($this->sendRequest($this->getAttributes()), $this->method);
+        $response = $this->sendRequest($this->getAttributes());
+
+        return $this->method->response($response);
     }
 }

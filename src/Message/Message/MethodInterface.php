@@ -14,7 +14,8 @@ interface MethodInterface {
     public function getPayload(): array;
 
     /**
-     * @return string
+     * @param array $data
+     * @return mixed
      */
-    public function response(): string;
+    public function response(array $data): mixed;
 }

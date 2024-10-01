@@ -2,8 +2,6 @@
 
 namespace UzDevid\Telegram\Bot\Core;
 
-use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
-
 class Service {
     /**
      * @param string $string
@@ -43,24 +41,5 @@ class Service {
         }
 
         return $payload;
-    }
-
-    /**
-     * @param array $responseBody
-     * @param MethodInterface $method
-     *
-     * @return object
-     */
-    public static function buildResponse(array $responseBody, MethodInterface $method): object {
-        $data['ok'] = $responseBody['ok'];
-
-        if (is_array($responseBody['result'])) {
-            $data = array_merge($data, $responseBody['result']);
-        } else {
-            $data['result'] = $responseBody['result'];
-        }
-
-        $response = $method->response();
-        return new $response($data);
     }
 }

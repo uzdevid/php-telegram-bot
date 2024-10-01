@@ -34,5 +34,5 @@ interface SenderInterface {
      * @throws MissedAttributesException
      * @throws GuzzleException|ServerException|ClientException
      */
-    public function send(): object;
+    public function send(): mixed;
 }
