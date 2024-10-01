@@ -31,12 +31,12 @@ class GetChatMember extends Method implements MethodInterface {
 
     /**
      * @param array $data
-     * @return ChatMemberMember
+     * @return ChatMemberMember|ChatMemberOwner|ChatMemberAdministrator|ChatMemberRestricted|ChatMemberLeft|ChatMemberBanned
      */
-    public function response(array $data): ChatMemberMember {
+    public function response(array $data): ChatMemberMember|ChatMemberOwner|ChatMemberAdministrator|ChatMemberRestricted|ChatMemberLeft|ChatMemberBanned {
         $class = match ($data['result']['status']) {
             'member' => ChatMemberMember::class,
-            'owner' => ChatMemberOwner::class,
+            'creator' => ChatMemberOwner::class,
             'administrator' => ChatMemberAdministrator::class,
             'restricted' => ChatMemberRestricted::class,
             'left' => ChatMemberLeft::class,
