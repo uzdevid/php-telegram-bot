@@ -72,6 +72,16 @@ class SendVideo extends Method implements MethodInterface {
     }
 
     /**
+     * @param string $mode
+     *
+     * @return $this
+     */
+    public function parseMode(string $mode): static {
+        $this->addAttribute('parse_mode', $mode);
+        return $this;
+    }
+
+    /**
      * @param bool $hasSpoiler
      *
      * @return $this
