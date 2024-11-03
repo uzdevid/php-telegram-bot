@@ -21,7 +21,7 @@ class CopyMessage extends Method implements MethodInterface {
      * @return string
      */
     public function methodName(): string {
-        return "forwardMessage";
+        return "copyMessage";
     }
 
     /**
