@@ -5,7 +5,7 @@ namespace UzDevid\Telegram\Bot\Message\Message\Method;
 use UzDevid\Telegram\Bot\Message\Message\Method;
 use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
 
-class ForwardMessage extends Method implements MethodInterface {
+class CopyMessage extends Method implements MethodInterface {
     /**
      * @param string $fromChatId
      * @param int $messageId
@@ -22,6 +22,26 @@ class ForwardMessage extends Method implements MethodInterface {
      */
     public function methodName(): string {
         return "forwardMessage";
+    }
+
+    /**
+     * @param string $caption
+     *
+     * @return $this
+     */
+    public function caption(string $caption): static {
+        $this->addAttribute('caption', $caption);
+        return $this;
+    }
+
+    /**
+     * @param string $mode
+     *
+     * @return $this
+     */
+    public function parseMode(string $mode): static {
+        $this->addAttribute('parse_mode', $mode);
+        return $this;
     }
 
     /**
