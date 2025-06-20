@@ -1,10 +1,12 @@
 <?php
 
-namespace uzdevid\telegram\bot\message\answer;
+namespace UzDevid\Telegram\Bot\Message\Answer;
 
-use uzdevid\telegram\bot\BaseBot;
+use UzDevid\Telegram\Bot\Core\AttributeContainer;
 
-class AnswerType extends BaseBot {
+class AnswerType {
+    use AttributeContainer;
+
     /**
      * @return array
      */

@@ -1,79 +1,51 @@
 <?php
 
-namespace uzdevid\telegram\bot;
+namespace UzDevid\Telegram\Bot;
 
-use uzdevid\telegram\bot\exceptions\InvalidCallException;
-use uzdevid\telegram\bot\handler\Handler;
-use uzdevid\telegram\bot\message\ManagerInterface;
-use uzdevid\telegram\bot\message\managers\Editor;
-use uzdevid\telegram\bot\message\managers\Sender;
+use UzDevid\Telegram\Bot\Core\Service;
+use UzDevid\Telegram\Bot\Handler\Handler;
+use UzDevid\Telegram\Bot\Manager\SenderInterface;
+use UzDevid\Telegram\Bot\Scenario\Scenario;
 
 /**
  * Class Bot
  *
- * @package uzdevid\telegram\bot
+ * @package UzDevid\Telegram\Bot
  */
-class Bot extends BaseBot {
+readonly class Bot {
     /**
-     * @param ManagerInterface|null $sender
-     *
-     * @return Sender
+     * @param string $token
+     * @param string $endpoint
      */
-    public function sender(ManagerInterface|null $sender = null): Sender {
-        if ($sender === null) {
-            $sender = new Sender();
-        }
-
-        if (!isset($this->token)) {
-            throw new InvalidCallException('Token is not set');
-        }
-
-        $sender->setToken($this->token);
-
-        if (isset($this->chatId)) {
-            $sender->setChatId($this->chatId);
-        }
-
-        if (isset($this->username)) {
-            $sender->setUsername($this->username);
-        }
-
-        return $sender;
+    public function __construct(
+        private string $token,
+        public string  $endpoint = 'https://api.telegram.org/bot%s/%s'
+    ) {
     }
 
     /**
-     * @param ManagerInterface|null $editor
-     *
-     * @return Editor
-     */
-    public function editor(ManagerInterface|null $editor = null): Editor {
-        if ($editor === null) {
-            $editor = new Editor();
-        }
-
-        if (!isset($this->token)) {
-            throw new InvalidCallException('Token is not set');
-        }
-
-        $editor->setToken($this->token);
-
-        if (isset($this->chatId)) {
-            $editor->setChatId($this->chatId);
-        }
-
-        if (isset($this->username)) {
-            $editor->setUsername($this->username);
-        }
-
-        return $editor;
-    }
-
-    /**
-     * @param array $data
-     *
+     * @param array $payload
      * @return Handler
      */
-    public function handler(array $data): Handler {
-        return new Handler($this, $data);
+    public function handler(array $payload): Handler {
+        $reformattedPayload = Service::reformat($payload);
+        return new Handler($reformattedPayload);
+    }
+
+    /**
+     * @param array $payload
+     * @return Scenario
+     */
+    public function scenario(array $payload): Scenario {
+        $reformattedPayload = Service::reformat($payload);
+        return new Scenario($payload);
+    }
+
+    /**
+     * @param SenderInterface $sender
+     * @return SenderInterface
+     */
+    public function sender(SenderInterface $sender): SenderInterface {
+        return $sender->endpoint($this->endpoint)->token($this->token);
     }
 }

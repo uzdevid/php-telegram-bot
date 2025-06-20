@@ -1,60 +1,138 @@
 <?php
 
-namespace uzdevid\telegram\bot\handler;
+namespace UzDevid\Telegram\Bot\Handler;
 
-use uzdevid\telegram\bot\Bot;
-use uzdevid\telegram\bot\exceptions\InvalidCallException;
-use uzdevid\telegram\bot\objects\CallbackQuery;
-use uzdevid\telegram\bot\objects\InlineQuery;
-use uzdevid\telegram\bot\objects\Message;
+use UzDevid\Telegram\Bot\Exception\NotSupportedException;
+use UzDevid\Telegram\Bot\Handler\Callback\CallbackQueryHandler;
+use UzDevid\Telegram\Bot\Handler\Inline\InlineQueryUpdateHandler;
+use UzDevid\Telegram\Bot\Handler\Message\FilterMessageTypeInterface;
+use UzDevid\Telegram\Bot\Handler\Message\FilterMessageTypesInterface;
+use UzDevid\Telegram\Bot\Handler\Message\MessageUpdateHandler;
+use UzDevid\Telegram\Bot\Handler\Request\RequestInterface;
 
+/**
+ * Class Handler
+ *
+ * @package UzDevid\Telegram\Bot\Handler
+ */
 class Handler {
-    protected Bot $botInstance;
-    protected array $data = [];
     private bool $isHandled = false;
 
-    public function __construct(Bot $botInstance, array $data) {
-        $this->botInstance = $botInstance;
-        $this->data = $data;
+    /**
+     * @param array $payload
+     */
+    public function __construct(
+        private readonly array $payload
+    ) {
     }
 
-    public function on(string $handlerClassName): static {
-        if (!(
-            is_subclass_of($handlerClassName, MessageUpdateInterface::class) ||
-            is_subclass_of($handlerClassName, CallbackQueryUpdateInterface::class) ||
-            is_subclass_of($handlerClassName, InlineQueryUpdateInterface::class) ||
-            is_subclass_of($handlerClassName, RequestInterface::class)
-        )) {
-            throw new InvalidCallException('Update class must be instance of ' . MessageUpdateInterface::class . ' or ' . CallbackQueryUpdateInterface::class . ' or ' . InlineQueryUpdateInterface::class . ' or ' . RequestInterface::class . ' interface');
-        }
+    /**
+     * @param MessageUpdateHandler $handler
+     * @return Handler
+     * @throws NotSupportedException
+     */
+    public function onMessage(MessageUpdateHandler $handler): static {
+        if ($this->isHandled) return $this;
 
-        if (!$this->matchedUpdate($handlerClassName)) {
+        $name = $handler->getName();
+
+        if (!$this->match($name)) return $this;
+
+        $type = $handler->getType($this->payload);
+
+        if ($handler instanceof FilterMessageTypeInterface && !$type->is($handler->allowedType())) {
             return $this;
         }
 
-        /** @var UpdateInterface|RequestInterface $update */
-        $update = new $handlerClassName($this->data);
-
-        if (!$this->canHandle($update, $update->body())) {
+        if ($handler instanceof FilterMessageTypesInterface && !$type->isOneOf($handler->allowedTypes())) {
             return $this;
         }
 
-        call_user_func([$update, 'handle'], $this->botInstance, $update->body());
+        if (!$handler->canHandle($type)) {
+            return $this;
+        }
+
+        $handler->handle($type);
+
         $this->isHandled = true;
 
         return $this;
     }
 
-    protected function matchedUpdate(string $updateClassName): bool {
-        $objectName = call_user_func([$updateClassName, 'objectName']);
-        return !$this->isHandled && $this->match($objectName, $this->data);
+    /**
+     * @param CallbackQueryHandler $handler
+     * @return $this
+     */
+    public function onCallbackQuery(CallbackQueryHandler $handler): static {
+        if ($this->isHandled) return $this;
+
+        $name = $handler->getName();
+
+        if (!$this->match($name)) return $this;
+
+        $type = $handler->getType($this->payload);
+
+        if (!$handler->canHandle($type)) {
+            return $this;
+        }
+
+        $handler->handle($type);
+
+        $this->isHandled = true;
+
+        return $this;
     }
 
-    protected function canHandle(UpdateInterface $update, Message|CallbackQuery|InlineQuery $body): bool {
-        return call_user_func([$update, 'canHandle'], $this->botInstance, $body);
+    /**
+     * @param InlineQueryUpdateHandler $handler
+     * @return $this
+     */
+    public function onInlineQuery(InlineQueryUpdateHandler $handler): static {
+        if ($this->isHandled) return $this;
+
+        $name = $handler->getName();
+
+        if (!$this->match($name)) return $this;
+
+        $type = $handler->getType($this->payload);
+
+        if (!$handler->canHandle($type)) {
+            return $this;
+        }
+
+        $handler->handle($type);
+
+        $this->isHandled = true;
+
+        return $this;
     }
 
-    protected function match(string $objectName, array $data): bool {
-        return array_key_exists($objectName, $data);
+    /**
+     * @param RequestInterface $handler
+     * @return $this
+     */
+    public function onRequest(RequestInterface $handler): static {
+        if ($this->isHandled) return $this;
+
+        $name = $handler->getName();
+
+        if (!$this->match($name)) return $this;
+
+        $handler->buildRequest($this->payload);
+
+        $handler->handle();
+
+        $this->isHandled = true;
+
+        return $this;
+    }
+
+    /**
+     * @param string $updateName
+     *
+     * @return bool
+     */
+    protected function match(string $updateName): bool {
+        return array_key_exists($updateName, $this->payload);
     }
 }
