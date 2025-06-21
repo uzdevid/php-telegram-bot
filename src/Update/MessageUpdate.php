@@ -2,7 +2,7 @@
 
 namespace UzDevid\Telegram\Bot\Update;
 
-use UzDevid\Telegram\Bot\Core\Service;
+use UzDevid\Telegram\Bot\Core\Helper;
 use UzDevid\Telegram\Bot\Exception\NotSupportedException;
 use UzDevid\Telegram\Bot\Type\Message;
 
@@ -31,28 +31,13 @@ final class MessageUpdate {
     ];
     // @formatter:on
 
-
-    /**
-     * @return string
-     * @throws NotSupportedException
-     */
-    public function type(): string {
-        $intersect = array_intersect_key(get_object_vars($this->message), array_flip($this->messageTypes));
-
-        if (empty($intersect)) {
-            throw new NotSupportedException('Unsupported message type');
-        }
-
-        return key($intersect);
-    }
-
     /**
      * @param string $type
      * @return bool
      * @throws NotSupportedException
      */
     public function is(string $type): bool {
-        return $this->type() === Service::snakeToCamel($type);
+        return $this->getType() === Helper::snakeToCamel($type);
     }
 
     /**
@@ -61,6 +46,20 @@ final class MessageUpdate {
      * @throws NotSupportedException
      */
     public function isOneOf(array $allowedTypes): bool {
-        return in_array($this->type(), array_map(static fn($type) => Service::snakeToCamel($type), $allowedTypes), true);
+        return in_array($this->getType(), array_map(static fn($type) => Helper::snakeToCamel($type), $allowedTypes), true);
+    }
+
+    /**
+     * @return string
+     * @throws NotSupportedException
+     */
+    private function getType(): string {
+        $intersect = array_intersect_key(get_object_vars($this->message), array_flip($this->messageTypes));
+
+        if (empty($intersect)) {
+            throw new NotSupportedException('Unsupported message type');
+        }
+
+        return key($intersect);
     }
 }

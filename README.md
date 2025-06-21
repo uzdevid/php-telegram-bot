@@ -33,7 +33,7 @@ $config = [
 Bot obyektini yaratish
 
 ```php
-$bot = new \uzdevid\telegram\bot\Bot($config);
+$bot = new \uzdevid\telegram\bot\Client($config);
 ```
 
 Matnli habar yuborish

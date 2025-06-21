@@ -1,10 +1,10 @@
 <?php
 
-namespace UzDevid\Telegram\Bot\Handler\Callback;
+namespace UzDevid\Telegram\Bot\Handler;
 
 use UzDevid\Telegram\Bot\Update\CallbackQueryUpdate;
 
-interface CallbackQueryUpdateInterface {
+interface CallbackQueryHandlerInterface {
     /**
      * @param CallbackQueryUpdate $query
      *

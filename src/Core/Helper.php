@@ -2,7 +2,7 @@
 
 namespace UzDevid\Telegram\Bot\Core;
 
-class Service {
+class Helper {
     /**
      * @param string $string
      *
@@ -31,6 +31,7 @@ class Service {
     public static function reformat(array $payload): array {
         foreach ($payload as $key => $value) {
             unset($payload[$key]);
+            
             $camelCaseName = self::snakeToCamel($key);
 
             if (is_array($value)) {
