@@ -1,6 +1,6 @@
 <?php
 
-namespace UzDevid\Telegram\Bot\Handler1;
+namespace UzDevid\Telegram\Bot\Handler;
 
 use UzDevid\Telegram\Bot\Update\CallbackQueryUpdate;
 

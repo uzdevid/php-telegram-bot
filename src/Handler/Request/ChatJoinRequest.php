@@ -1,6 +1,6 @@
 <?php
 
-namespace UzDevid\Telegram\Bot\Handler1\Request;
+namespace UzDevid\Telegram\Bot\Handler\Request;
 
 use UzDevid\Telegram\Bot\Update\ChatJoinRequestUpdate;
 use Yiisoft\Hydrator\Hydrator;

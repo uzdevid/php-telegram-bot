@@ -4,7 +4,7 @@ namespace UzDevid\Telegram\Bot\Message\Message\Method;
 
 use JsonException;
 use UzDevid\Telegram\Bot\Core\AttributeContainer;
-use UzDevid\Telegram\Bot\Message\Answer1\AnswerInterface;
+use UzDevid\Telegram\Bot\Message\Answer\AnswerInterface;
 use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
 use UzDevid\Telegram\Bot\Type\Response;
 use Yiisoft\Hydrator\Hydrator;

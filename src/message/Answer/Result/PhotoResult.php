@@ -1,9 +1,9 @@
 <?php
 
-namespace UzDevid\Telegram\Bot\Message\Answer1\Result;
+namespace UzDevid\Telegram\Bot\Message\Answer\Result;
 
-use UzDevid\Telegram\Bot\Message\Answer1\AnswerInterface;
-use UzDevid\Telegram\Bot\Message\Answer1\AnswerType;
+use UzDevid\Telegram\Bot\Message\Answer\AnswerInterface;
+use UzDevid\Telegram\Bot\Message\Answer\AnswerType;
 
 class PhotoResult extends AnswerType implements AnswerInterface {
     /**

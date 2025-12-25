@@ -153,8 +153,8 @@ ChatStart.php
 ```php
 namespace App\Handlers;
 
-use uzdevid\telegram\bot\Handler1\updates\MessageUpdate;
-use uzdevid\telegram\bot\Handler1\MessageUpdateInterface;
+use uzdevid\telegram\bot\Handler\updates\MessageUpdate;
+use uzdevid\telegram\bot\Handler\MessageUpdateInterface;
 use uzdevid\telegram\bot\objects\Message;
 
 class ChatStart extends MessageUpdate implements MessageUpdateInterface {

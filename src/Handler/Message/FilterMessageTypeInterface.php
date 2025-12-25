@@ -1,6 +1,6 @@
 <?php
 
-namespace UzDevid\Telegram\Bot\Handler1\Message;
+namespace UzDevid\Telegram\Bot\Handler\Message;
 
 interface FilterMessageTypeInterface {
     /**
