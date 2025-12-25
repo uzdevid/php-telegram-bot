@@ -64,7 +64,7 @@ final class Server implements ServerInterface {
             return $this;
         }
 
-        if (!$handlerClass->canHandle($type)) {
+        if (!call_user_func([$handlerClass, 'canHandle'], $type)) {
             return $this;
         }
 
