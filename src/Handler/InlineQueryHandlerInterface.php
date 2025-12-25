@@ -10,7 +10,7 @@ interface InlineQueryHandlerInterface {
      *
      * @return bool
      */
-    public static function canHandle(InlineQueryUpdate $update): bool;
+    public function canHandle(InlineQueryUpdate $update): bool;
 
     /**
      * @param InlineQueryUpdate $update

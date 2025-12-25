@@ -10,7 +10,7 @@ interface MessageHandlerInterface {
      *
      * @return bool
      */
-    public static function canHandle(MessageUpdate $update): bool;
+    public function canHandle(MessageUpdate $update): bool;
 
     /**
      * @param MessageUpdate $update

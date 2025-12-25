@@ -64,12 +64,12 @@ final class Server implements ServerInterface {
             return $this;
         }
 
-        if (!call_user_func([$handlerClass, 'canHandle'], $type)) {
-            return $this;
-        }
-
         /** @var MessageHandlerInterface $handler */
         $handler = $this->container->get($handlerClass);
+
+        if (!$handler->canHandle($type)) {
+            return $this;
+        }
 
         $handler->handle($type);
 
@@ -91,12 +91,12 @@ final class Server implements ServerInterface {
 
         $type = $this->hydrator->create(CallbackQueryUpdate::class, $this->payload);
 
-        if (!call_user_func([$handlerClass, 'canHandle'], $type)) {
-            return $this;
-        }
-
         /** @var CallbackQueryHandlerInterface $handler */
         $handler = $this->container->get($handlerClass);
+
+        if (!$handler->canHandle($type)) {
+            return $this;
+        }
 
         $handler->handle($type);
 
@@ -118,12 +118,12 @@ final class Server implements ServerInterface {
 
         $type = $this->hydrator->create(InlineQueryUpdate::class, $this->payload);
 
-        if (!call_user_func([$handlerClass, 'canHandle'], $type)) {
-            return $this;
-        }
-
         /** @var InlineQueryHandlerInterface $handler */
         $handler = $this->container->get($handlerClass);
+
+        if (!$handler->canHandle($type)) {
+            return $this;
+        }
 
         $handler->handle($type);
 

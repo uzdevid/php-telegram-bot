@@ -10,7 +10,7 @@ interface CallbackQueryHandlerInterface {
      *
      * @return bool
      */
-    public static function canHandle(CallbackQueryUpdate $query): bool;
+    public function canHandle(CallbackQueryUpdate $query): bool;
 
     /**
      * @param CallbackQueryUpdate $query
