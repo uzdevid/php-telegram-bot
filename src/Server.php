@@ -91,7 +91,7 @@ final class Server implements ServerInterface {
 
         $type = $this->hydrator->create(CallbackQueryUpdate::class, $this->payload);
 
-        if (!$handlerClass->canHandle($type)) {
+        if (!call_user_func([$handlerClass, 'canHandle'], $type)) {
             return $this;
         }
 
@@ -118,7 +118,7 @@ final class Server implements ServerInterface {
 
         $type = $this->hydrator->create(InlineQueryUpdate::class, $this->payload);
 
-        if (!$handlerClass->canHandle($type)) {
+        if (!call_user_func([$handlerClass, 'canHandle'], $type)) {
             return $this;
         }
 
