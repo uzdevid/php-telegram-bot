@@ -1,6 +1,6 @@
 <?php
 
-namespace UzDevid\Telegram\Bot\Handler\Request;
+namespace UzDevid\Telegram\Bot\Handler1\Request;
 
 use UzDevid\Telegram\Bot\Update\PreCheckoutQueryUpdate;
 use Yiisoft\Hydrator\Hydrator;

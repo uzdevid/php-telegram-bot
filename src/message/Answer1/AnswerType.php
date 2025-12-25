@@ -1,6 +1,6 @@
 <?php
 
-namespace UzDevid\Telegram\Bot\Message\Answer;
+namespace UzDevid\Telegram\Bot\Message\Answer1;
 
 use UzDevid\Telegram\Bot\Core\AttributeContainer;
 

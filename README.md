@@ -149,11 +149,12 @@ $bot->handler($requestBody)
 > __on()__ - qabul qilinadigan so'rovlarni qo'shish uchun kerakli metod.
 
 ChatStart.php
+
 ```php
 namespace App\Handlers;
 
-use uzdevid\telegram\bot\handler\updates\MessageUpdate;
-use uzdevid\telegram\bot\handler\MessageUpdateInterface;
+use uzdevid\telegram\bot\Handler1\updates\MessageUpdate;
+use uzdevid\telegram\bot\Handler1\MessageUpdateInterface;
 use uzdevid\telegram\bot\objects\Message;
 
 class ChatStart extends MessageUpdate implements MessageUpdateInterface {

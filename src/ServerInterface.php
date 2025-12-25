@@ -5,10 +5,10 @@ namespace UzDevid\Telegram\Bot;
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
 use UzDevid\Telegram\Bot\Exception\NotSupportedException;
-use UzDevid\Telegram\Bot\Handler\CallbackQueryHandlerInterface;
-use UzDevid\Telegram\Bot\Handler\InlineQueryHandlerInterface;
-use UzDevid\Telegram\Bot\Handler\MessageHandlerInterface;
-use UzDevid\Telegram\Bot\Handler\RequestInterface;
+use UzDevid\Telegram\Bot\Handler1\CallbackQueryHandlerInterface;
+use UzDevid\Telegram\Bot\Handler1\InlineQueryHandlerInterface;
+use UzDevid\Telegram\Bot\Handler1\MessageHandlerInterface;
+use UzDevid\Telegram\Bot\Handler1\RequestInterface;
 
 interface ServerInterface {
     /**

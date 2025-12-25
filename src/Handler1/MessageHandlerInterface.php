@@ -1,6 +1,6 @@
 <?php
 
-namespace UzDevid\Telegram\Bot\Handler;
+namespace UzDevid\Telegram\Bot\Handler1;
 
 use UzDevid\Telegram\Bot\Update\MessageUpdate;
 
