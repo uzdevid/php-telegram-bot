@@ -4,7 +4,6 @@ namespace UzDevid\Telegram\Bot\Message\Message\Keyboard\Reply;
 
 use UzDevid\Telegram\Bot\Core\AttributeContainer;
 use UzDevid\Telegram\Bot\Message\Message\Keyboard\ButtonInterface;
-use UzDevid\Telegram\Bot\Type\WebAppInfo;
 
 class ReplyButton implements ButtonInterface {
     use AttributeContainer;
@@ -36,15 +35,6 @@ class ReplyButton implements ButtonInterface {
      */
     public function requestLocation(bool $requestLocation = true): static {
         $this->addAttribute('request_location', $requestLocation);
-        return $this;
-    }
-
-    /**
-     * @param WebAppInfo $webAppInfo
-     * @return $this
-     */
-    public function webApp(WebAppInfo $webAppInfo): static {
-        $this->addAttribute('web_app', $webAppInfo);
         return $this;
     }
 }
