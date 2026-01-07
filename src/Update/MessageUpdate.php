@@ -53,7 +53,7 @@ final class MessageUpdate {
      * @return string
      * @throws NotSupportedException
      */
-    private function getType(): string {
+    public function getType(): string {
         $intersect = array_intersect_key(get_object_vars($this->message), array_flip($this->messageTypes));
 
         if (empty($intersect)) {
