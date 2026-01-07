@@ -56,11 +56,11 @@ final class Server implements ServerInterface {
 
         $type = $this->hydrator->create(MessageUpdate::class, $this->payload);
 
-        if ($handlerClass instanceof FilterMessageTypeInterface && !$type->is(call_user_func([$handlerClass, 'allowedType']))) {
+        if (is_subclass_of($handlerClass, FilterMessageTypeInterface::class) && !$type->is(call_user_func([$handlerClass, 'allowedType']))) {
             return $this;
         }
 
-        if ($handlerClass instanceof FilterMessageTypesInterface && !$type->isOneOf(call_user_func([$handlerClass, 'allowedTypes']))) {
+        if (is_subclass_of($handlerClass, FilterMessageTypesInterface::class) && !$type->isOneOf(call_user_func([$handlerClass, 'allowedTypes']))) {
             return $this;
         }
 
