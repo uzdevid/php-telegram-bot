@@ -11,6 +11,8 @@ use Yiisoft\Hydrator\Attribute\Parameter\Collection;
  * @link https://core.telegram.org/bots/api#message
  *
  * This object represents a message.
+ *
+ * @property PhotoSize[] $photo
  */
 class Message extends Type {
     public int $messageId;
