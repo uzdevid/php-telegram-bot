@@ -3,6 +3,7 @@
 namespace UzDevid\Telegram\Bot\Type;
 
 use UzDevid\Telegram\Bot\Core\Type;
+use Yiisoft\Hydrator\Attribute\Parameter\Collection;
 
 /**
  * Type Message
@@ -37,7 +38,8 @@ class Message extends Type {
     public Animation $animation;
     public Audio $audio;
     public Document $document;
-    public PhotoSize $photo;
+    #[Collection(PhotoSize::class)]
+    public array $photo;
     public Sticker $sticker;
     public Story $story;
     public Video $video;
