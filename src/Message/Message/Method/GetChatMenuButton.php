@@ -12,8 +12,12 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Use this method to get the current value of the bot's menu button in a private chat, or the default menu button. Returns MenuButton on success.
  */
 class GetChatMenuButton extends Method implements MethodInterface {
+
+    /**
+     */
     public function __construct() {
         parent::__construct();
+
 
     }
 
@@ -22,7 +26,7 @@ class GetChatMenuButton extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $chatId
+     * @param int $chatId Unique identifier for the target private chat. If not specified, default bot's menu button will be returned
      *
      * @return $this
      */

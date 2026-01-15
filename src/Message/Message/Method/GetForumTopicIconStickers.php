@@ -12,8 +12,14 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Use this method to get custom emoji stickers, which can be used as a forum topic icon by any user. Requires no parameters. Returns an Array of Sticker objects.
  */
 class GetForumTopicIconStickers extends Method implements MethodInterface {
+
+    /**
+     * @param int | string $chatId Unique identifier for the target chat or username of the target supergroup (in the format @supergroupusername)
+     * @param string $name Topic name, 1-128 characters
+     */
     public function __construct(int|string $chatId, string $name) {
         parent::__construct();
+
         $this->addAttribute('chat_id', $chatId);
         $this->addAttribute('name', $name);
     }
@@ -23,7 +29,7 @@ class GetForumTopicIconStickers extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $iconColor
+     * @param int $iconColor Color of the topic icon in RGB format. Currently, must be one of 7322096 (0x6FB9F0), 16766590 (0xFFD67E), 13338331 (0xCB86DB), 9367192 (0x8EEE98), 16749490 (0xFF93B2), or 16478047 (0xFB6F5F)
      *
      * @return $this
      */
@@ -33,7 +39,7 @@ class GetForumTopicIconStickers extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $iconCustomEmojiId
+     * @param string $iconCustomEmojiId Unique identifier of the custom emoji shown as the topic icon. Use getForumTopicIconStickers to get all allowed custom emoji identifiers.
      *
      * @return $this
      */

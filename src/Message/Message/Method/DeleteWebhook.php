@@ -12,8 +12,12 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Use this method to remove webhook integration if you decide to switch back to getUpdates. Returns True on success.
  */
 class DeleteWebhook extends Method implements MethodInterface {
+
+    /**
+     */
     public function __construct() {
         parent::__construct();
+
 
     }
 
@@ -22,7 +26,7 @@ class DeleteWebhook extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $dropPendingUpdates
+     * @param bool $dropPendingUpdates Pass True to drop all pending updates
      *
      * @return $this
      */

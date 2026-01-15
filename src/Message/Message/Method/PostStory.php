@@ -12,8 +12,15 @@ use UzDevid\Telegram\Bot\Type\InputStoryContent;
  * Posts a story on behalf of a managed business account. Requires the can_manage_stories business bot right. Returns Story on success.
  */
 class PostStory extends Method implements MethodInterface {
+
+    /**
+     * @param string $businessConnectionId Unique identifier of the business connection
+     * @param InputStoryContent $content Content of the story
+     * @param int $activePeriod Period after which the story is moved to the archive, in seconds; must be one of 6 * 3600, 12 * 3600, 86400, or 2 * 86400
+     */
     public function __construct(string $businessConnectionId, InputStoryContent $content, int $activePeriod) {
         parent::__construct();
+
         $this->addAttribute('business_connection_id', $businessConnectionId);
         $this->addAttribute('content', $content);
         $this->addAttribute('active_period', $activePeriod);
@@ -24,7 +31,7 @@ class PostStory extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $caption
+     * @param string $caption Caption of the story, 0-2048 characters after entities parsing
      *
      * @return $this
      */
@@ -34,7 +41,7 @@ class PostStory extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $parseMode
+     * @param string $parseMode Mode for parsing entities in the story caption. See formatting options for more details.
      *
      * @return $this
      */
@@ -44,7 +51,7 @@ class PostStory extends Method implements MethodInterface {
     }
 
     /**
-     * @param array $captionEntities
+     * @param array $captionEntities A JSON-serialized list of special entities that appear in the caption, which can be specified instead of parse_mode
      *
      * @return $this
      */
@@ -54,7 +61,7 @@ class PostStory extends Method implements MethodInterface {
     }
 
     /**
-     * @param array $areas
+     * @param array $areas A JSON-serialized list of clickable areas to be shown on the story
      *
      * @return $this
      */
@@ -64,7 +71,7 @@ class PostStory extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $postToChatPage
+     * @param bool $postToChatPage Pass True to keep the story accessible after it expires
      *
      * @return $this
      */
@@ -74,7 +81,7 @@ class PostStory extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $protectContent
+     * @param bool $protectContent Pass True if the content of the story must be protected from forwarding and screenshotting
      *
      * @return $this
      */

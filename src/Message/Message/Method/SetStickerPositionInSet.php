@@ -12,8 +12,14 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Use this method to move a sticker in a set created by the bot to a specific position. Returns True on success.
  */
 class SetStickerPositionInSet extends Method implements MethodInterface {
+
+    /**
+     * @param string $sticker File identifier of the sticker
+     * @param int $position New sticker position in the set, zero-based
+     */
     public function __construct(string $sticker, int $position) {
         parent::__construct();
+
         $this->addAttribute('sticker', $sticker);
         $this->addAttribute('position', $position);
     }

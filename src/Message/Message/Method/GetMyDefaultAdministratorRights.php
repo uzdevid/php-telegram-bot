@@ -12,8 +12,12 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Use this method to get the current default administrator rights of the bot. Returns ChatAdministratorRights on success.
  */
 class GetMyDefaultAdministratorRights extends Method implements MethodInterface {
+
+    /**
+     */
     public function __construct() {
         parent::__construct();
+
 
     }
 
@@ -22,7 +26,7 @@ class GetMyDefaultAdministratorRights extends Method implements MethodInterface 
     }
 
     /**
-     * @param bool $forChannels
+     * @param bool $forChannels Pass True to get default administrator rights of the bot in channels. Otherwise, default administrator rights of the bot for groups and supergroups will be returned.
      *
      * @return $this
      */

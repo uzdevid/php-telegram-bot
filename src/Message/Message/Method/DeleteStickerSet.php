@@ -12,8 +12,13 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Use this method to delete a sticker set that was created by the bot. Returns True on success.
  */
 class DeleteStickerSet extends Method implements MethodInterface {
+
+    /**
+     * @param string $name Sticker set name
+     */
     public function __construct(string $name) {
         parent::__construct();
+
         $this->addAttribute('name', $name);
     }
 

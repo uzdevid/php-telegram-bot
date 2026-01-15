@@ -17,8 +17,15 @@ use UzDevid\Telegram\Bot\Type\SuggestedPostParameters;
  * Use this method to send point on the map. On success, the sent Message is returned.
  */
 class SendLocation extends Method implements MethodInterface {
+
+    /**
+     * @param int | string $chatId Unique identifier for the target chat or username of the target channel (in the format @channelusername)
+     * @param float $latitude Latitude of the location
+     * @param float $longitude Longitude of the location
+     */
     public function __construct(int|string $chatId, float $latitude, float $longitude) {
         parent::__construct();
+
         $this->addAttribute('chat_id', $chatId);
         $this->addAttribute('latitude', $latitude);
         $this->addAttribute('longitude', $longitude);
@@ -29,7 +36,7 @@ class SendLocation extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $businessConnectionId
+     * @param string $businessConnectionId Unique identifier of the business connection on behalf of which the message will be sent
      *
      * @return $this
      */
@@ -39,7 +46,7 @@ class SendLocation extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $messageThreadId
+     * @param int $messageThreadId Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only
      *
      * @return $this
      */
@@ -49,7 +56,7 @@ class SendLocation extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $directMessagesTopicId
+     * @param int $directMessagesTopicId Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat
      *
      * @return $this
      */
@@ -59,7 +66,7 @@ class SendLocation extends Method implements MethodInterface {
     }
 
     /**
-     * @param float $horizontalAccuracy
+     * @param float $horizontalAccuracy The radius of uncertainty for the location, measured in meters; 0-1500
      *
      * @return $this
      */
@@ -69,7 +76,7 @@ class SendLocation extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $livePeriod
+     * @param int $livePeriod Period in seconds during which the location will be updated (see Live Locations, should be between 60 and 86400, or 0x7FFFFFFF for live locations that can be edited indefinitely.
      *
      * @return $this
      */
@@ -79,7 +86,7 @@ class SendLocation extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $heading
+     * @param int $heading For live locations, a direction in which the user is moving, in degrees. Must be between 1 and 360 if specified.
      *
      * @return $this
      */
@@ -89,7 +96,7 @@ class SendLocation extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $proximityAlertRadius
+     * @param int $proximityAlertRadius For live locations, a maximum distance for proximity alerts about approaching another chat member, in meters. Must be between 1 and 100000 if specified.
      *
      * @return $this
      */
@@ -99,7 +106,7 @@ class SendLocation extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $disableNotification
+     * @param bool $disableNotification Sends the message silently. Users will receive a notification with no sound.
      *
      * @return $this
      */
@@ -109,7 +116,7 @@ class SendLocation extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $protectContent
+     * @param bool $protectContent Protects the contents of the sent message from forwarding and saving
      *
      * @return $this
      */
@@ -119,7 +126,7 @@ class SendLocation extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $allowPaidBroadcast
+     * @param bool $allowPaidBroadcast Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance
      *
      * @return $this
      */
@@ -129,7 +136,7 @@ class SendLocation extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $messageEffectId
+     * @param string $messageEffectId Unique identifier of the message effect to be added to the message; for private chats only
      *
      * @return $this
      */
@@ -139,7 +146,7 @@ class SendLocation extends Method implements MethodInterface {
     }
 
     /**
-     * @param SuggestedPostParameters $suggestedPostParameters
+     * @param SuggestedPostParameters $suggestedPostParameters A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.
      *
      * @return $this
      */
@@ -149,7 +156,7 @@ class SendLocation extends Method implements MethodInterface {
     }
 
     /**
-     * @param ReplyParameters $replyParameters
+     * @param ReplyParameters $replyParameters Description of the message to reply to
      *
      * @return $this
      */
@@ -159,7 +166,7 @@ class SendLocation extends Method implements MethodInterface {
     }
 
     /**
-     * @param InlineKeyboardMarkup | ReplyKeyboardMarkup | ReplyKeyboardRemove | ForceReply $replyMarkup
+     * @param InlineKeyboardMarkup | ReplyKeyboardMarkup | ReplyKeyboardRemove | ForceReply $replyMarkup Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user
      *
      * @return $this
      */

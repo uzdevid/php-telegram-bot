@@ -12,8 +12,13 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Returns the gifts received and owned by a managed business account. Requires the can_view_gifts_and_stars business bot right. Returns OwnedGifts on success.
  */
 class GetBusinessAccountGifts extends Method implements MethodInterface {
+
+    /**
+     * @param string $businessConnectionId Unique identifier of the business connection
+     */
     public function __construct(string $businessConnectionId) {
         parent::__construct();
+
         $this->addAttribute('business_connection_id', $businessConnectionId);
     }
 
@@ -22,7 +27,7 @@ class GetBusinessAccountGifts extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $excludeUnsaved
+     * @param bool $excludeUnsaved Pass True to exclude gifts that aren't saved to the account's profile page
      *
      * @return $this
      */
@@ -32,7 +37,7 @@ class GetBusinessAccountGifts extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $excludeSaved
+     * @param bool $excludeSaved Pass True to exclude gifts that are saved to the account's profile page
      *
      * @return $this
      */
@@ -42,7 +47,7 @@ class GetBusinessAccountGifts extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $excludeUnlimited
+     * @param bool $excludeUnlimited Pass True to exclude gifts that can be purchased an unlimited number of times
      *
      * @return $this
      */
@@ -52,7 +57,7 @@ class GetBusinessAccountGifts extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $excludeLimitedUpgradable
+     * @param bool $excludeLimitedUpgradable Pass True to exclude gifts that can be purchased a limited number of times and can be upgraded to unique
      *
      * @return $this
      */
@@ -62,7 +67,7 @@ class GetBusinessAccountGifts extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $excludeLimitedNonUpgradable
+     * @param bool $excludeLimitedNonUpgradable Pass True to exclude gifts that can be purchased a limited number of times and can't be upgraded to unique
      *
      * @return $this
      */
@@ -72,7 +77,7 @@ class GetBusinessAccountGifts extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $excludeUnique
+     * @param bool $excludeUnique Pass True to exclude unique gifts
      *
      * @return $this
      */
@@ -82,7 +87,7 @@ class GetBusinessAccountGifts extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $excludeFromBlockchain
+     * @param bool $excludeFromBlockchain Pass True to exclude gifts that were assigned from the TON blockchain and can't be resold or transferred in Telegram
      *
      * @return $this
      */
@@ -92,7 +97,7 @@ class GetBusinessAccountGifts extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $sortByPrice
+     * @param bool $sortByPrice Pass True to sort results by gift price instead of send date. Sorting is applied before pagination.
      *
      * @return $this
      */
@@ -102,7 +107,7 @@ class GetBusinessAccountGifts extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $offset
+     * @param string $offset Offset of the first entry to return as received from the previous request; use empty string to get the first chunk of results
      *
      * @return $this
      */
@@ -112,7 +117,7 @@ class GetBusinessAccountGifts extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $limit
+     * @param int $limit The maximum number of gifts to be returned; 1-100. Defaults to 100
      *
      * @return $this
      */

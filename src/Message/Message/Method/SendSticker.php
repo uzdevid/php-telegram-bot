@@ -18,8 +18,14 @@ use UzDevid\Telegram\Bot\Type\SuggestedPostParameters;
  * Use this method to send static .WEBP, animated .TGS, or video .WEBM stickers. On success, the sent Message is returned.
  */
 class SendSticker extends Method implements MethodInterface {
+
+    /**
+     * @param int | string $chatId Unique identifier for the target chat or username of the target channel (in the format @channelusername)
+     * @param InputFile | string $sticker Sticker to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a .WEBP sticker from the Internet, or upload a new .WEBP, .TGS, or .WEBM sticker using multipart/form-data. More information on Sending Files ». Video and animated stickers can't be sent via an HTTP URL.
+     */
     public function __construct(int|string $chatId, InputFile|string $sticker) {
         parent::__construct();
+
         $this->addAttribute('chat_id', $chatId);
         $this->addAttribute('sticker', $sticker);
     }
@@ -29,7 +35,7 @@ class SendSticker extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $businessConnectionId
+     * @param string $businessConnectionId Unique identifier of the business connection on behalf of which the message will be sent
      *
      * @return $this
      */
@@ -39,7 +45,7 @@ class SendSticker extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $messageThreadId
+     * @param int $messageThreadId Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only
      *
      * @return $this
      */
@@ -49,7 +55,7 @@ class SendSticker extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $directMessagesTopicId
+     * @param int $directMessagesTopicId Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat
      *
      * @return $this
      */
@@ -59,7 +65,7 @@ class SendSticker extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $emoji
+     * @param string $emoji Emoji associated with the sticker; only for just uploaded stickers
      *
      * @return $this
      */
@@ -69,7 +75,7 @@ class SendSticker extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $disableNotification
+     * @param bool $disableNotification Sends the message silently. Users will receive a notification with no sound.
      *
      * @return $this
      */
@@ -79,7 +85,7 @@ class SendSticker extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $protectContent
+     * @param bool $protectContent Protects the contents of the sent message from forwarding and saving
      *
      * @return $this
      */
@@ -89,7 +95,7 @@ class SendSticker extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $allowPaidBroadcast
+     * @param bool $allowPaidBroadcast Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance
      *
      * @return $this
      */
@@ -99,7 +105,7 @@ class SendSticker extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $messageEffectId
+     * @param string $messageEffectId Unique identifier of the message effect to be added to the message; for private chats only
      *
      * @return $this
      */
@@ -109,7 +115,7 @@ class SendSticker extends Method implements MethodInterface {
     }
 
     /**
-     * @param SuggestedPostParameters $suggestedPostParameters
+     * @param SuggestedPostParameters $suggestedPostParameters A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.
      *
      * @return $this
      */
@@ -119,7 +125,7 @@ class SendSticker extends Method implements MethodInterface {
     }
 
     /**
-     * @param ReplyParameters $replyParameters
+     * @param ReplyParameters $replyParameters Description of the message to reply to
      *
      * @return $this
      */
@@ -129,7 +135,7 @@ class SendSticker extends Method implements MethodInterface {
     }
 
     /**
-     * @param InlineKeyboardMarkup | ReplyKeyboardMarkup | ReplyKeyboardRemove | ForceReply $replyMarkup
+     * @param InlineKeyboardMarkup | ReplyKeyboardMarkup | ReplyKeyboardRemove | ForceReply $replyMarkup Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user
      *
      * @return $this
      */

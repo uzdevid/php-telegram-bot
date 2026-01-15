@@ -12,8 +12,13 @@ use UzDevid\Telegram\Bot\Type\BotCommandScope;
  * Use this method to change the list of the bot's commands. See this manual for more details about bot commands. Returns True on success.
  */
 class SetMyCommands extends Method implements MethodInterface {
+
+    /**
+     * @param array $commands A JSON-serialized list of bot commands to be set as the list of the bot's commands. At most 100 commands can be specified.
+     */
     public function __construct(array $commands) {
         parent::__construct();
+
         $this->addAttribute('commands', $commands);
     }
 
@@ -22,7 +27,7 @@ class SetMyCommands extends Method implements MethodInterface {
     }
 
     /**
-     * @param BotCommandScope $scope
+     * @param BotCommandScope $scope A JSON-serialized object, describing scope of users for which the commands are relevant. Defaults to BotCommandScopeDefault.
      *
      * @return $this
      */
@@ -32,7 +37,7 @@ class SetMyCommands extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $languageCode
+     * @param string $languageCode A two-letter ISO 639-1 language code. If empty, commands will be applied to all users from the given scope, for whose language there are no dedicated commands
      *
      * @return $this
      */

@@ -12,8 +12,14 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Use this method to set the score of the specified user in a game message. On success, if the message is not an inline message, the Message is returned, otherwise True is returned. Returns an error, if the new score is not greater than the user's current score in the chat and force is False.
  */
 class SetGameScore extends Method implements MethodInterface {
+
+    /**
+     * @param int $userId User identifier
+     * @param int $score New score, must be non-negative
+     */
     public function __construct(int $userId, int $score) {
         parent::__construct();
+
         $this->addAttribute('user_id', $userId);
         $this->addAttribute('score', $score);
     }
@@ -23,7 +29,7 @@ class SetGameScore extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $force
+     * @param bool $force Pass True if the high score is allowed to decrease. This can be useful when fixing mistakes or banning cheaters
      *
      * @return $this
      */
@@ -33,7 +39,7 @@ class SetGameScore extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $disableEditMessage
+     * @param bool $disableEditMessage Pass True if the game message should not be automatically edited to include the current scoreboard
      *
      * @return $this
      */
@@ -43,7 +49,7 @@ class SetGameScore extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $chatId
+     * @param int $chatId Required if inline_message_id is not specified. Unique identifier for the target chat
      *
      * @return $this
      */
@@ -53,7 +59,7 @@ class SetGameScore extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $messageId
+     * @param int $messageId Required if inline_message_id is not specified. Identifier of the sent message
      *
      * @return $this
      */
@@ -63,7 +69,7 @@ class SetGameScore extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $inlineMessageId
+     * @param string $inlineMessageId Required if chat_id and message_id are not specified. Identifier of the inline message
      *
      * @return $this
      */

@@ -12,8 +12,12 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * A method to get the current Telegram Stars balance of the bot. Requires no parameters. On success, returns a StarAmount object.
  */
 class GetMyStarBalance extends Method implements MethodInterface {
+
+    /**
+     */
     public function __construct() {
         parent::__construct();
+
 
     }
 
@@ -22,7 +26,7 @@ class GetMyStarBalance extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $offset
+     * @param int $offset Number of transactions to skip in the response
      *
      * @return $this
      */
@@ -32,7 +36,7 @@ class GetMyStarBalance extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $limit
+     * @param int $limit The maximum number of transactions to be retrieved. Values between 1-100 are accepted. Defaults to 100.
      *
      * @return $this
      */

@@ -12,8 +12,13 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Use this method to get data for high score tables. Will return the score of the specified user and several of their neighbors in a game. Returns an Array of GameHighScore objects.
  */
 class GetGameHighScores extends Method implements MethodInterface {
+
+    /**
+     * @param int $userId Target user id
+     */
     public function __construct(int $userId) {
         parent::__construct();
+
         $this->addAttribute('user_id', $userId);
     }
 
@@ -22,7 +27,7 @@ class GetGameHighScores extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $chatId
+     * @param int $chatId Required if inline_message_id is not specified. Unique identifier for the target chat
      *
      * @return $this
      */
@@ -32,7 +37,7 @@ class GetGameHighScores extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $messageId
+     * @param int $messageId Required if inline_message_id is not specified. Identifier of the sent message
      *
      * @return $this
      */
@@ -42,7 +47,7 @@ class GetGameHighScores extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $inlineMessageId
+     * @param string $inlineMessageId Required if chat_id and message_id are not specified. Identifier of the inline message
      *
      * @return $this
      */

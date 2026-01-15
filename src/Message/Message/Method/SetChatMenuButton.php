@@ -12,8 +12,12 @@ use UzDevid\Telegram\Bot\Type\MenuButton;
  * Use this method to change the bot's menu button in a private chat, or the default menu button. Returns True on success.
  */
 class SetChatMenuButton extends Method implements MethodInterface {
+
+    /**
+     */
     public function __construct() {
         parent::__construct();
+
 
     }
 
@@ -22,7 +26,7 @@ class SetChatMenuButton extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $chatId
+     * @param int $chatId Unique identifier for the target private chat. If not specified, default bot's menu button will be changed
      *
      * @return $this
      */
@@ -32,7 +36,7 @@ class SetChatMenuButton extends Method implements MethodInterface {
     }
 
     /**
-     * @param MenuButton $menuButton
+     * @param MenuButton $menuButton A JSON-serialized object for the bot's new menu button. Defaults to MenuButtonDefault
      *
      * @return $this
      */

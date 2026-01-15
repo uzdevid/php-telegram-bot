@@ -14,8 +14,15 @@ use UzDevid\Telegram\Bot\Type\ReplyParameters;
  * Use this method to send a checklist on behalf of a connected business account. On success, the sent Message is returned.
  */
 class SendChecklist extends Method implements MethodInterface {
+
+    /**
+     * @param string $businessConnectionId Unique identifier of the business connection on behalf of which the message will be sent
+     * @param int $chatId Unique identifier for the target chat
+     * @param InputChecklist $checklist A JSON-serialized object for the checklist to send
+     */
     public function __construct(string $businessConnectionId, int $chatId, InputChecklist $checklist) {
         parent::__construct();
+
         $this->addAttribute('business_connection_id', $businessConnectionId);
         $this->addAttribute('chat_id', $chatId);
         $this->addAttribute('checklist', $checklist);
@@ -26,7 +33,7 @@ class SendChecklist extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $disableNotification
+     * @param bool $disableNotification Sends the message silently. Users will receive a notification with no sound.
      *
      * @return $this
      */
@@ -36,7 +43,7 @@ class SendChecklist extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $protectContent
+     * @param bool $protectContent Protects the contents of the sent message from forwarding and saving
      *
      * @return $this
      */
@@ -46,7 +53,7 @@ class SendChecklist extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $messageEffectId
+     * @param string $messageEffectId Unique identifier of the message effect to be added to the message
      *
      * @return $this
      */
@@ -56,7 +63,7 @@ class SendChecklist extends Method implements MethodInterface {
     }
 
     /**
-     * @param ReplyParameters $replyParameters
+     * @param ReplyParameters $replyParameters A JSON-serialized object for description of the message to reply to
      *
      * @return $this
      */
@@ -66,7 +73,7 @@ class SendChecklist extends Method implements MethodInterface {
     }
 
     /**
-     * @param InlineKeyboardMarkup $replyMarkup
+     * @param InlineKeyboardMarkup $replyMarkup A JSON-serialized object for an inline keyboard
      *
      * @return $this
      */

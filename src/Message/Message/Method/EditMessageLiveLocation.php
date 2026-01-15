@@ -12,8 +12,14 @@ use UzDevid\Telegram\Bot\Type\InlineKeyboardMarkup;
  * Use this method to edit live location messages. A location can be edited until its live_period expires or editing is explicitly disabled by a call to stopMessageLiveLocation. On success, if the edited message is not an inline message, the edited Message is returned, otherwise True is returned.
  */
 class EditMessageLiveLocation extends Method implements MethodInterface {
+
+    /**
+     * @param float $latitude Latitude of new location
+     * @param float $longitude Longitude of new location
+     */
     public function __construct(float $latitude, float $longitude) {
         parent::__construct();
+
         $this->addAttribute('latitude', $latitude);
         $this->addAttribute('longitude', $longitude);
     }
@@ -23,7 +29,7 @@ class EditMessageLiveLocation extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $businessConnectionId
+     * @param string $businessConnectionId Unique identifier of the business connection on behalf of which the message to be edited was sent
      *
      * @return $this
      */
@@ -33,7 +39,7 @@ class EditMessageLiveLocation extends Method implements MethodInterface {
     }
 
     /**
-     * @param int | string $chatId
+     * @param int | string $chatId Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername)
      *
      * @return $this
      */
@@ -43,7 +49,7 @@ class EditMessageLiveLocation extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $messageId
+     * @param int $messageId Required if inline_message_id is not specified. Identifier of the message to edit
      *
      * @return $this
      */
@@ -53,7 +59,7 @@ class EditMessageLiveLocation extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $inlineMessageId
+     * @param string $inlineMessageId Required if chat_id and message_id are not specified. Identifier of the inline message
      *
      * @return $this
      */
@@ -63,7 +69,7 @@ class EditMessageLiveLocation extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $livePeriod
+     * @param int $livePeriod New period in seconds during which the location can be updated, starting from the message send date. If 0x7FFFFFFF is specified, then the location can be updated forever. Otherwise, the new value must not exceed the current live_period by more than a day, and the live location expiration date must remain within the next 90 days. If not specified, then live_period remains unchanged
      *
      * @return $this
      */
@@ -73,7 +79,7 @@ class EditMessageLiveLocation extends Method implements MethodInterface {
     }
 
     /**
-     * @param float $horizontalAccuracy
+     * @param float $horizontalAccuracy The radius of uncertainty for the location, measured in meters; 0-1500
      *
      * @return $this
      */
@@ -83,7 +89,7 @@ class EditMessageLiveLocation extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $heading
+     * @param int $heading Direction in which the user is moving, in degrees. Must be between 1 and 360 if specified.
      *
      * @return $this
      */
@@ -93,7 +99,7 @@ class EditMessageLiveLocation extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $proximityAlertRadius
+     * @param int $proximityAlertRadius The maximum distance for proximity alerts about approaching another chat member, in meters. Must be between 1 and 100000 if specified.
      *
      * @return $this
      */
@@ -103,7 +109,7 @@ class EditMessageLiveLocation extends Method implements MethodInterface {
     }
 
     /**
-     * @param InlineKeyboardMarkup $replyMarkup
+     * @param InlineKeyboardMarkup $replyMarkup A JSON-serialized object for a new inline keyboard.
      *
      * @return $this
      */

@@ -12,8 +12,14 @@ use UzDevid\Telegram\Bot\Type\InputProfilePhoto;
  * Changes the profile photo of a managed business account. Requires the can_edit_profile_photo business bot right. Returns True on success.
  */
 class SetBusinessAccountProfilePhoto extends Method implements MethodInterface {
+
+    /**
+     * @param string $businessConnectionId Unique identifier of the business connection
+     * @param InputProfilePhoto $photo The new profile photo to set
+     */
     public function __construct(string $businessConnectionId, InputProfilePhoto $photo) {
         parent::__construct();
+
         $this->addAttribute('business_connection_id', $businessConnectionId);
         $this->addAttribute('photo', $photo);
     }
@@ -23,7 +29,7 @@ class SetBusinessAccountProfilePhoto extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $isPublic
+     * @param bool $isPublic Pass True to set the public photo, which will be visible even if the main photo is hidden by the business account's privacy settings. An account can have only one public photo.
      *
      * @return $this
      */

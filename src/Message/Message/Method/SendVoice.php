@@ -18,8 +18,14 @@ use UzDevid\Telegram\Bot\Type\SuggestedPostParameters;
  * Use this method to send audio files, if you want Telegram clients to display the file as a playable voice message. For this to work, your audio must be in an .OGG file encoded with OPUS, or in .MP3 format, or in .M4A format (other formats may be sent as Audio or Document). On success, the sent Message is returned. Bots can currently send voice messages of up to 50 MB in size, this limit may be changed in the future.
  */
 class SendVoice extends Method implements MethodInterface {
+
+    /**
+     * @param int | string $chatId Unique identifier for the target chat or username of the target channel (in the format @channelusername)
+     * @param InputFile | string $voice Audio file to send. Pass a file_id as String to send a file that exists on the Telegram servers (recommended), pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart/form-data. More information on Sending Files »
+     */
     public function __construct(int|string $chatId, InputFile|string $voice) {
         parent::__construct();
+
         $this->addAttribute('chat_id', $chatId);
         $this->addAttribute('voice', $voice);
     }
@@ -29,7 +35,7 @@ class SendVoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $businessConnectionId
+     * @param string $businessConnectionId Unique identifier of the business connection on behalf of which the message will be sent
      *
      * @return $this
      */
@@ -39,7 +45,7 @@ class SendVoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $messageThreadId
+     * @param int $messageThreadId Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only
      *
      * @return $this
      */
@@ -49,7 +55,7 @@ class SendVoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $directMessagesTopicId
+     * @param int $directMessagesTopicId Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat
      *
      * @return $this
      */
@@ -59,7 +65,7 @@ class SendVoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $caption
+     * @param string $caption Voice message caption, 0-1024 characters after entities parsing
      *
      * @return $this
      */
@@ -69,7 +75,7 @@ class SendVoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $parseMode
+     * @param string $parseMode Mode for parsing entities in the voice message caption. See formatting options for more details.
      *
      * @return $this
      */
@@ -79,7 +85,7 @@ class SendVoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param array $captionEntities
+     * @param array $captionEntities A JSON-serialized list of special entities that appear in the caption, which can be specified instead of parse_mode
      *
      * @return $this
      */
@@ -89,7 +95,7 @@ class SendVoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $duration
+     * @param int $duration Duration of the voice message in seconds
      *
      * @return $this
      */
@@ -99,7 +105,7 @@ class SendVoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $disableNotification
+     * @param bool $disableNotification Sends the message silently. Users will receive a notification with no sound.
      *
      * @return $this
      */
@@ -109,7 +115,7 @@ class SendVoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $protectContent
+     * @param bool $protectContent Protects the contents of the sent message from forwarding and saving
      *
      * @return $this
      */
@@ -119,7 +125,7 @@ class SendVoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $allowPaidBroadcast
+     * @param bool $allowPaidBroadcast Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance
      *
      * @return $this
      */
@@ -129,7 +135,7 @@ class SendVoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $messageEffectId
+     * @param string $messageEffectId Unique identifier of the message effect to be added to the message; for private chats only
      *
      * @return $this
      */
@@ -139,7 +145,7 @@ class SendVoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param SuggestedPostParameters $suggestedPostParameters
+     * @param SuggestedPostParameters $suggestedPostParameters A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.
      *
      * @return $this
      */
@@ -149,7 +155,7 @@ class SendVoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param ReplyParameters $replyParameters
+     * @param ReplyParameters $replyParameters Description of the message to reply to
      *
      * @return $this
      */
@@ -159,7 +165,7 @@ class SendVoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param InlineKeyboardMarkup | ReplyKeyboardMarkup | ReplyKeyboardRemove | ForceReply $replyMarkup
+     * @param InlineKeyboardMarkup | ReplyKeyboardMarkup | ReplyKeyboardRemove | ForceReply $replyMarkup Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user
      *
      * @return $this
      */

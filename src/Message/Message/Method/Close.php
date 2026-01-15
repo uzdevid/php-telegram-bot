@@ -18,8 +18,14 @@ use UzDevid\Telegram\Bot\Type\SuggestedPostParameters;
  * Use this method to close the bot instance before moving it from one local server to another. You need to delete the webhook before calling this method to ensure that the bot isn't launched again after server restart. The method will return error 429 in the first 10 minutes after the bot is launched. Returns True on success. Requires no parameters.
  */
 class Close extends Method implements MethodInterface {
+
+    /**
+     * @param int | string $chatId Unique identifier for the target chat or username of the target channel (in the format @channelusername)
+     * @param string $text Text of the message to be sent, 1-4096 characters after entities parsing
+     */
     public function __construct(int|string $chatId, string $text) {
         parent::__construct();
+
         $this->addAttribute('chat_id', $chatId);
         $this->addAttribute('text', $text);
     }
@@ -29,7 +35,7 @@ class Close extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $businessConnectionId
+     * @param string $businessConnectionId Unique identifier of the business connection on behalf of which the message will be sent
      *
      * @return $this
      */
@@ -39,7 +45,7 @@ class Close extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $messageThreadId
+     * @param int $messageThreadId Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only
      *
      * @return $this
      */
@@ -49,7 +55,7 @@ class Close extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $directMessagesTopicId
+     * @param int $directMessagesTopicId Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat
      *
      * @return $this
      */
@@ -59,7 +65,7 @@ class Close extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $parseMode
+     * @param string $parseMode Mode for parsing entities in the message text. See formatting options for more details.
      *
      * @return $this
      */
@@ -69,7 +75,7 @@ class Close extends Method implements MethodInterface {
     }
 
     /**
-     * @param array $entities
+     * @param array $entities A JSON-serialized list of special entities that appear in message text, which can be specified instead of parse_mode
      *
      * @return $this
      */
@@ -79,7 +85,7 @@ class Close extends Method implements MethodInterface {
     }
 
     /**
-     * @param LinkPreviewOptions $linkPreviewOptions
+     * @param LinkPreviewOptions $linkPreviewOptions Link preview generation options for the message
      *
      * @return $this
      */
@@ -89,7 +95,7 @@ class Close extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $disableNotification
+     * @param bool $disableNotification Sends the message silently. Users will receive a notification with no sound.
      *
      * @return $this
      */
@@ -99,7 +105,7 @@ class Close extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $protectContent
+     * @param bool $protectContent Protects the contents of the sent message from forwarding and saving
      *
      * @return $this
      */
@@ -109,7 +115,7 @@ class Close extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $allowPaidBroadcast
+     * @param bool $allowPaidBroadcast Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance
      *
      * @return $this
      */
@@ -119,7 +125,7 @@ class Close extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $messageEffectId
+     * @param string $messageEffectId Unique identifier of the message effect to be added to the message; for private chats only
      *
      * @return $this
      */
@@ -129,7 +135,7 @@ class Close extends Method implements MethodInterface {
     }
 
     /**
-     * @param SuggestedPostParameters $suggestedPostParameters
+     * @param SuggestedPostParameters $suggestedPostParameters A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.
      *
      * @return $this
      */
@@ -139,7 +145,7 @@ class Close extends Method implements MethodInterface {
     }
 
     /**
-     * @param ReplyParameters $replyParameters
+     * @param ReplyParameters $replyParameters Description of the message to reply to
      *
      * @return $this
      */
@@ -149,7 +155,7 @@ class Close extends Method implements MethodInterface {
     }
 
     /**
-     * @param InlineKeyboardMarkup | ReplyKeyboardMarkup | ReplyKeyboardRemove | ForceReply $replyMarkup
+     * @param InlineKeyboardMarkup | ReplyKeyboardMarkup | ReplyKeyboardRemove | ForceReply $replyMarkup Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user
      *
      * @return $this
      */

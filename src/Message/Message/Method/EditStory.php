@@ -12,8 +12,15 @@ use UzDevid\Telegram\Bot\Type\InputStoryContent;
  * Edits a story previously posted by the bot on behalf of a managed business account. Requires the can_manage_stories business bot right. Returns Story on success.
  */
 class EditStory extends Method implements MethodInterface {
+
+    /**
+     * @param string $businessConnectionId Unique identifier of the business connection
+     * @param int $storyId Unique identifier of the story to edit
+     * @param InputStoryContent $content Content of the story
+     */
     public function __construct(string $businessConnectionId, int $storyId, InputStoryContent $content) {
         parent::__construct();
+
         $this->addAttribute('business_connection_id', $businessConnectionId);
         $this->addAttribute('story_id', $storyId);
         $this->addAttribute('content', $content);
@@ -24,7 +31,7 @@ class EditStory extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $caption
+     * @param string $caption Caption of the story, 0-2048 characters after entities parsing
      *
      * @return $this
      */
@@ -34,7 +41,7 @@ class EditStory extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $parseMode
+     * @param string $parseMode Mode for parsing entities in the story caption. See formatting options for more details.
      *
      * @return $this
      */
@@ -44,7 +51,7 @@ class EditStory extends Method implements MethodInterface {
     }
 
     /**
-     * @param array $captionEntities
+     * @param array $captionEntities A JSON-serialized list of special entities that appear in the caption, which can be specified instead of parse_mode
      *
      * @return $this
      */
@@ -54,7 +61,7 @@ class EditStory extends Method implements MethodInterface {
     }
 
     /**
-     * @param array $areas
+     * @param array $areas A JSON-serialized list of clickable areas to be shown on the story
      *
      * @return $this
      */

@@ -12,8 +12,12 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Returns the bot's Telegram Star transactions in chronological order. On success, returns a StarTransactions object.
  */
 class GetStarTransactions extends Method implements MethodInterface {
+
+    /**
+     */
     public function __construct() {
         parent::__construct();
+
 
     }
 
@@ -22,7 +26,7 @@ class GetStarTransactions extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $offset
+     * @param int $offset Number of transactions to skip in the response
      *
      * @return $this
      */
@@ -32,7 +36,7 @@ class GetStarTransactions extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $limit
+     * @param int $limit The maximum number of transactions to be retrieved. Values between 1-100 are accepted. Defaults to 100.
      *
      * @return $this
      */

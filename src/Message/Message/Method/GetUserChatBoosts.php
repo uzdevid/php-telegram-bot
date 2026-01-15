@@ -12,8 +12,14 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Use this method to get the list of boosts added to a chat by a user. Requires administrator rights in the chat. Returns a UserChatBoosts object.
  */
 class GetUserChatBoosts extends Method implements MethodInterface {
+
+    /**
+     * @param int | string $chatId Unique identifier for the chat or username of the channel (in the format @channelusername)
+     * @param int $userId Unique identifier of the target user
+     */
     public function __construct(int|string $chatId, int $userId) {
         parent::__construct();
+
         $this->addAttribute('chat_id', $chatId);
         $this->addAttribute('user_id', $userId);
     }

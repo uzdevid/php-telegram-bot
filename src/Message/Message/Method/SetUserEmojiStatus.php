@@ -12,8 +12,13 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Changes the emoji status for a given user that previously allowed the bot to manage their emoji status via the Mini App method requestEmojiStatusAccess. Returns True on success.
  */
 class SetUserEmojiStatus extends Method implements MethodInterface {
+
+    /**
+     * @param int $userId Unique identifier of the target user
+     */
     public function __construct(int $userId) {
         parent::__construct();
+
         $this->addAttribute('user_id', $userId);
     }
 
@@ -22,7 +27,7 @@ class SetUserEmojiStatus extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $emojiStatusCustomEmojiId
+     * @param string $emojiStatusCustomEmojiId Custom emoji identifier of the emoji status to set. Pass an empty string to remove the status.
      *
      * @return $this
      */
@@ -32,7 +37,7 @@ class SetUserEmojiStatus extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $emojiStatusExpirationDate
+     * @param int $emojiStatusExpirationDate Expiration date of the emoji status, if any
      *
      * @return $this
      */

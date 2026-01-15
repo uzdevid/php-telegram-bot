@@ -17,8 +17,17 @@ use UzDevid\Telegram\Bot\Type\SuggestedPostParameters;
  * Use this method to send information about a venue. On success, the sent Message is returned.
  */
 class SendVenue extends Method implements MethodInterface {
+
+    /**
+     * @param int | string $chatId Unique identifier for the target chat or username of the target channel (in the format @channelusername)
+     * @param float $latitude Latitude of the venue
+     * @param float $longitude Longitude of the venue
+     * @param string $title Name of the venue
+     * @param string $address Address of the venue
+     */
     public function __construct(int|string $chatId, float $latitude, float $longitude, string $title, string $address) {
         parent::__construct();
+
         $this->addAttribute('chat_id', $chatId);
         $this->addAttribute('latitude', $latitude);
         $this->addAttribute('longitude', $longitude);
@@ -31,7 +40,7 @@ class SendVenue extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $businessConnectionId
+     * @param string $businessConnectionId Unique identifier of the business connection on behalf of which the message will be sent
      *
      * @return $this
      */
@@ -41,7 +50,7 @@ class SendVenue extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $messageThreadId
+     * @param int $messageThreadId Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only
      *
      * @return $this
      */
@@ -51,7 +60,7 @@ class SendVenue extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $directMessagesTopicId
+     * @param int $directMessagesTopicId Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat
      *
      * @return $this
      */
@@ -61,7 +70,7 @@ class SendVenue extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $foursquareId
+     * @param string $foursquareId Foursquare identifier of the venue
      *
      * @return $this
      */
@@ -71,7 +80,7 @@ class SendVenue extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $foursquareType
+     * @param string $foursquareType Foursquare type of the venue, if known. (For example, “arts_entertainment/default”, “arts_entertainment/aquarium” or “food/icecream”.)
      *
      * @return $this
      */
@@ -81,7 +90,7 @@ class SendVenue extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $googlePlaceId
+     * @param string $googlePlaceId Google Places identifier of the venue
      *
      * @return $this
      */
@@ -91,7 +100,7 @@ class SendVenue extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $googlePlaceType
+     * @param string $googlePlaceType Google Places type of the venue. (See supported types.)
      *
      * @return $this
      */
@@ -101,7 +110,7 @@ class SendVenue extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $disableNotification
+     * @param bool $disableNotification Sends the message silently. Users will receive a notification with no sound.
      *
      * @return $this
      */
@@ -111,7 +120,7 @@ class SendVenue extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $protectContent
+     * @param bool $protectContent Protects the contents of the sent message from forwarding and saving
      *
      * @return $this
      */
@@ -121,7 +130,7 @@ class SendVenue extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $allowPaidBroadcast
+     * @param bool $allowPaidBroadcast Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance
      *
      * @return $this
      */
@@ -131,7 +140,7 @@ class SendVenue extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $messageEffectId
+     * @param string $messageEffectId Unique identifier of the message effect to be added to the message; for private chats only
      *
      * @return $this
      */
@@ -141,7 +150,7 @@ class SendVenue extends Method implements MethodInterface {
     }
 
     /**
-     * @param SuggestedPostParameters $suggestedPostParameters
+     * @param SuggestedPostParameters $suggestedPostParameters A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.
      *
      * @return $this
      */
@@ -151,7 +160,7 @@ class SendVenue extends Method implements MethodInterface {
     }
 
     /**
-     * @param ReplyParameters $replyParameters
+     * @param ReplyParameters $replyParameters Description of the message to reply to
      *
      * @return $this
      */
@@ -161,7 +170,7 @@ class SendVenue extends Method implements MethodInterface {
     }
 
     /**
-     * @param InlineKeyboardMarkup | ReplyKeyboardMarkup | ReplyKeyboardRemove | ForceReply $replyMarkup
+     * @param InlineKeyboardMarkup | ReplyKeyboardMarkup | ReplyKeyboardRemove | ForceReply $replyMarkup Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user
      *
      * @return $this
      */

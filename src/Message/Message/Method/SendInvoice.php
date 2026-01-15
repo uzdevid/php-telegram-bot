@@ -14,8 +14,18 @@ use UzDevid\Telegram\Bot\Type\SuggestedPostParameters;
  * Use this method to send invoices. On success, the sent Message is returned.
  */
 class SendInvoice extends Method implements MethodInterface {
+
+    /**
+     * @param int | string $chatId Unique identifier for the target chat or username of the target channel (in the format @channelusername)
+     * @param string $title Product name, 1-32 characters
+     * @param string $description Product description, 1-255 characters
+     * @param string $payload Bot-defined invoice payload, 1-128 bytes. This will not be displayed to the user, use it for your internal processes.
+     * @param string $currency Three-letter ISO 4217 currency code, see more on currencies. Pass “XTR” for payments in Telegram Stars.
+     * @param array $prices Price breakdown, a JSON-serialized list of components (e.g. product price, tax, discount, delivery cost, delivery tax, bonus, etc.). Must contain exactly one item for payments in Telegram Stars.
+     */
     public function __construct(int|string $chatId, string $title, string $description, string $payload, string $currency, array $prices) {
         parent::__construct();
+
         $this->addAttribute('chat_id', $chatId);
         $this->addAttribute('title', $title);
         $this->addAttribute('description', $description);
@@ -29,7 +39,7 @@ class SendInvoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $messageThreadId
+     * @param int $messageThreadId Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only
      *
      * @return $this
      */
@@ -39,7 +49,7 @@ class SendInvoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $directMessagesTopicId
+     * @param int $directMessagesTopicId Identifier of the direct messages topic to which the message will be sent; required if the message is sent to a direct messages chat
      *
      * @return $this
      */
@@ -49,7 +59,7 @@ class SendInvoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $providerToken
+     * @param string $providerToken Payment provider token, obtained via @BotFather. Pass an empty string for payments in Telegram Stars.
      *
      * @return $this
      */
@@ -59,7 +69,7 @@ class SendInvoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $maxTipAmount
+     * @param int $maxTipAmount The maximum accepted amount for tips in the smallest units of the currency (integer, not float/double). For example, for a maximum tip of US$ 1.45 pass max_tip_amount = 145. See the exp parameter in currencies.json, it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). Defaults to 0. Not supported for payments in Telegram Stars.
      *
      * @return $this
      */
@@ -69,7 +79,7 @@ class SendInvoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param array $suggestedTipAmounts
+     * @param array $suggestedTipAmounts A JSON-serialized array of suggested amounts of tips in the smallest units of the currency (integer, not float/double). At most 4 suggested tip amounts can be specified. The suggested tip amounts must be positive, passed in a strictly increased order and must not exceed max_tip_amount.
      *
      * @return $this
      */
@@ -79,7 +89,7 @@ class SendInvoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $startParameter
+     * @param string $startParameter Unique deep-linking parameter. If left empty, forwarded copies of the sent message will have a Pay button, allowing multiple users to pay directly from the forwarded message, using the same invoice. If non-empty, forwarded copies of the sent message will have a URL button with a deep link to the bot (instead of a Pay button), with the value used as the start parameter
      *
      * @return $this
      */
@@ -89,7 +99,7 @@ class SendInvoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $providerData
+     * @param string $providerData JSON-serialized data about the invoice, which will be shared with the payment provider. A detailed description of required fields should be provided by the payment provider.
      *
      * @return $this
      */
@@ -99,7 +109,7 @@ class SendInvoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $photoUrl
+     * @param string $photoUrl URL of the product photo for the invoice. Can be a photo of the goods or a marketing image for a service. People like it better when they see what they are paying for.
      *
      * @return $this
      */
@@ -109,7 +119,7 @@ class SendInvoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $photoSize
+     * @param int $photoSize Photo size in bytes
      *
      * @return $this
      */
@@ -119,7 +129,7 @@ class SendInvoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $photoWidth
+     * @param int $photoWidth Photo width
      *
      * @return $this
      */
@@ -129,7 +139,7 @@ class SendInvoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $photoHeight
+     * @param int $photoHeight Photo height
      *
      * @return $this
      */
@@ -139,7 +149,7 @@ class SendInvoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $needName
+     * @param bool $needName Pass True if you require the user's full name to complete the order. Ignored for payments in Telegram Stars.
      *
      * @return $this
      */
@@ -149,7 +159,7 @@ class SendInvoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $needPhoneNumber
+     * @param bool $needPhoneNumber Pass True if you require the user's phone number to complete the order. Ignored for payments in Telegram Stars.
      *
      * @return $this
      */
@@ -159,7 +169,7 @@ class SendInvoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $needEmail
+     * @param bool $needEmail Pass True if you require the user's email address to complete the order. Ignored for payments in Telegram Stars.
      *
      * @return $this
      */
@@ -169,7 +179,7 @@ class SendInvoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $needShippingAddress
+     * @param bool $needShippingAddress Pass True if you require the user's shipping address to complete the order. Ignored for payments in Telegram Stars.
      *
      * @return $this
      */
@@ -179,7 +189,7 @@ class SendInvoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $sendPhoneNumberToProvider
+     * @param bool $sendPhoneNumberToProvider Pass True if the user's phone number should be sent to the provider. Ignored for payments in Telegram Stars.
      *
      * @return $this
      */
@@ -189,7 +199,7 @@ class SendInvoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $sendEmailToProvider
+     * @param bool $sendEmailToProvider Pass True if the user's email address should be sent to the provider. Ignored for payments in Telegram Stars.
      *
      * @return $this
      */
@@ -199,7 +209,7 @@ class SendInvoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $isFlexible
+     * @param bool $isFlexible Pass True if the final price depends on the shipping method. Ignored for payments in Telegram Stars.
      *
      * @return $this
      */
@@ -209,7 +219,7 @@ class SendInvoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $disableNotification
+     * @param bool $disableNotification Sends the message silently. Users will receive a notification with no sound.
      *
      * @return $this
      */
@@ -219,7 +229,7 @@ class SendInvoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $protectContent
+     * @param bool $protectContent Protects the contents of the sent message from forwarding and saving
      *
      * @return $this
      */
@@ -229,7 +239,7 @@ class SendInvoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $allowPaidBroadcast
+     * @param bool $allowPaidBroadcast Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance
      *
      * @return $this
      */
@@ -239,7 +249,7 @@ class SendInvoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $messageEffectId
+     * @param string $messageEffectId Unique identifier of the message effect to be added to the message; for private chats only
      *
      * @return $this
      */
@@ -249,7 +259,7 @@ class SendInvoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param SuggestedPostParameters $suggestedPostParameters
+     * @param SuggestedPostParameters $suggestedPostParameters A JSON-serialized object containing the parameters of the suggested post to send; for direct messages chats only. If the message is sent as a reply to another suggested post, then that suggested post is automatically declined.
      *
      * @return $this
      */
@@ -259,7 +269,7 @@ class SendInvoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param ReplyParameters $replyParameters
+     * @param ReplyParameters $replyParameters Description of the message to reply to
      *
      * @return $this
      */
@@ -269,7 +279,7 @@ class SendInvoice extends Method implements MethodInterface {
     }
 
     /**
-     * @param InlineKeyboardMarkup $replyMarkup
+     * @param InlineKeyboardMarkup $replyMarkup A JSON-serialized object for an inline keyboard. If empty, one 'Pay total price' button will be shown. If not empty, the first button must be a Pay button.
      *
      * @return $this
      */

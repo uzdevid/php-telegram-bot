@@ -13,8 +13,13 @@ use UzDevid\Telegram\Bot\Type\LinkPreviewOptions;
  * Use this method to edit text and game messages. On success, if the edited message is not an inline message, the edited Message is returned, otherwise True is returned. Note that business messages that were not sent by the bot and do not contain an inline keyboard can only be edited within 48 hours from the time they were sent.
  */
 class EditMessageText extends Method implements MethodInterface {
+
+    /**
+     * @param string $text New text of the message, 1-4096 characters after entities parsing
+     */
     public function __construct(string $text) {
         parent::__construct();
+
         $this->addAttribute('text', $text);
     }
 
@@ -23,7 +28,7 @@ class EditMessageText extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $businessConnectionId
+     * @param string $businessConnectionId Unique identifier of the business connection on behalf of which the message to be edited was sent
      *
      * @return $this
      */
@@ -33,7 +38,7 @@ class EditMessageText extends Method implements MethodInterface {
     }
 
     /**
-     * @param int | string $chatId
+     * @param int | string $chatId Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername)
      *
      * @return $this
      */
@@ -43,7 +48,7 @@ class EditMessageText extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $messageId
+     * @param int $messageId Required if inline_message_id is not specified. Identifier of the message to edit
      *
      * @return $this
      */
@@ -53,7 +58,7 @@ class EditMessageText extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $inlineMessageId
+     * @param string $inlineMessageId Required if chat_id and message_id are not specified. Identifier of the inline message
      *
      * @return $this
      */
@@ -63,7 +68,7 @@ class EditMessageText extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $parseMode
+     * @param string $parseMode Mode for parsing entities in the message text. See formatting options for more details.
      *
      * @return $this
      */
@@ -73,7 +78,7 @@ class EditMessageText extends Method implements MethodInterface {
     }
 
     /**
-     * @param array $entities
+     * @param array $entities A JSON-serialized list of special entities that appear in message text, which can be specified instead of parse_mode
      *
      * @return $this
      */
@@ -83,7 +88,7 @@ class EditMessageText extends Method implements MethodInterface {
     }
 
     /**
-     * @param LinkPreviewOptions $linkPreviewOptions
+     * @param LinkPreviewOptions $linkPreviewOptions Link preview generation options for the message
      *
      * @return $this
      */
@@ -93,7 +98,7 @@ class EditMessageText extends Method implements MethodInterface {
     }
 
     /**
-     * @param InlineKeyboardMarkup $replyMarkup
+     * @param InlineKeyboardMarkup $replyMarkup A JSON-serialized object for an inline keyboard.
      *
      * @return $this
      */

@@ -12,8 +12,12 @@ use UzDevid\Telegram\Bot\Type\InlineKeyboardMarkup;
  * Use this method to edit only the reply markup of messages. On success, if the edited message is not an inline message, the edited Message is returned, otherwise True is returned. Note that business messages that were not sent by the bot and do not contain an inline keyboard can only be edited within 48 hours from the time they were sent.
  */
 class EditMessageReplyMarkup extends Method implements MethodInterface {
+
+    /**
+     */
     public function __construct() {
         parent::__construct();
+
 
     }
 
@@ -22,7 +26,7 @@ class EditMessageReplyMarkup extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $businessConnectionId
+     * @param string $businessConnectionId Unique identifier of the business connection on behalf of which the message to be edited was sent
      *
      * @return $this
      */
@@ -32,7 +36,7 @@ class EditMessageReplyMarkup extends Method implements MethodInterface {
     }
 
     /**
-     * @param int | string $chatId
+     * @param int | string $chatId Required if inline_message_id is not specified. Unique identifier for the target chat or username of the target channel (in the format @channelusername)
      *
      * @return $this
      */
@@ -42,7 +46,7 @@ class EditMessageReplyMarkup extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $messageId
+     * @param int $messageId Required if inline_message_id is not specified. Identifier of the message to edit
      *
      * @return $this
      */
@@ -52,7 +56,7 @@ class EditMessageReplyMarkup extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $inlineMessageId
+     * @param string $inlineMessageId Required if chat_id and message_id are not specified. Identifier of the inline message
      *
      * @return $this
      */
@@ -62,7 +66,7 @@ class EditMessageReplyMarkup extends Method implements MethodInterface {
     }
 
     /**
-     * @param InlineKeyboardMarkup $replyMarkup
+     * @param InlineKeyboardMarkup $replyMarkup A JSON-serialized object for an inline keyboard.
      *
      * @return $this
      */

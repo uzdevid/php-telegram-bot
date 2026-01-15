@@ -12,8 +12,13 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Use this method to get a list of profile pictures for a user. Returns a UserProfilePhotos object.
  */
 class GetUserProfilePhotos extends Method implements MethodInterface {
+
+    /**
+     * @param int $userId Unique identifier of the target user
+     */
     public function __construct(int $userId) {
         parent::__construct();
+
         $this->addAttribute('user_id', $userId);
     }
 
@@ -22,7 +27,7 @@ class GetUserProfilePhotos extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $offset
+     * @param int $offset Sequential number of the first photo to be returned. By default, all photos are returned.
      *
      * @return $this
      */
@@ -32,7 +37,7 @@ class GetUserProfilePhotos extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $limit
+     * @param int $limit Limits the number of photos to be retrieved. Values between 1-100 are accepted. Defaults to 100.
      *
      * @return $this
      */

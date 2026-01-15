@@ -12,8 +12,14 @@ use UzDevid\Telegram\Bot\Type\InlineKeyboardMarkup;
  * Use this method to stop a poll which was sent by the bot. On success, the stopped Poll is returned.
  */
 class StopPoll extends Method implements MethodInterface {
+
+    /**
+     * @param int | string $chatId Unique identifier for the target chat or username of the target channel (in the format @channelusername)
+     * @param int $messageId Identifier of the original message with the poll
+     */
     public function __construct(int|string $chatId, int $messageId) {
         parent::__construct();
+
         $this->addAttribute('chat_id', $chatId);
         $this->addAttribute('message_id', $messageId);
     }
@@ -23,7 +29,7 @@ class StopPoll extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $businessConnectionId
+     * @param string $businessConnectionId Unique identifier of the business connection on behalf of which the message to be edited was sent
      *
      * @return $this
      */
@@ -33,7 +39,7 @@ class StopPoll extends Method implements MethodInterface {
     }
 
     /**
-     * @param InlineKeyboardMarkup $replyMarkup
+     * @param InlineKeyboardMarkup $replyMarkup A JSON-serialized object for a new message inline keyboard.
      *
      * @return $this
      */

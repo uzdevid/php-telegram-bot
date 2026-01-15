@@ -12,8 +12,14 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Use this method to decline a chat join request. The bot must be an administrator in the chat for this to work and must have the can_invite_users administrator right. Returns True on success.
  */
 class DeclineChatJoinRequest extends Method implements MethodInterface {
+
+    /**
+     * @param int | string $chatId Unique identifier for the target chat or username of the target channel (in the format @channelusername)
+     * @param int $userId Unique identifier of the target user
+     */
     public function __construct(int|string $chatId, int $userId) {
         parent::__construct();
+
         $this->addAttribute('chat_id', $chatId);
         $this->addAttribute('user_id', $userId);
     }

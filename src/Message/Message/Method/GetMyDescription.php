@@ -12,8 +12,12 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Use this method to get the current bot description for the given user language. Returns BotDescription on success.
  */
 class GetMyDescription extends Method implements MethodInterface {
+
+    /**
+     */
     public function __construct() {
         parent::__construct();
+
 
     }
 
@@ -22,7 +26,7 @@ class GetMyDescription extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $languageCode
+     * @param string $languageCode A two-letter ISO 639-1 language code or an empty string
      *
      * @return $this
      */

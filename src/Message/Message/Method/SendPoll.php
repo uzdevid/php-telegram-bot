@@ -16,8 +16,15 @@ use UzDevid\Telegram\Bot\Type\ReplyParameters;
  * Use this method to send a native poll. On success, the sent Message is returned.
  */
 class SendPoll extends Method implements MethodInterface {
+
+    /**
+     * @param int | string $chatId Unique identifier for the target chat or username of the target channel (in the format @channelusername). Polls can't be sent to channel direct messages chats.
+     * @param string $question Poll question, 1-300 characters
+     * @param array $options A JSON-serialized list of 2-12 answer options
+     */
     public function __construct(int|string $chatId, string $question, array $options) {
         parent::__construct();
+
         $this->addAttribute('chat_id', $chatId);
         $this->addAttribute('question', $question);
         $this->addAttribute('options', $options);
@@ -28,7 +35,7 @@ class SendPoll extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $businessConnectionId
+     * @param string $businessConnectionId Unique identifier of the business connection on behalf of which the message will be sent
      *
      * @return $this
      */
@@ -38,7 +45,7 @@ class SendPoll extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $messageThreadId
+     * @param int $messageThreadId Unique identifier for the target message thread (topic) of a forum; for forum supergroups and private chats of bots with forum topic mode enabled only
      *
      * @return $this
      */
@@ -48,7 +55,7 @@ class SendPoll extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $questionParseMode
+     * @param string $questionParseMode Mode for parsing entities in the question. See formatting options for more details. Currently, only custom emoji entities are allowed
      *
      * @return $this
      */
@@ -58,7 +65,7 @@ class SendPoll extends Method implements MethodInterface {
     }
 
     /**
-     * @param array $questionEntities
+     * @param array $questionEntities A JSON-serialized list of special entities that appear in the poll question. It can be specified instead of question_parse_mode
      *
      * @return $this
      */
@@ -68,7 +75,7 @@ class SendPoll extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $isAnonymous
+     * @param bool $isAnonymous True, if the poll needs to be anonymous, defaults to True
      *
      * @return $this
      */
@@ -78,7 +85,7 @@ class SendPoll extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $type
+     * @param string $type Poll type, “quiz” or “regular”, defaults to “regular”
      *
      * @return $this
      */
@@ -88,7 +95,7 @@ class SendPoll extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $allowsMultipleAnswers
+     * @param bool $allowsMultipleAnswers True, if the poll allows multiple answers, ignored for polls in quiz mode, defaults to False
      *
      * @return $this
      */
@@ -98,7 +105,7 @@ class SendPoll extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $correctOptionId
+     * @param int $correctOptionId 0-based identifier of the correct answer option, required for polls in quiz mode
      *
      * @return $this
      */
@@ -108,7 +115,7 @@ class SendPoll extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $explanation
+     * @param string $explanation Text that is shown when a user chooses an incorrect answer or taps on the lamp icon in a quiz-style poll, 0-200 characters with at most 2 line feeds after entities parsing
      *
      * @return $this
      */
@@ -118,7 +125,7 @@ class SendPoll extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $explanationParseMode
+     * @param string $explanationParseMode Mode for parsing entities in the explanation. See formatting options for more details.
      *
      * @return $this
      */
@@ -128,7 +135,7 @@ class SendPoll extends Method implements MethodInterface {
     }
 
     /**
-     * @param array $explanationEntities
+     * @param array $explanationEntities A JSON-serialized list of special entities that appear in the poll explanation. It can be specified instead of explanation_parse_mode
      *
      * @return $this
      */
@@ -138,7 +145,7 @@ class SendPoll extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $openPeriod
+     * @param int $openPeriod Amount of time in seconds the poll will be active after creation, 5-600. Can't be used together with close_date.
      *
      * @return $this
      */
@@ -148,7 +155,7 @@ class SendPoll extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $closeDate
+     * @param int $closeDate Point in time (Unix timestamp) when the poll will be automatically closed. Must be at least 5 and no more than 600 seconds in the future. Can't be used together with open_period.
      *
      * @return $this
      */
@@ -158,7 +165,7 @@ class SendPoll extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $isClosed
+     * @param bool $isClosed Pass True if the poll needs to be immediately closed. This can be useful for poll preview.
      *
      * @return $this
      */
@@ -168,7 +175,7 @@ class SendPoll extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $disableNotification
+     * @param bool $disableNotification Sends the message silently. Users will receive a notification with no sound.
      *
      * @return $this
      */
@@ -178,7 +185,7 @@ class SendPoll extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $protectContent
+     * @param bool $protectContent Protects the contents of the sent message from forwarding and saving
      *
      * @return $this
      */
@@ -188,7 +195,7 @@ class SendPoll extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $allowPaidBroadcast
+     * @param bool $allowPaidBroadcast Pass True to allow up to 1000 messages per second, ignoring broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance
      *
      * @return $this
      */
@@ -198,7 +205,7 @@ class SendPoll extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $messageEffectId
+     * @param string $messageEffectId Unique identifier of the message effect to be added to the message; for private chats only
      *
      * @return $this
      */
@@ -208,7 +215,7 @@ class SendPoll extends Method implements MethodInterface {
     }
 
     /**
-     * @param ReplyParameters $replyParameters
+     * @param ReplyParameters $replyParameters Description of the message to reply to
      *
      * @return $this
      */
@@ -218,7 +225,7 @@ class SendPoll extends Method implements MethodInterface {
     }
 
     /**
-     * @param InlineKeyboardMarkup | ReplyKeyboardMarkup | ReplyKeyboardRemove | ForceReply $replyMarkup
+     * @param InlineKeyboardMarkup | ReplyKeyboardMarkup | ReplyKeyboardRemove | ForceReply $replyMarkup Additional interface options. A JSON-serialized object for an inline keyboard, custom reply keyboard, instructions to remove a reply keyboard or to force a reply from the user
      *
      * @return $this
      */

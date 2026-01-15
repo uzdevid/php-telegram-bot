@@ -12,8 +12,12 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Use this method to get the current bot name for the given user language. Returns BotName on success.
  */
 class GetMyName extends Method implements MethodInterface {
+
+    /**
+     */
     public function __construct() {
         parent::__construct();
+
 
     }
 
@@ -22,7 +26,7 @@ class GetMyName extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $languageCode
+     * @param string $languageCode A two-letter ISO 639-1 language code or an empty string
      *
      * @return $this
      */

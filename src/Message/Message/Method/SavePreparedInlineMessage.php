@@ -12,8 +12,14 @@ use UzDevid\Telegram\Bot\Type\InlineQueryResult;
  * Stores a message that can be sent by a user of a Mini App. Returns a PreparedInlineMessage object.
  */
 class SavePreparedInlineMessage extends Method implements MethodInterface {
+
+    /**
+     * @param int $userId Unique identifier of the target user that can use the prepared message
+     * @param InlineQueryResult $result A JSON-serialized object describing the message to be sent
+     */
     public function __construct(int $userId, InlineQueryResult $result) {
         parent::__construct();
+
         $this->addAttribute('user_id', $userId);
         $this->addAttribute('result', $result);
     }
@@ -23,7 +29,7 @@ class SavePreparedInlineMessage extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $allowUserChats
+     * @param bool $allowUserChats Pass True if the message can be sent to private chats with users
      *
      * @return $this
      */
@@ -33,7 +39,7 @@ class SavePreparedInlineMessage extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $allowBotChats
+     * @param bool $allowBotChats Pass True if the message can be sent to private chats with bots
      *
      * @return $this
      */
@@ -43,7 +49,7 @@ class SavePreparedInlineMessage extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $allowGroupChats
+     * @param bool $allowGroupChats Pass True if the message can be sent to group and supergroup chats
      *
      * @return $this
      */
@@ -53,7 +59,7 @@ class SavePreparedInlineMessage extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $allowChannelChats
+     * @param bool $allowChannelChats Pass True if the message can be sent to channel chats
      *
      * @return $this
      */

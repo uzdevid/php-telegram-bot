@@ -12,8 +12,12 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Use this method to change the bot's name. Returns True on success.
  */
 class SetMyName extends Method implements MethodInterface {
+
+    /**
+     */
     public function __construct() {
         parent::__construct();
+
 
     }
 
@@ -22,7 +26,7 @@ class SetMyName extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $name
+     * @param string $name New bot name; 0-64 characters. Pass an empty string to remove the dedicated name for the given language.
      *
      * @return $this
      */
@@ -32,7 +36,7 @@ class SetMyName extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $languageCode
+     * @param string $languageCode A two-letter ISO 639-1 language code. If empty, the name will be shown to all users for whose language there is no dedicated name.
      *
      * @return $this
      */

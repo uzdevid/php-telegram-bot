@@ -12,8 +12,13 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Use this method to get information about custom emoji stickers by their identifiers. Returns an Array of Sticker objects.
  */
 class GetCustomEmojiStickers extends Method implements MethodInterface {
+
+    /**
+     * @param array $customEmojiIds A JSON-serialized list of custom emoji identifiers. At most 200 custom emoji identifiers can be specified.
+     */
     public function __construct(array $customEmojiIds) {
         parent::__construct();
+
         $this->addAttribute('custom_emoji_ids', $customEmojiIds);
     }
 

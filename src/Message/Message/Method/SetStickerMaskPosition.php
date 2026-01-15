@@ -12,8 +12,13 @@ use UzDevid\Telegram\Bot\Type\MaskPosition;
  * Use this method to change the mask position of a mask sticker. The sticker must belong to a sticker set that was created by the bot. Returns True on success.
  */
 class SetStickerMaskPosition extends Method implements MethodInterface {
+
+    /**
+     * @param string $sticker File identifier of the sticker
+     */
     public function __construct(string $sticker) {
         parent::__construct();
+
         $this->addAttribute('sticker', $sticker);
     }
 
@@ -22,7 +27,7 @@ class SetStickerMaskPosition extends Method implements MethodInterface {
     }
 
     /**
-     * @param MaskPosition $maskPosition
+     * @param MaskPosition $maskPosition A JSON-serialized object with the position where the mask should be placed on faces. Omit the parameter to remove the mask position.
      *
      * @return $this
      */

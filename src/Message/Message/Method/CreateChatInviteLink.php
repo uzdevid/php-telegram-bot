@@ -12,8 +12,13 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Use this method to create an additional invite link for a chat. The bot must be an administrator in the chat for this to work and must have the appropriate administrator rights. The link can be revoked using the method revokeChatInviteLink. Returns the new invite link as ChatInviteLink object.
  */
 class CreateChatInviteLink extends Method implements MethodInterface {
+
+    /**
+     * @param int | string $chatId Unique identifier for the target chat or username of the target channel (in the format @channelusername)
+     */
     public function __construct(int|string $chatId) {
         parent::__construct();
+
         $this->addAttribute('chat_id', $chatId);
     }
 
@@ -22,7 +27,7 @@ class CreateChatInviteLink extends Method implements MethodInterface {
     }
 
     /**
-     * @param string $name
+     * @param string $name Invite link name; 0-32 characters
      *
      * @return $this
      */
@@ -32,7 +37,7 @@ class CreateChatInviteLink extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $expireDate
+     * @param int $expireDate Point in time (Unix timestamp) when the link will expire
      *
      * @return $this
      */
@@ -42,7 +47,7 @@ class CreateChatInviteLink extends Method implements MethodInterface {
     }
 
     /**
-     * @param int $memberLimit
+     * @param int $memberLimit The maximum number of users that can be members of the chat simultaneously after joining the chat via this invite link; 1-99999
      *
      * @return $this
      */
@@ -52,7 +57,7 @@ class CreateChatInviteLink extends Method implements MethodInterface {
     }
 
     /**
-     * @param bool $createsJoinRequest
+     * @param bool $createsJoinRequest True, if users joining the chat via the link need to be approved by chat administrators. If True, member_limit can't be specified
      *
      * @return $this
      */

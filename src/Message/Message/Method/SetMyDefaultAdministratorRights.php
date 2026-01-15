@@ -12,8 +12,12 @@ use UzDevid\Telegram\Bot\Type\ChatAdministratorRights;
  * Use this method to change the default administrator rights requested by the bot when it's added as an administrator to groups or channels. These rights will be suggested to users, but they are free to modify the list before adding the bot. Returns True on success.
  */
 class SetMyDefaultAdministratorRights extends Method implements MethodInterface {
+
+    /**
+     */
     public function __construct() {
         parent::__construct();
+
 
     }
 
@@ -22,7 +26,7 @@ class SetMyDefaultAdministratorRights extends Method implements MethodInterface 
     }
 
     /**
-     * @param ChatAdministratorRights $rights
+     * @param ChatAdministratorRights $rights A JSON-serialized object describing new default administrator rights. If not specified, the default administrator rights will be cleared.
      *
      * @return $this
      */
@@ -32,7 +36,7 @@ class SetMyDefaultAdministratorRights extends Method implements MethodInterface 
     }
 
     /**
-     * @param bool $forChannels
+     * @param bool $forChannels Pass True to change the default administrator rights of the bot in channels. Otherwise, the default administrator rights of the bot for groups and supergroups will be changed.
      *
      * @return $this
      */

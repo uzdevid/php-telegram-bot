@@ -12,8 +12,13 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Removes verification from a user who is currently verified on behalf of the organization represented by the bot. Returns True on success.
  */
 class RemoveUserVerification extends Method implements MethodInterface {
+
+    /**
+     * @param int $userId Unique identifier of the target user
+     */
     public function __construct(int $userId) {
         parent::__construct();
+
         $this->addAttribute('user_id', $userId);
     }
 
