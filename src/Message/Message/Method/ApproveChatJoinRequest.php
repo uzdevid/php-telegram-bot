@@ -5,20 +5,22 @@ namespace UzDevid\Telegram\Bot\Message\Message\Method;
 use UzDevid\Telegram\Bot\Message\Message\Method;
 use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
 
-class ApproveChatJoinRequest extends Method implements MethodInterface {
-    /**
-     * @param string $userId
-     */
-    public function __construct(string $userId) {
-        parent::__construct();
 
+/**
+ * Method ApproveChatJoinRequest
+ *
+ * Use this method to approve a chat join request. The bot must be an administrator in the chat for this to work and must have the can_invite_users administrator right. Returns True on success.
+ */
+class ApproveChatJoinRequest extends Method implements MethodInterface {
+    public function __construct(int|string $chatId, int $userId) {
+        parent::__construct();
+        $this->addAttribute('chat_id', $chatId);
         $this->addAttribute('user_id', $userId);
     }
 
-    /**
-     * @return string
-     */
     public function methodName(): string {
-        return 'approveChatJoinRequest';
+        return "approveChatJoinRequest";
     }
+
+
 }

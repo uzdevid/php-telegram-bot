@@ -5,19 +5,18 @@ namespace UzDevid\Telegram\Bot\Message\Message\Method;
 use UzDevid\Telegram\Bot\Message\Message\Method;
 use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
 
+
+/**
+ * Method AnswerCallbackQuery
+ *
+ * Use this method to send answers to callback queries sent from inline keyboards. The answer will be displayed to the user as a notification at the top of the chat screen or as an alert. On success, True is returned.
+ */
 class AnswerCallbackQuery extends Method implements MethodInterface {
-    /**
-     * @param string $callbackQueryId
-     */
     public function __construct(string $callbackQueryId) {
         parent::__construct();
-
         $this->addAttribute('callback_query_id', $callbackQueryId);
     }
 
-    /**
-     * @return string
-     */
     public function methodName(): string {
         return "answerCallbackQuery";
     }
@@ -37,7 +36,7 @@ class AnswerCallbackQuery extends Method implements MethodInterface {
      *
      * @return $this
      */
-    public function showAlert(bool $showAlert = true): static {
+    public function showAlert(bool $showAlert): static {
         $this->addAttribute('show_alert', $showAlert);
         return $this;
     }

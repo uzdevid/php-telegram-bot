@@ -9,8 +9,11 @@ use UzDevid\Telegram\Bot\Core\Type;
  *
  * @link https://core.telegram.org/bots/api#inlinekeyboardmarkup
  *
- * This object represents a service message about a video chat ended in the chat.
+ * This object represents an inline keyboard that appears right next to the message it belongs to.
  */
 class InlineKeyboardMarkup extends Type {
-    public InlineKeyboardButton $inlineKeyboardButton;
+    /**
+     * @var InlineKeyboardButton[][] Array of button rows, each represented by an Array of InlineKeyboardButton objects
+     */
+    public array $inlineKeyboard;
 }

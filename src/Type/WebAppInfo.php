@@ -10,15 +10,10 @@ use UzDevid\Telegram\Bot\Core\Type;
  * @link https://core.telegram.org/bots/api#webappinfo
  *
  * Describes a Web App.
- *
- * @property string $url
  */
 class WebAppInfo extends Type {
     /**
-     * @param string $url
+     * @var string An HTTPS URL of a Web App to be opened with additional data as specified in Initializing Web Apps
      */
-    public function __construct(
-        public string $url
-    ) {
-    }
+    public string $url;
 }

@@ -4,21 +4,19 @@ namespace UzDevid\Telegram\Bot\Message\Message\Method;
 
 use UzDevid\Telegram\Bot\Message\Message\Method;
 use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
-use UzDevid\Telegram\Bot\Type\UserProfilePhotos;
-use Yiisoft\Hydrator\Hydrator;
 
+
+/**
+ * Method GetUserProfilePhotos
+ *
+ * Use this method to get a list of profile pictures for a user. Returns a UserProfilePhotos object.
+ */
 class GetUserProfilePhotos extends Method implements MethodInterface {
-    /**
-     * @param int $userId
-     */
     public function __construct(int $userId) {
         parent::__construct();
         $this->addAttribute('user_id', $userId);
     }
 
-    /**
-     * @return string
-     */
     public function methodName(): string {
         return "getUserProfilePhotos";
     }
@@ -28,7 +26,7 @@ class GetUserProfilePhotos extends Method implements MethodInterface {
      *
      * @return $this
      */
-    public function offset(int $offset): self {
+    public function offset(int $offset): static {
         $this->addAttribute('offset', $offset);
         return $this;
     }
@@ -38,16 +36,8 @@ class GetUserProfilePhotos extends Method implements MethodInterface {
      *
      * @return $this
      */
-    public function limit(int $limit): self {
+    public function limit(int $limit): static {
         $this->addAttribute('limit', $limit);
         return $this;
-    }
-
-    /**
-     * @param array $data
-     * @return UserProfilePhotos
-     */
-    public function response(array $data): UserProfilePhotos {
-        return (new Hydrator())->create(UserProfilePhotos::class, $data['result']);
     }
 }

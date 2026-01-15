@@ -12,32 +12,43 @@ use UzDevid\Telegram\Bot\Core\Type;
  * This object represents a chat.
  */
 class Chat extends Type {
+    /**
+     * @var int Unique identifier for this chat. This number may have more than 32 significant bits and some programming languages may have difficulty/silent defects in interpreting it. But it has at most 52 significant bits, so a signed 64-bit integer or double-precision float type are safe for storing this identifier.
+     */
     public int $id;
+
+    /**
+     * @var string Type of the chat, can be either “private”, “group”, “supergroup” or “channel”
+     */
     public string $type;
-    public string $title;
+
+    /**
+     * @var string|null Optional. Title, for supergroups, channels and group chats
+     */
+    public string|null $title;
+
+    /**
+     * @var string|null Optional. Username, for private chats, supergroups and channels if available
+     */
     public string|null $username;
-    public string $firstName;
-    public string $lastName;
-    public bool $isForum;
-    public bool $chatPhoto;
-    public array $activeUsernames;
-    public string $emojiStatusCustomEmojiId;
-    public string $bio;
-    public bool $hasPrivateForwards;
-    public bool $hasRestrictedVoiceAndVideoMessages;
-    public bool $joinToSendMessages;
-    public bool $joinByRequest;
-    public string $description;
-    public string $inviteLink;
-    public int $pinnedMessage;
-    public int $permissions;
-    public int $slowModeDelay;
-    public int $messageAutoDeleteTime;
-    public bool $hasAggressiveAntiSpamEnabled;
-    public bool $hasHiddenMembers;
-    public bool $hasProtectedContent;
-    public string $stickerSetName;
-    public bool $canSetStickerSet;
-    public bool $linkedChatId;
-    public bool $location;
+
+    /**
+     * @var string|null Optional. First name of the other party in a private chat
+     */
+    public string|null $firstName;
+
+    /**
+     * @var string|null Optional. Last name of the other party in a private chat
+     */
+    public string|null $lastName;
+
+    /**
+     * @var bool|null Optional. True, if the supergroup chat is a forum (has topics enabled)
+     */
+    public bool|null $isForum;
+
+    /**
+     * @var bool|null Optional. True, if the chat is the direct messages chat of a channel
+     */
+    public bool|null $isDirectMessages;
 }

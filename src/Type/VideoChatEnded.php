@@ -12,5 +12,8 @@ use UzDevid\Telegram\Bot\Core\Type;
  * This object represents a service message about a video chat ended in the chat.
  */
 class VideoChatEnded extends Type {
+    /**
+     * @var int Video chat duration in seconds
+     */
     public int $duration;
 }

@@ -10,11 +10,20 @@ use UzDevid\Telegram\Bot\Core\Type;
  * @link https://core.telegram.org/bots/api#chatmembermember
  *
  * Represents a chat member that has no additional privileges or restrictions.
- *
- * @property string $status
- * @property User $user
  */
 class ChatMemberMember extends Type {
+    /**
+     * @var string The member's status in the chat, always “member”
+     */
     public string $status;
+
+    /**
+     * @var User Information about the user
+     */
     public User $user;
+
+    /**
+     * @var int|null Optional. Date when the user's subscription will expire; Unix time
+     */
+    public int|null $untilDate;
 }

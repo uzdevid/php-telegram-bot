@@ -4,45 +4,23 @@ namespace UzDevid\Telegram\Bot\Message\Message\Method;
 
 use UzDevid\Telegram\Bot\Message\Message\Method;
 use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
-use UzDevid\Telegram\Bot\Type\ChatMemberAdministrator;
-use UzDevid\Telegram\Bot\Type\ChatMemberBanned;
-use UzDevid\Telegram\Bot\Type\ChatMemberLeft;
-use UzDevid\Telegram\Bot\Type\ChatMemberMember;
-use UzDevid\Telegram\Bot\Type\ChatMemberOwner;
-use UzDevid\Telegram\Bot\Type\ChatMemberRestricted;
-use Yiisoft\Hydrator\Hydrator;
 
+
+/**
+ * Method GetChatMember
+ *
+ * Use this method to get information about a member of a chat. The method is only guaranteed to work for other users if the bot is an administrator in the chat. Returns a ChatMember object on success.
+ */
 class GetChatMember extends Method implements MethodInterface {
-    /**
-     * @param int $userId
-     */
-    public function __construct(int $userId) {
+    public function __construct(int|string $chatId, int $userId) {
         parent::__construct();
-
+        $this->addAttribute('chat_id', $chatId);
         $this->addAttribute('user_id', $userId);
     }
 
-    /**
-     * @return string
-     */
     public function methodName(): string {
         return "getChatMember";
     }
 
-    /**
-     * @param array $data
-     * @return ChatMemberMember|ChatMemberOwner|ChatMemberAdministrator|ChatMemberRestricted|ChatMemberLeft|ChatMemberBanned
-     */
-    public function response(array $data): ChatMemberMember|ChatMemberOwner|ChatMemberAdministrator|ChatMemberRestricted|ChatMemberLeft|ChatMemberBanned {
-        $class = match ($data['result']['status']) {
-            'member' => ChatMemberMember::class,
-            'creator' => ChatMemberOwner::class,
-            'administrator' => ChatMemberAdministrator::class,
-            'restricted' => ChatMemberRestricted::class,
-            'left' => ChatMemberLeft::class,
-            'banned' => ChatMemberBanned::class
-        };
 
-        return (new Hydrator())->create($class, $data['result']);
-    }
 }

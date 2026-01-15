@@ -5,27 +5,30 @@ namespace UzDevid\Telegram\Bot\Message\Message\Method;
 use UzDevid\Telegram\Bot\Message\Message\Method;
 use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
 
-class AnswerPreCheckoutQuery extends Method implements MethodInterface {
-    /**
-     * @param string $preCheckoutQueryId
-     * @param bool $ok
-     * @param string|null $errorMessage
-     */
-    public function __construct(string $preCheckoutQueryId, bool $ok = true, string $errorMessage = null) {
-        parent::__construct();
 
+/**
+ * Method AnswerPreCheckoutQuery
+ *
+ * Once the user has confirmed their payment and shipping details, the Bot API sends the final confirmation in the form of an Update with the field pre_checkout_query. Use this method to respond to such pre-checkout queries. On success, True is returned. Note: The Bot API must receive an answer within 10 seconds after the pre-checkout query was sent.
+ */
+class AnswerPreCheckoutQuery extends Method implements MethodInterface {
+    public function __construct(string $preCheckoutQueryId, bool $ok) {
+        parent::__construct();
         $this->addAttribute('pre_checkout_query_id', $preCheckoutQueryId);
         $this->addAttribute('ok', $ok);
+    }
 
-        if ($ok === false) {
-            $this->addAttribute('error_message', $errorMessage);
-        }
+    public function methodName(): string {
+        return "answerPreCheckoutQuery";
     }
 
     /**
-     * @return string
+     * @param string $errorMessage
+     *
+     * @return $this
      */
-    public function methodName(): string {
-        return 'answerPreCheckoutQuery';
+    public function errorMessage(string $errorMessage): static {
+        $this->addAttribute('error_message', $errorMessage);
+        return $this;
     }
 }

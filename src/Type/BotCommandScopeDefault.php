@@ -9,8 +9,11 @@ use UzDevid\Telegram\Bot\Core\Type;
  *
  * @link https://core.telegram.org/bots/api#botcommandscopedefault
  *
- * This object represents a bot command.
+ * Represents the default scope of bot commands. Default commands are used if no commands with a narrower scope are specified for the user.
  */
 class BotCommandScopeDefault extends Type {
+    /**
+     * @var string Scope type, must be default
+     */
     public string $type;
 }

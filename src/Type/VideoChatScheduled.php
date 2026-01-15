@@ -12,5 +12,8 @@ use UzDevid\Telegram\Bot\Core\Type;
  * This object represents a service message about a video chat scheduled in the chat.
  */
 class VideoChatScheduled extends Type {
+    /**
+     * @var int Point in time (Unix timestamp) when the video chat is supposed to be started by a chat administrator
+     */
     public int $startDate;
 }

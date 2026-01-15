@@ -7,10 +7,13 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Type BotCommandScopeAllPrivateChats
  *
- * @link https://core.telegram.org/bots/api#BotCommandScopeAllPrivateChats
+ * @link https://core.telegram.org/bots/api#botcommandscopeallprivatechats
  *
- * This object represents a bot command.
+ * Represents the scope of bot commands, covering all private chats.
  */
 class BotCommandScopeAllPrivateChats extends Type {
+    /**
+     * @var string Scope type, must be all_private_chats
+     */
     public string $type;
 }

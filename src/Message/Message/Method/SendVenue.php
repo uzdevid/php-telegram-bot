@@ -4,37 +4,169 @@ namespace UzDevid\Telegram\Bot\Message\Message\Method;
 
 use UzDevid\Telegram\Bot\Message\Message\Method;
 use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
+use UzDevid\Telegram\Bot\Type\ForceReply;
+use UzDevid\Telegram\Bot\Type\InlineKeyboardMarkup;
+use UzDevid\Telegram\Bot\Type\ReplyKeyboardMarkup;
+use UzDevid\Telegram\Bot\Type\ReplyKeyboardRemove;
+use UzDevid\Telegram\Bot\Type\ReplyParameters;
+use UzDevid\Telegram\Bot\Type\SuggestedPostParameters;
 
+/**
+ * Method SendVenue
+ *
+ * Use this method to send information about a venue. On success, the sent Message is returned.
+ */
 class SendVenue extends Method implements MethodInterface {
-    /**
-     * @param float $latitude
-     * @param float $longitude
-     */
-    public function __construct(float $latitude, float $longitude) {
+    public function __construct(int|string $chatId, float $latitude, float $longitude, string $title, string $address) {
         parent::__construct();
+        $this->addAttribute('chat_id', $chatId);
         $this->addAttribute('latitude', $latitude);
         $this->addAttribute('longitude', $longitude);
+        $this->addAttribute('title', $title);
+        $this->addAttribute('address', $address);
     }
 
     public function methodName(): string {
-        return 'sendVenue';
+        return "sendVenue";
     }
 
     /**
-     * @param string $title
+     * @param string $businessConnectionId
+     *
      * @return $this
      */
-    public function title(string $title): static {
-        $this->addAttribute('title', $title);
+    public function businessConnectionId(string $businessConnectionId): static {
+        $this->addAttribute('business_connection_id', $businessConnectionId);
         return $this;
     }
 
     /**
-     * @param string $address
+     * @param int $messageThreadId
+     *
      * @return $this
      */
-    public function address(string $address): static {
-        $this->addAttribute('address', $address);
+    public function messageThreadId(int $messageThreadId): static {
+        $this->addAttribute('message_thread_id', $messageThreadId);
+        return $this;
+    }
+
+    /**
+     * @param int $directMessagesTopicId
+     *
+     * @return $this
+     */
+    public function directMessagesTopicId(int $directMessagesTopicId): static {
+        $this->addAttribute('direct_messages_topic_id', $directMessagesTopicId);
+        return $this;
+    }
+
+    /**
+     * @param string $foursquareId
+     *
+     * @return $this
+     */
+    public function foursquareId(string $foursquareId): static {
+        $this->addAttribute('foursquare_id', $foursquareId);
+        return $this;
+    }
+
+    /**
+     * @param string $foursquareType
+     *
+     * @return $this
+     */
+    public function foursquareType(string $foursquareType): static {
+        $this->addAttribute('foursquare_type', $foursquareType);
+        return $this;
+    }
+
+    /**
+     * @param string $googlePlaceId
+     *
+     * @return $this
+     */
+    public function googlePlaceId(string $googlePlaceId): static {
+        $this->addAttribute('google_place_id', $googlePlaceId);
+        return $this;
+    }
+
+    /**
+     * @param string $googlePlaceType
+     *
+     * @return $this
+     */
+    public function googlePlaceType(string $googlePlaceType): static {
+        $this->addAttribute('google_place_type', $googlePlaceType);
+        return $this;
+    }
+
+    /**
+     * @param bool $disableNotification
+     *
+     * @return $this
+     */
+    public function disableNotification(bool $disableNotification): static {
+        $this->addAttribute('disable_notification', $disableNotification);
+        return $this;
+    }
+
+    /**
+     * @param bool $protectContent
+     *
+     * @return $this
+     */
+    public function protectContent(bool $protectContent): static {
+        $this->addAttribute('protect_content', $protectContent);
+        return $this;
+    }
+
+    /**
+     * @param bool $allowPaidBroadcast
+     *
+     * @return $this
+     */
+    public function allowPaidBroadcast(bool $allowPaidBroadcast): static {
+        $this->addAttribute('allow_paid_broadcast', $allowPaidBroadcast);
+        return $this;
+    }
+
+    /**
+     * @param string $messageEffectId
+     *
+     * @return $this
+     */
+    public function messageEffectId(string $messageEffectId): static {
+        $this->addAttribute('message_effect_id', $messageEffectId);
+        return $this;
+    }
+
+    /**
+     * @param SuggestedPostParameters $suggestedPostParameters
+     *
+     * @return $this
+     */
+    public function suggestedPostParameters(SuggestedPostParameters $suggestedPostParameters): static {
+        $this->addAttribute('suggested_post_parameters', $suggestedPostParameters);
+        return $this;
+    }
+
+    /**
+     * @param ReplyParameters $replyParameters
+     *
+     * @return $this
+     */
+    public function replyParameters(ReplyParameters $replyParameters): static {
+        $this->addAttribute('reply_parameters', $replyParameters);
+        return $this;
+    }
+
+    /**
+     * @param InlineKeyboardMarkup | ReplyKeyboardMarkup | ReplyKeyboardRemove | ForceReply $replyMarkup
+     *
+     * @return $this
+     */
+    public function replyMarkup(InlineKeyboardMarkup|ReplyKeyboardMarkup|ReplyKeyboardRemove|ForceReply $replyMarkup): static {
+        $this->addAttribute('reply_markup', $replyMarkup);
         return $this;
     }
 }
