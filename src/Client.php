@@ -86,15 +86,20 @@ readonly class Client implements ClientInterface {
      * @throws JsonException
      */
     public function sendRequest(array $params) {
-        $query = array_merge($params, $this->method->getPayload());
+        $payload = array_merge($params, $this->method->getPayload());
 
         $url = sprintf($this->config->getEndpoint(), $this->config->getToken(), $this->method->methodName());
 
-        $response = $this->client->get($url, ['query' => $query]);
+        $response = $this->client->post($url, [
+            'json' => $payload,
+            'headers' => [
+                'Accept' => 'application/json',
+            ],
+        ]);
 
-        $payload = json_decode($response->getBody()->getContents(), true, 512, JSON_THROW_ON_ERROR);
+        $data = json_decode($response->getBody()->getContents(), true, 512, JSON_THROW_ON_ERROR);
 
-        $response = Helper::reformat($payload);
+        $response = Helper::reformat($data);
 
         return $this->method->response($response);
     }
