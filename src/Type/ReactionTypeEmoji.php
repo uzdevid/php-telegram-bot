@@ -5,13 +5,13 @@ namespace UzDevid\Telegram\Bot\Type;
 use UzDevid\Telegram\Bot\Core\Type;
 
 /**
- * Type ReactionType
+ * Type ReactionTypeEmoji
  *
- * @link https://core.telegram.org/bots/api#reactiontype
+ * @link https://core.telegram.org/bots/api#reactiontypeemoji
  *
- * This object describes the type of reaction. Currently, it can be one of
+ * The reaction is based on an emoji.
  */
-class ReactionType extends Type {
+class ReactionTypeEmoji extends Type {
     /**
      * @var string Type of the reaction, always “emoji”
      */
