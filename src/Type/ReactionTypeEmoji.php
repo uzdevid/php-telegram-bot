@@ -13,12 +13,12 @@ use UzDevid\Telegram\Bot\Core\Type;
  */
 class ReactionTypeEmoji extends Type {
     /**
-     * @var string Type of the reaction, always “emoji”
+     * @param string $type Type of the reaction, always “emoji”
+     * @param string $emoji Reaction emoji.
      */
-    public string $type;
-
-    /**
-     * @var string Reaction emoji. Currently, it can be one of "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""
-     */
-    public string $emoji;
+    public function __construct(
+        public string $type,
+        public string $emoji
+    ) {
+    }
 }
