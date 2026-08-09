@@ -69,19 +69,21 @@ $server
 
 ## Documentation
 
-Complete documentation is available in the `docs/` directory:
+Complete documentation is available in the `docs/` directory, organized by language:
 
-- **[📚 Documentation Index](docs/index.md)** - Start here for navigation and all guides
-- **[Installation & Configuration](docs/installation.md)** - Setup and bot token configuration
-- **[Using the Client](docs/use-client.md)** - Sending messages and making API calls
-- **[Using the Server](docs/use-server.md)** - Handling incoming updates
-- **[Examples](docs/examples.md)** - Real-world code examples
-- **[API Methods](docs/api-methods.md)** - List of all 185+ available methods
-- **[Static Analysis](docs/static-analysis.md)** - Code quality and linting tools
-- **[Contributing](docs/contributing.md)** - How to contribute
-- **[FAQ](docs/faq.md)** - Frequently asked questions
+- **[English](docs/en/index.md)** (default)
+- **[Русский](docs/ru/index.md)**
+- **[O'zbekcha](docs/uz/index.md)**
 
-All documentation is available in English, Русский (Russian), and O'zbekcha (Uzbek).
+Each language folder contains:
+
+- **Installation & Configuration** - Setup and bot token configuration
+- **Using the Client** - Sending messages and making API calls
+- **Using the Server** - Handling incoming updates
+- **API Methods** - List of all 185+ available methods
+- **Examples** - Real-world code examples
+- **Contributing** - How to contribute
+- **FAQ** - Frequently asked questions
 
 ## Code Quality
 
