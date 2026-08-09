@@ -13,7 +13,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'shipping_query_id' and 'ok' fields, then
  * chain optional builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#answershippingquery
+ * @see https://core.telegram.org/bots/api#answershippingquery
  */
 class AnswerShippingQuery extends Method implements MethodInterface {
     /**
@@ -39,6 +39,7 @@ class AnswerShippingQuery extends Method implements MethodInterface {
      *
      * @param array $shippingOptions Required if ok is True . A JSON-serialized Array of available
      *   shipping options.
+     *
      * @return $this
      */
     public function shippingOptions(array $shippingOptions): static {
@@ -52,6 +53,7 @@ class AnswerShippingQuery extends Method implements MethodInterface {
      *
      * @param mixed $shippingOption Adds one item to the shipping_options list. Required if ok is
      *   True . A JSON-serialized Array of available shipping options.
+     *
      * @return $this
      */
     public function addShippingOption(mixed $shippingOption): static {
@@ -67,6 +69,7 @@ class AnswerShippingQuery extends Method implements MethodInterface {
      * @param string $errorMessage Required if ok is False . Error message in human readable form
      *   that explains why it is impossible to complete the order (e.g. “Sorry, delivery to your
      *   desired address is unavailable”). Telegram will display this message to the user.
+     *
      * @return $this
      */
     public function errorMessage(string $errorMessage): static {

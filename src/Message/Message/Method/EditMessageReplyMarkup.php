@@ -14,7 +14,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method, chain any optional builder methods, and then dispatch the
  * request.
  *
- * @link https://core.telegram.org/bots/api#editmessagereplymarkup
+ * @see https://core.telegram.org/bots/api#editmessagereplymarkup
  */
 class EditMessageReplyMarkup extends Method implements MethodInterface {
     public function methodName(): string {
@@ -27,6 +27,7 @@ class EditMessageReplyMarkup extends Method implements MethodInterface {
      *
      * @param string $businessConnectionId Unique identifier of the business connection on behalf of
      *   which the message to be edited was sent
+     *
      * @return $this
      */
     public function businessConnectionId(string $businessConnectionId): static {
@@ -40,7 +41,9 @@ class EditMessageReplyMarkup extends Method implements MethodInterface {
      *
      * @param int|string $chatId Required if inline_message_id is not specified. Unique identifier
      *   for the target chat or username of the target bot, supergroup or channel in the format
+     *
      *   @username .
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -53,6 +56,7 @@ class EditMessageReplyMarkup extends Method implements MethodInterface {
      *
      * @param int $messageId Required if inline_message_id is not specified. Identifier of the
      *   message to edit.
+     *
      * @return $this
      */
     public function messageId(int $messageId): static {
@@ -65,6 +69,7 @@ class EditMessageReplyMarkup extends Method implements MethodInterface {
      *
      * @param string $inlineMessageId Required if chat_id and message_id are not specified.
      *   Identifier of the inline message.
+     *
      * @return $this
      */
     public function inlineMessageId(string $inlineMessageId): static {
@@ -76,6 +81,7 @@ class EditMessageReplyMarkup extends Method implements MethodInterface {
      * A JSON-serialized object for an inline keyboard
      *
      * @param mixed $replyMarkup A JSON-serialized object for an inline keyboard
+     *
      * @return $this
      */
     public function replyMarkup(mixed $replyMarkup): static {

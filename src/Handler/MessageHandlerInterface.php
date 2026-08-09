@@ -15,7 +15,6 @@ interface MessageHandlerInterface {
     /**
      * @param MessageUpdate $update
      *
-     * @return void
      */
     public function handle(MessageUpdate $update): void;
 }

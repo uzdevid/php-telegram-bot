@@ -11,7 +11,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'user_id' field and dispatch the request
  * directly.
  *
- * @link https://core.telegram.org/bots/api#getmanagedbottoken
+ * @see https://core.telegram.org/bots/api#getmanagedbottoken
  */
 class GetManagedBotToken extends Method implements MethodInterface {
     /**

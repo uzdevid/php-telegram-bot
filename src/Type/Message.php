@@ -8,7 +8,7 @@ use Yiisoft\Hydrator\Attribute\Parameter\Collection;
 /**
  * Type Message
  *
- * @link https://core.telegram.org/bots/api#message
+ * @see https://core.telegram.org/bots/api#message
  *
  * This object represents a message.
  *
@@ -18,7 +18,7 @@ class Message extends Type {
     public int $messageId;
     public int $messageThreadId;
     public User $from;
-    public int $senderChat;
+    public Chat $senderChat;
     public int $date;
     public Chat $chat;
     public User $forwardFrom;
@@ -36,6 +36,7 @@ class Message extends Type {
     public string $mediaGroupId;
     public string $authorSignature;
     public string $text;
+    #[Collection(MessageEntity::class)]
     public array $entities;
     public Animation $animation;
     public Audio $audio;
@@ -48,6 +49,7 @@ class Message extends Type {
     public VideoNote $videoNote;
     public Voice $voice;
     public string $caption;
+    #[Collection(MessageEntity::class)]
     public array $captionEntities;
     public bool $hasMediaSpoiler;
     public Contact $contact;
@@ -56,10 +58,12 @@ class Message extends Type {
     public Poll $poll;
     public Venue $venue;
     public Location $location;
+    #[Collection(User::class)]
     public array $newChatMembers;
     public User $leftChatMember;
     public string $newChatTitle;
-    public PhotoSize $newChatPhoto;
+    #[Collection(PhotoSize::class)]
+    public array $newChatPhoto;
     public bool $deleteChatPhoto;
     public bool $groupChatCreated;
     public bool $supergroupChatCreated;

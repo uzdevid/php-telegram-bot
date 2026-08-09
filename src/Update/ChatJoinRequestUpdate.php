@@ -8,7 +8,7 @@ use UzDevid\Telegram\Bot\Type\ChatJoinRequest;
 /**
  * Type ChatJoinRequest
  *
- * @link https://core.telegram.org/bots/api#chatjoinrequest
+ * @see https://core.telegram.org/bots/api#chatjoinrequest
  *
  * Represents a join request sent to a chat.
  */

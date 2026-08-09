@@ -7,12 +7,11 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Type InlineKeyboardButton
  *
- * @link https://core.telegram.org/bots/api#inlinekeyboardbutton
+ * @see https://core.telegram.org/bots/api#inlinekeyboardbutton
  *
  * This object represents one button of an inline keyboard. You must use exactly one of the optional fields.
  */
 class InlineKeyboardButton extends Type {
-
     public string $text;
     public string $url;
     public string $callbackData;

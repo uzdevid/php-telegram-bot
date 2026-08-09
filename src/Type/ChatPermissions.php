@@ -7,7 +7,7 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Type ChatPermissions
  *
- * @link https://core.telegram.org/bots/api#chatpermissions
+ * @see https://core.telegram.org/bots/api#chatpermissions
  *
  * Describes actions that a non-administrator user is allowed to take in a chat.
  */

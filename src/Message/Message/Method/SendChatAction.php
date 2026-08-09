@@ -13,7 +13,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'action' field, then chain optional
  * builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#sendchataction
+ * @see https://core.telegram.org/bots/api#sendchataction
  */
 class SendChatAction extends Method implements MethodInterface {
     /**
@@ -39,6 +39,7 @@ class SendChatAction extends Method implements MethodInterface {
      *
      * @param string $businessConnectionId Unique identifier of the business connection on behalf of
      *   which the action will be sent
+     *
      * @return $this
      */
     public function businessConnectionId(string $businessConnectionId): static {
@@ -53,6 +54,7 @@ class SendChatAction extends Method implements MethodInterface {
      * @param int|string $chatId Unique identifier for the target chat or username of the target bot
      *   or supergroup in the format @username . Channel chats and channel direct messages chats
      *   aren't supported.
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -66,6 +68,7 @@ class SendChatAction extends Method implements MethodInterface {
      *
      * @param int $messageThreadId Unique identifier for the target message thread or topic of a
      *   forum; for supergroups and private chats of bots with forum topic mode enabled only
+     *
      * @return $this
      */
     public function messageThreadId(int $messageThreadId): static {

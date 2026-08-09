@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method, chain any optional builder methods, and then dispatch the
  * request.
  *
- * @link https://core.telegram.org/bots/api#getmydefaultadministratorrights
+ * @see https://core.telegram.org/bots/api#getmydefaultadministratorrights
  */
 class GetMyDefaultAdministratorRights extends Method implements MethodInterface {
     public function methodName(): string {
@@ -26,6 +26,7 @@ class GetMyDefaultAdministratorRights extends Method implements MethodInterface 
      * @param bool $forChannels Pass True to get default administrator rights of the bot in
      *   channels. Otherwise, default administrator rights of the bot for groups and supergroups
      *   will be returned.
+     *
      * @return $this
      */
     public function forChannels(bool $forChannels = true): static {

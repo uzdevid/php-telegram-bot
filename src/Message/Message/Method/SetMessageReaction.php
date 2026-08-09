@@ -14,7 +14,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'message_id' field, then chain optional
  * builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#setmessagereaction
+ * @see https://core.telegram.org/bots/api#setmessagereaction
  */
 class SetMessageReaction extends Method implements MethodInterface {
     /**
@@ -38,6 +38,7 @@ class SetMessageReaction extends Method implements MethodInterface {
      *
      * @param int|string $chatId Unique identifier for the target chat or username of the target
      *   bot, supergroup or channel in the format @username
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -55,6 +56,7 @@ class SetMessageReaction extends Method implements MethodInterface {
      *   Currently, as non-premium users, bots can set up to one reaction per message. A custom
      *   emoji reaction can be used if it is either already present on the message or explicitly
      *   allowed by chat administrators. Paid reactions can't be used by bots.
+     *
      * @return $this
      */
     public function reaction(array $reaction): static {
@@ -73,6 +75,7 @@ class SetMessageReaction extends Method implements MethodInterface {
      *   one reaction per message. A custom emoji reaction can be used if it is either already
      *   present on the message or explicitly allowed by chat administrators. Paid reactions can't
      *   be used by bots.
+     *
      * @return $this
      */
     public function addReactionItem(mixed $reactionItem): static {
@@ -84,6 +87,7 @@ class SetMessageReaction extends Method implements MethodInterface {
      * Pass True to set the reaction with a big animation
      *
      * @param bool $isBig Pass True to set the reaction with a big animation
+     *
      * @return $this
      */
     public function isBig(bool $isBig = true): static {

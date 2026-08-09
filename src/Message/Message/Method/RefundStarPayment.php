@@ -11,7 +11,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'user_id' and
  * 'telegram_payment_charge_id' fields and dispatch the request directly.
  *
- * @link https://core.telegram.org/bots/api#refundstarpayment
+ * @see https://core.telegram.org/bots/api#refundstarpayment
  */
 class RefundStarPayment extends Method implements MethodInterface {
     /**

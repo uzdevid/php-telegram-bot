@@ -18,7 +18,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'media' field, then chain optional
  * builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#editmessagemedia
+ * @see https://core.telegram.org/bots/api#editmessagemedia
  */
 class EditMessageMedia extends Method implements MethodInterface {
     /**
@@ -41,6 +41,7 @@ class EditMessageMedia extends Method implements MethodInterface {
      *
      * @param string $businessConnectionId Unique identifier of the business connection on behalf of
      *   which the message to be edited was sent
+     *
      * @return $this
      */
     public function businessConnectionId(string $businessConnectionId): static {
@@ -54,7 +55,9 @@ class EditMessageMedia extends Method implements MethodInterface {
      *
      * @param int|string $chatId Required if inline_message_id is not specified. Unique identifier
      *   for the target chat or username of the target bot, supergroup or channel in the format
+     *
      *   @username .
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -67,6 +70,7 @@ class EditMessageMedia extends Method implements MethodInterface {
      *
      * @param int $messageId Required if inline_message_id is not specified. Identifier of the
      *   message to edit.
+     *
      * @return $this
      */
     public function messageId(int $messageId): static {
@@ -79,6 +83,7 @@ class EditMessageMedia extends Method implements MethodInterface {
      *
      * @param string $inlineMessageId Required if chat_id and message_id are not specified.
      *   Identifier of the inline message.
+     *
      * @return $this
      */
     public function inlineMessageId(string $inlineMessageId): static {
@@ -90,6 +95,7 @@ class EditMessageMedia extends Method implements MethodInterface {
      * A JSON-serialized object for a new inline keyboard
      *
      * @param mixed $replyMarkup A JSON-serialized object for a new inline keyboard
+     *
      * @return $this
      */
     public function replyMarkup(mixed $replyMarkup): static {

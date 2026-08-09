@@ -11,7 +11,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'name' field, then chain optional builder
  * methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#setcustomemojistickersetthumbnail
+ * @see https://core.telegram.org/bots/api#setcustomemojistickersetthumbnail
  */
 class SetCustomEmojiStickerSetThumbnail extends Method implements MethodInterface {
     /**
@@ -34,6 +34,7 @@ class SetCustomEmojiStickerSetThumbnail extends Method implements MethodInterfac
      *
      * @param string $customEmojiId Custom emoji identifier of a sticker from the sticker set; pass
      *   an empty string to drop the thumbnail and use the first sticker as the thumbnail
+     *
      * @return $this
      */
     public function customEmojiId(string $customEmojiId): static {

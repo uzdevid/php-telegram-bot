@@ -13,7 +13,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'message_id' field, then chain optional
  * builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#declinesuggestedpost
+ * @see https://core.telegram.org/bots/api#declinesuggestedpost
  */
 class DeclineSuggestedPost extends Method implements MethodInterface {
     /**
@@ -34,6 +34,7 @@ class DeclineSuggestedPost extends Method implements MethodInterface {
      * Unique identifier for the target direct messages chat
      *
      * @param int $chatId Unique identifier for the target direct messages chat
+     *
      * @return $this
      */
     public function chatId(int $chatId): static {
@@ -45,6 +46,7 @@ class DeclineSuggestedPost extends Method implements MethodInterface {
      * Comment for the creator of the suggested post; 0-128 characters
      *
      * @param string $comment Comment for the creator of the suggested post; 0-128 characters
+     *
      * @return $this
      */
     public function comment(string $comment): static {

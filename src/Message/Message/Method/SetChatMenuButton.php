@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method, chain any optional builder methods, and then dispatch the
  * request.
  *
- * @link https://core.telegram.org/bots/api#setchatmenubutton
+ * @see https://core.telegram.org/bots/api#setchatmenubutton
  */
 class SetChatMenuButton extends Method implements MethodInterface {
     public function methodName(): string {
@@ -25,6 +25,7 @@ class SetChatMenuButton extends Method implements MethodInterface {
      *
      * @param int $chatId Unique identifier for the target private chat. If not specified, the bot's
      *   default menu button will be changed.
+     *
      * @return $this
      */
     public function chatId(int $chatId): static {
@@ -37,6 +38,7 @@ class SetChatMenuButton extends Method implements MethodInterface {
      *
      * @param mixed $menuButton A JSON-serialized object for the bot's new menu button. Defaults to
      *   MenuButtonDefault .
+     *
      * @return $this
      */
     public function menuButton(mixed $menuButton): static {

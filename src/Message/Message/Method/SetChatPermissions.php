@@ -13,7 +13,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'permissions' field, then chain optional
  * builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#setchatpermissions
+ * @see https://core.telegram.org/bots/api#setchatpermissions
  */
 class SetChatPermissions extends Method implements MethodInterface {
     /**
@@ -32,10 +32,12 @@ class SetChatPermissions extends Method implements MethodInterface {
 
     /**
      * Unique identifier for the target chat or username of the target supergroup in the format
+     *
      * @username
      *
      * @param int|string $chatId Unique identifier for the target chat or username of the target
      *   supergroup in the format @username
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -55,6 +57,7 @@ class SetChatPermissions extends Method implements MethodInterface {
      *   permissions will imply the can_send_messages , can_send_audios , can_send_documents ,
      *   can_send_photos , can_send_videos , can_send_video_notes , and can_send_voice_notes
      *   permissions; the can_send_polls permission will imply the can_send_messages permission.
+     *
      * @return $this
      */
     public function useIndependentChatPermissions(bool $useIndependentChatPermissions = true): static {

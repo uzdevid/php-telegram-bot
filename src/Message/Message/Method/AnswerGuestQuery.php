@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'guest_query_id' and 'result' fields and
  * dispatch the request directly.
  *
- * @link https://core.telegram.org/bots/api#answerguestquery
+ * @see https://core.telegram.org/bots/api#answerguestquery
  */
 class AnswerGuestQuery extends Method implements MethodInterface {
     /**

@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'business_connection_id' and 'message_id'
  * fields, then chain optional builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#readbusinessmessage
+ * @see https://core.telegram.org/bots/api#readbusinessmessage
  */
 class ReadBusinessMessage extends Method implements MethodInterface {
     /**
@@ -39,6 +39,7 @@ class ReadBusinessMessage extends Method implements MethodInterface {
      *
      * @param int $chatId Unique identifier of the chat in which the message was received. The chat
      *   must have been active in the last 24 hours.
+     *
      * @return $this
      */
     public function chatId(int $chatId): static {

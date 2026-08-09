@@ -11,7 +11,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'name' and 'title' fields and dispatch
  * the request directly.
  *
- * @link https://core.telegram.org/bots/api#setstickersettitle
+ * @see https://core.telegram.org/bots/api#setstickersettitle
  */
 class SetStickerSetTitle extends Method implements MethodInterface {
     /**

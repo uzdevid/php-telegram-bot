@@ -17,14 +17,10 @@ abstract class PreCheckoutQuery implements RequestInterface {
 
     /**
      * @param array $payload
-     * @return void
      */
     public function buildRequest(array $payload): void {
-        $this->request = (new Hydrator)->create(PreCheckoutQueryUpdate::class, $payload);
+        $this->request = (new Hydrator())->create(PreCheckoutQueryUpdate::class, $payload);
     }
 
-    /**
-     * @return void
-     */
     abstract public function handle(): void;
 }

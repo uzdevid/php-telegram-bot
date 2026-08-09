@@ -7,7 +7,7 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Type ChatAdministratorRights
  *
- * @link https://core.telegram.org/bots/api#chatadministratorrights
+ * @see https://core.telegram.org/bots/api#chatadministratorrights
  *
  * Represents the rights of an administrator in a chat.
  */

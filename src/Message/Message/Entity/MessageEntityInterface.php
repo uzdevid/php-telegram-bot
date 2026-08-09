@@ -13,7 +13,6 @@ interface MessageEntityInterface {
     /**
      * @param array $params
      *
-     * @return void
      */
     public function setParams(array $params): void;
 
@@ -21,9 +20,8 @@ interface MessageEntityInterface {
      * @param string $name
      * @param mixed $value
      *
-     * @return mixed
      */
-    public function addParams(string $name, mixed $value): mixed;
+    public function addParams(string $name, mixed $value): void;
 
     /**
      * @param string $type

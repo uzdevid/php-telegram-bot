@@ -13,7 +13,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'invite_link' field, then chain optional
  * builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#editchatinvitelink
+ * @see https://core.telegram.org/bots/api#editchatinvitelink
  */
 class EditChatInviteLink extends Method implements MethodInterface {
     /**
@@ -32,10 +32,12 @@ class EditChatInviteLink extends Method implements MethodInterface {
 
     /**
      * Unique identifier for the target chat or username of the target channel in the format
+     *
      * @username
      *
      * @param int|string $chatId Unique identifier for the target chat or username of the target
      *   channel in the format @username
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -47,6 +49,7 @@ class EditChatInviteLink extends Method implements MethodInterface {
      * Invite link name; 0-32 characters
      *
      * @param string $name Invite link name; 0-32 characters
+     *
      * @return $this
      */
     public function name(string $name): static {
@@ -58,6 +61,7 @@ class EditChatInviteLink extends Method implements MethodInterface {
      * Point in time (Unix timestamp) when the link will expire
      *
      * @param int $expireDate Point in time (Unix timestamp) when the link will expire
+     *
      * @return $this
      */
     public function expireDate(int $expireDate): static {
@@ -71,6 +75,7 @@ class EditChatInviteLink extends Method implements MethodInterface {
      *
      * @param int $memberLimit The maximum number of users that can be members of the chat
      *   simultaneously after joining the chat via this invite link; 1-99999
+     *
      * @return $this
      */
     public function memberLimit(int $memberLimit): static {
@@ -84,6 +89,7 @@ class EditChatInviteLink extends Method implements MethodInterface {
      *
      * @param bool $createsJoinRequest True , if users joining the chat via the link need to be
      *   approved by chat administrators. If True , member_limit can't be specified.
+     *
      * @return $this
      */
     public function createsJoinRequest(bool $createsJoinRequest = true): static {

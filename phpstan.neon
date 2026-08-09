@@ -2,24 +2,9 @@ parameters:
   level: 8
   paths:
     - src
-  strictTypes: true
-  reportUnusedForEachValueVariables: true
   checkMissingIterableValueType: false
-  checkInternalClassCasing: true
   treatPhpDocTypesAsCertain: false
-  ignoreErrors:
-    - '#PHPDoc comment is not properly formatted#'
-
-rules:
-  - PHPStan\Rules\Classes\CompleteConstructorRule
-  - PHPStan\Rules\Exceptions\ThrowMustBundledExceptionRule
-  - PHPStan\Rules\Methods\CallStaticMethodOnNonClassRule
-  - PHPStan\Rules\Methods\NullsafeMethodCallRule
-  - PHPStan\Rules\Missing\MissingClosureNativeReturnTypehintRule
-  - PHPStan\Rules\Missing\MissingClosureParameterTypehintRule
-  - PHPStan\Rules\Missing\MissingFunctionReturnTypehintRule
-  - PHPStan\Rules\Missing\MissingPropertyTypehintRule
-  - PHPStan\Rules\Missing\MissingMethodReturnTypehintRule
 
 includes:
   - phar://phpstan.phar/conf/bleedingEdge.neon
+  - phpstan-baseline.neon

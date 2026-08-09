@@ -16,7 +16,7 @@ use Yiisoft\Hydrator\Hydrator;
  * Typical usage: instantiate the method with the required 'inline_query_id' field, then chain
  * optional builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#answerinlinequery
+ * @see https://core.telegram.org/bots/api#answerinlinequery
  */
 class Answer implements MethodInterface {
     use AttributeContainer {
@@ -45,6 +45,7 @@ class Answer implements MethodInterface {
      *
      * @param AnswerInterface $result Adds one item to the results list. A JSON-serialized Array of
      *   results for the inline query
+     *
      * @return $this
      */
     public function addResult(AnswerInterface $result): static {
@@ -58,6 +59,7 @@ class Answer implements MethodInterface {
      *
      * @param int $cacheTime The maximum amount of time in seconds that the result of the inline
      *   query may be cached on the server. Defaults to 300.
+     *
      * @return $this
      */
     public function setCacheTime(int $cacheTime): static {
@@ -72,6 +74,7 @@ class Answer implements MethodInterface {
      * @param bool $personal Pass True if results may be cached on the server side only for the user
      *   that sent the query. By default, results may be returned to any user who sends the same
      *   query.
+     *
      * @return $this
      */
     public function setIsPersonal(bool $personal = true): static {
@@ -87,6 +90,7 @@ class Answer implements MethodInterface {
      * @param string $offset Pass the offset that a client should send in the next query with the
      *   same text to receive more results. Pass an empty string if there are no more results or if
      *   you don't support pagination. Offset length can't exceed 64 bytes.
+     *
      * @return $this
      */
     public function setNextOffset(string $offset): static {
@@ -99,6 +103,7 @@ class Answer implements MethodInterface {
      *
      * @param mixed $button A JSON-serialized object describing a button to be shown above inline
      *   query results
+     *
      * @return $this
      */
     public function button(mixed $button): static {
@@ -107,11 +112,12 @@ class Answer implements MethodInterface {
     }
 
     /**
-     * @return array
      * @throws JsonException
+     *
+     * @return array
      */
     public function getPayload(): array {
-        $this->addAttribute('results', json_encode($this->getAttribute('results'), JSON_THROW_ON_ERROR | JSON_UNESCAPED_UNICODE));
+        $this->addAttribute('results', json_encode($this->getAttribute('results'), \JSON_THROW_ON_ERROR | \JSON_UNESCAPED_UNICODE));
 
         return $this->attributes;
     }
@@ -119,7 +125,8 @@ class Answer implements MethodInterface {
     /**
      * Hydrates the successful Bot API response into a Response instance.
      *
-     * @param array $data Raw Telegram Bot API response payload.
+     * @param array $data raw Telegram Bot API response payload
+     *
      * @return Response
      */
     public function response(array $data): Response {

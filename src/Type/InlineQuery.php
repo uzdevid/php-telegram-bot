@@ -7,7 +7,6 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Class InlineQuery
  *
- * @package UzDevid\Telegram\Bot\objects
  */
 class InlineQuery extends Type {
     public int $updateId;

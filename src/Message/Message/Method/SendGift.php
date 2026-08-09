@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'gift_id' field, then chain optional
  * builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#sendgift
+ * @see https://core.telegram.org/bots/api#sendgift
  */
 class SendGift extends Method implements MethodInterface {
     /**
@@ -35,6 +35,7 @@ class SendGift extends Method implements MethodInterface {
      *
      * @param int $userId Required if chat_id is not specified. Unique identifier of the target user
      *   who will receive the gift.
+     *
      * @return $this
      */
     public function userId(int $userId): static {
@@ -48,6 +49,7 @@ class SendGift extends Method implements MethodInterface {
      *
      * @param int|string $chatId Required if user_id is not specified. Unique identifier for the
      *   chat or username of the channel (in the format @username ) that will receive the gift.
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -61,6 +63,7 @@ class SendGift extends Method implements MethodInterface {
      *
      * @param bool $payForUpgrade Pass True to pay for the gift upgrade from the bot's balance,
      *   thereby making the upgrade free for the receiver
+     *
      * @return $this
      */
     public function payForUpgrade(bool $payForUpgrade = true): static {
@@ -72,6 +75,7 @@ class SendGift extends Method implements MethodInterface {
      * Text that will be shown along with the gift; 0-128 characters
      *
      * @param string $text Text that will be shown along with the gift; 0-128 characters
+     *
      * @return $this
      */
     public function text(string $text): static {
@@ -87,6 +91,7 @@ class SendGift extends Method implements MethodInterface {
      * @param string $textParseMode Mode for parsing entities in the text. See formatting options
      *   for more details. Entities other than “bold”, “italic”, “underline”, “strikethrough”,
      *   “spoiler”, “custom_emoji”, and “date_time” are ignored.
+     *
      * @return $this
      */
     public function textParseMode(string $textParseMode): static {
@@ -103,6 +108,7 @@ class SendGift extends Method implements MethodInterface {
      *   text. It can be specified instead of text_parse_mode . Entities other than “bold”,
      *   “italic”, “underline”, “strikethrough”, “spoiler”, “custom_emoji”, and “date_time” are
      *   ignored.
+     *
      * @return $this
      */
     public function textEntities(array $textEntities): static {
@@ -120,6 +126,7 @@ class SendGift extends Method implements MethodInterface {
      *   special entities that appear in the gift text. It can be specified instead of
      *   text_parse_mode . Entities other than “bold”, “italic”, “underline”, “strikethrough”,
      *   “spoiler”, “custom_emoji”, and “date_time” are ignored.
+     *
      * @return $this
      */
     public function addTextEntity(mixed $textEntity): static {

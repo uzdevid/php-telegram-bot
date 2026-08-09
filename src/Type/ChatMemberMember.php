@@ -7,7 +7,7 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Type ChatMemberMember
  *
- * @link https://core.telegram.org/bots/api#chatmembermember
+ * @see https://core.telegram.org/bots/api#chatmembermember
  *
  * Represents a chat member that has no additional privileges or restrictions.
  *

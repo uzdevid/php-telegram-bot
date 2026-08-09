@@ -15,7 +15,6 @@ interface CallbackQueryHandlerInterface {
     /**
      * @param CallbackQueryUpdate $query
      *
-     * @return void
      */
     public function handle(CallbackQueryUpdate $query): void;
 }

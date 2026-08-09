@@ -14,7 +14,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'name' field, then chain optional builder
  * methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#createforumtopic
+ * @see https://core.telegram.org/bots/api#createforumtopic
  */
 class CreateForumTopic extends Method implements MethodInterface {
     /**
@@ -33,10 +33,12 @@ class CreateForumTopic extends Method implements MethodInterface {
 
     /**
      * Unique identifier for the target chat or username of the target supergroup in the format
+     *
      * @username
      *
      * @param int|string $chatId Unique identifier for the target chat or username of the target
      *   supergroup in the format @username
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -52,6 +54,7 @@ class CreateForumTopic extends Method implements MethodInterface {
      * @param int $iconColor Color of the topic icon in RGB format. Currently, must be one of
      *   7322096 (0x6FB9F0), 16766590 (0xFFD67E), 13338331 (0xCB86DB), 9367192 (0x8EEE98), 16749490
      *   (0xFF93B2), or 16478047 (0xFB6F5F).
+     *
      * @return $this
      */
     public function iconColor(int $iconColor): static {
@@ -65,6 +68,7 @@ class CreateForumTopic extends Method implements MethodInterface {
      *
      * @param string $iconCustomEmojiId Unique identifier of the custom emoji shown as the topic
      *   icon. Use getForumTopicIconStickers to get all allowed custom emoji identifiers.
+     *
      * @return $this
      */
     public function iconCustomEmojiId(string $iconCustomEmojiId): static {

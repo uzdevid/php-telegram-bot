@@ -7,7 +7,7 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Type Sticker
  *
- * @link https://core.telegram.org/bots/api#sticker
+ * @see https://core.telegram.org/bots/api#sticker
  *
  * This object represents a sticker.
  */

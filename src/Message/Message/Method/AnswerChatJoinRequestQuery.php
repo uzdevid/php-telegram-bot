@@ -11,7 +11,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'chat_join_request_query_id' and 'result'
  * fields and dispatch the request directly.
  *
- * @link https://core.telegram.org/bots/api#answerchatjoinrequestquery
+ * @see https://core.telegram.org/bots/api#answerchatjoinrequestquery
  */
 class AnswerChatJoinRequestQuery extends Method implements MethodInterface {
     /**

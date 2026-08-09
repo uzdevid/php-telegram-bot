@@ -11,7 +11,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'name' field and dispatch the request
  * directly.
  *
- * @link https://core.telegram.org/bots/api#getstickerset
+ * @see https://core.telegram.org/bots/api#getstickerset
  */
 class GetStickerSet extends Method implements MethodInterface {
     /**

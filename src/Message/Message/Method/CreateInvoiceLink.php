@@ -13,7 +13,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * 'currency', and 'prices' fields, then chain optional builder methods before dispatching the
  * request.
  *
- * @link https://core.telegram.org/bots/api#createinvoicelink
+ * @see https://core.telegram.org/bots/api#createinvoicelink
  */
 class CreateInvoiceLink extends Method implements MethodInterface {
     /**
@@ -49,6 +49,7 @@ class CreateInvoiceLink extends Method implements MethodInterface {
      *
      * @param string $businessConnectionId Unique identifier of the business connection on behalf of
      *   which the link will be created. For payments in Telegram Stars only.
+     *
      * @return $this
      */
     public function businessConnectionId(string $businessConnectionId): static {
@@ -62,6 +63,7 @@ class CreateInvoiceLink extends Method implements MethodInterface {
      *
      * @param string $providerToken Payment provider token, obtained via @BotFather . Pass an empty
      *   string for payments in Telegram Stars .
+     *
      * @return $this
      */
     public function providerToken(string $providerToken): static {
@@ -82,6 +84,7 @@ class CreateInvoiceLink extends Method implements MethodInterface {
      *   of subscriptions can be active for a given bot at the same time, including multiple
      *   concurrent subscriptions from the same user. Subscription price must no exceed 10000
      *   Telegram Stars.
+     *
      * @return $this
      */
     public function subscriptionPeriod(int $subscriptionPeriod): static {
@@ -101,6 +104,7 @@ class CreateInvoiceLink extends Method implements MethodInterface {
      *   max_tip_amount = 145 . See the exp parameter in currencies.json , it shows the number of
      *   digits past the decimal point for each currency (2 for the majority of currencies).
      *   Defaults to 0. Not supported for payments in Telegram Stars .
+     *
      * @return $this
      */
     public function maxTipAmount(int $maxTipAmount): static {
@@ -118,6 +122,7 @@ class CreateInvoiceLink extends Method implements MethodInterface {
      *   smallest units of the currency (integer, not float/double). At most 4 suggested tip amounts
      *   can be specified. The suggested tip amounts must be positive, passed in a strictly
      *   increased order and must not exceed max_tip_amount .
+     *
      * @return $this
      */
     public function suggestedTipAmounts(array $suggestedTipAmounts): static {
@@ -136,6 +141,7 @@ class CreateInvoiceLink extends Method implements MethodInterface {
      *   (integer, not float/double). At most 4 suggested tip amounts can be specified. The
      *   suggested tip amounts must be positive, passed in a strictly increased order and must not
      *   exceed max_tip_amount .
+     *
      * @return $this
      */
     public function addSuggestedTipAmount(int $suggestedTipAmount): static {
@@ -150,6 +156,7 @@ class CreateInvoiceLink extends Method implements MethodInterface {
      * @param string $providerData JSON-serialized data about the invoice, which will be shared with
      *   the payment provider. A detailed description of required fields should be provided by the
      *   payment provider.
+     *
      * @return $this
      */
     public function providerData(string $providerData): static {
@@ -163,6 +170,7 @@ class CreateInvoiceLink extends Method implements MethodInterface {
      *
      * @param string $photoUrl URL of the product photo for the invoice. Can be a photo of the goods
      *   or a marketing image for a service.
+     *
      * @return $this
      */
     public function photoUrl(string $photoUrl): static {
@@ -174,6 +182,7 @@ class CreateInvoiceLink extends Method implements MethodInterface {
      * Photo size in bytes
      *
      * @param int $photoSize Photo size in bytes
+     *
      * @return $this
      */
     public function photoSize(int $photoSize): static {
@@ -185,6 +194,7 @@ class CreateInvoiceLink extends Method implements MethodInterface {
      * Photo width
      *
      * @param int $photoWidth Photo width
+     *
      * @return $this
      */
     public function photoWidth(int $photoWidth): static {
@@ -196,6 +206,7 @@ class CreateInvoiceLink extends Method implements MethodInterface {
      * Photo height
      *
      * @param int $photoHeight Photo height
+     *
      * @return $this
      */
     public function photoHeight(int $photoHeight): static {
@@ -209,6 +220,7 @@ class CreateInvoiceLink extends Method implements MethodInterface {
      *
      * @param bool $needName Pass True if you require the user's full name to complete the order.
      *   Ignored for payments in Telegram Stars .
+     *
      * @return $this
      */
     public function needName(bool $needName = true): static {
@@ -222,6 +234,7 @@ class CreateInvoiceLink extends Method implements MethodInterface {
      *
      * @param bool $needPhoneNumber Pass True if you require the user's phone number to complete the
      *   order. Ignored for payments in Telegram Stars .
+     *
      * @return $this
      */
     public function needPhoneNumber(bool $needPhoneNumber = true): static {
@@ -235,6 +248,7 @@ class CreateInvoiceLink extends Method implements MethodInterface {
      *
      * @param bool $needEmail Pass True if you require the user's email address to complete the
      *   order. Ignored for payments in Telegram Stars .
+     *
      * @return $this
      */
     public function needEmail(bool $needEmail = true): static {
@@ -248,6 +262,7 @@ class CreateInvoiceLink extends Method implements MethodInterface {
      *
      * @param bool $needShippingAddress Pass True if you require the user's shipping address to
      *   complete the order. Ignored for payments in Telegram Stars .
+     *
      * @return $this
      */
     public function needShippingAddress(bool $needShippingAddress = true): static {
@@ -261,6 +276,7 @@ class CreateInvoiceLink extends Method implements MethodInterface {
      *
      * @param bool $sendPhoneNumberToProvider Pass True if the user's phone number should be sent to
      *   the provider. Ignored for payments in Telegram Stars .
+     *
      * @return $this
      */
     public function sendPhoneNumberToProvider(bool $sendPhoneNumberToProvider = true): static {
@@ -274,6 +290,7 @@ class CreateInvoiceLink extends Method implements MethodInterface {
      *
      * @param bool $sendEmailToProvider Pass True if the user's email address should be sent to the
      *   provider. Ignored for payments in Telegram Stars .
+     *
      * @return $this
      */
     public function sendEmailToProvider(bool $sendEmailToProvider = true): static {
@@ -287,6 +304,7 @@ class CreateInvoiceLink extends Method implements MethodInterface {
      *
      * @param bool $isFlexible Pass True if the final price depends on the shipping method. Ignored
      *   for payments in Telegram Stars .
+     *
      * @return $this
      */
     public function isFlexible(bool $isFlexible = true): static {

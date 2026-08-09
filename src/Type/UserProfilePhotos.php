@@ -7,7 +7,7 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Type UserProfilePhotos
  *
- * @link https://core.telegram.org/bots/api#userprofilephotos
+ * @see https://core.telegram.org/bots/api#userprofilephotos
  *
  * This object represent a user's profile pictures.
  */

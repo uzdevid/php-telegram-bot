@@ -14,7 +14,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'draft_id' and 'rich_message' fields,
  * then chain optional builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#sendrichmessagedraft
+ * @see https://core.telegram.org/bots/api#sendrichmessagedraft
  */
 class SendRichMessageDraft extends Method implements MethodInterface {
     /**
@@ -40,6 +40,7 @@ class SendRichMessageDraft extends Method implements MethodInterface {
      * Unique identifier for the target private chat
      *
      * @param int $chatId Unique identifier for the target private chat
+     *
      * @return $this
      */
     public function chatId(int $chatId): static {
@@ -51,6 +52,7 @@ class SendRichMessageDraft extends Method implements MethodInterface {
      * Unique identifier for the target message thread
      *
      * @param int $messageThreadId Unique identifier for the target message thread
+     *
      * @return $this
      */
     public function messageThreadId(int $messageThreadId): static {

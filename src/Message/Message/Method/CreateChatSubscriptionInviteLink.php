@@ -14,7 +14,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'subscription_period' and
  * 'subscription_price' fields, then chain optional builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#createchatsubscriptioninvitelink
+ * @see https://core.telegram.org/bots/api#createchatsubscriptioninvitelink
  */
 class CreateChatSubscriptionInviteLink extends Method implements MethodInterface {
     /**
@@ -38,10 +38,12 @@ class CreateChatSubscriptionInviteLink extends Method implements MethodInterface
 
     /**
      * Unique identifier for the target channel chat or username of the target channel in the format
+     *
      * @username
      *
      * @param int|string $chatId Unique identifier for the target channel chat or username of the
      *   target channel in the format @username
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -53,6 +55,7 @@ class CreateChatSubscriptionInviteLink extends Method implements MethodInterface
      * Invite link name; 0-32 characters
      *
      * @param string $name Invite link name; 0-32 characters
+     *
      * @return $this
      */
     public function name(string $name): static {

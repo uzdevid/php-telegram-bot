@@ -7,7 +7,7 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Type BotCommandScopeAllPrivateChats
  *
- * @link https://core.telegram.org/bots/api#BotCommandScopeAllPrivateChats
+ * @see https://core.telegram.org/bots/api#BotCommandScopeAllPrivateChats
  *
  * This object represents a bot command.
  */

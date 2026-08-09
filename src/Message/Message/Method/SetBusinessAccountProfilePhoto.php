@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'business_connection_id' and 'photo'
  * fields, then chain optional builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#setbusinessaccountprofilephoto
+ * @see https://core.telegram.org/bots/api#setbusinessaccountprofilephoto
  */
 class SetBusinessAccountProfilePhoto extends Method implements MethodInterface {
     /**
@@ -39,6 +39,7 @@ class SetBusinessAccountProfilePhoto extends Method implements MethodInterface {
      * @param bool $isPublic Pass True to set the public photo, which will be visible even if the
      *   main photo is hidden by the business account's privacy settings. An account can have only
      *   one public photo.
+     *
      * @return $this
      */
     public function isPublic(bool $isPublic = true): static {

@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'message_id' field, then chain optional
  * builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#deletemessagereaction
+ * @see https://core.telegram.org/bots/api#deletemessagereaction
  */
 class DeleteMessageReaction extends Method implements MethodInterface {
     /**
@@ -31,10 +31,12 @@ class DeleteMessageReaction extends Method implements MethodInterface {
 
     /**
      * Unique identifier for the target chat or username of the target supergroup in the format
+     *
      * @username
      *
      * @param int|string $chatId Unique identifier for the target chat or username of the target
      *   supergroup in the format @username
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -47,6 +49,7 @@ class DeleteMessageReaction extends Method implements MethodInterface {
      *
      * @param int $userId Identifier of the user whose reaction will be removed, if the reaction was
      *   added by a user
+     *
      * @return $this
      */
     public function userId(int $userId): static {
@@ -59,6 +62,7 @@ class DeleteMessageReaction extends Method implements MethodInterface {
      *
      * @param int $actorChatId Identifier of the chat whose reaction will be removed, if the
      *   reaction was added by a chat
+     *
      * @return $this
      */
     public function actorChatId(int $actorChatId): static {

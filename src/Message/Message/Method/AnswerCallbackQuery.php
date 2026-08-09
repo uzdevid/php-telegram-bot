@@ -13,7 +13,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'callback_query_id' field, then chain
  * optional builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#answercallbackquery
+ * @see https://core.telegram.org/bots/api#answercallbackquery
  */
 class AnswerCallbackQuery extends Method implements MethodInterface {
     /**
@@ -36,6 +36,7 @@ class AnswerCallbackQuery extends Method implements MethodInterface {
      *
      * @param string $text Text of the notification. If not specified, nothing will be shown to the
      *   user, 0-200 characters.
+     *
      * @return $this
      */
     public function text(string $text): static {
@@ -49,6 +50,7 @@ class AnswerCallbackQuery extends Method implements MethodInterface {
      *
      * @param bool $showAlert If True , an alert will be shown by the client instead of a
      *   notification at the top of the chat screen. Defaults to False .
+     *
      * @return $this
      */
     public function showAlert(bool $showAlert = true): static {
@@ -66,6 +68,7 @@ class AnswerCallbackQuery extends Method implements MethodInterface {
      *   and accepted the conditions via @BotFather , specify the URL that opens your game - note
      *   that this will only work if the query comes from a callback_game button. Otherwise, you may
      *   use links like t.me/your_bot?start=XXXX that open your bot with a parameter.
+     *
      * @return $this
      */
     public function url(string $url): static {
@@ -80,6 +83,7 @@ class AnswerCallbackQuery extends Method implements MethodInterface {
      * @param int $cacheTime The maximum amount of time in seconds that the result of the callback
      *   query may be cached client-side. Telegram apps will support caching starting in version
      *   3.14. Defaults to 0.
+     *
      * @return $this
      */
     public function cacheTime(int $cacheTime): static {

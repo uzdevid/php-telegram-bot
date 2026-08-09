@@ -11,7 +11,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'user_id' field, then chain optional
  * builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#getuserprofileaudios
+ * @see https://core.telegram.org/bots/api#getuserprofileaudios
  */
 class GetUserProfileAudios extends Method implements MethodInterface {
     /**
@@ -33,6 +33,7 @@ class GetUserProfileAudios extends Method implements MethodInterface {
      *
      * @param int $offset Sequential number of the first audio to be returned. By default, all
      *   audios are returned.
+     *
      * @return $this
      */
     public function offset(int $offset): static {
@@ -46,6 +47,7 @@ class GetUserProfileAudios extends Method implements MethodInterface {
      *
      * @param int $limit Limits the number of audios to be retrieved. Values between 1-100 are
      *   accepted. Defaults to 100.
+     *
      * @return $this
      */
     public function limit(int $limit): static {

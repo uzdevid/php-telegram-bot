@@ -11,7 +11,7 @@ class LabeledPrice extends Type {
      */
     public function __construct(
         public string $label,
-        public int    $amount
+        public int $amount,
     ) {
     }
 }

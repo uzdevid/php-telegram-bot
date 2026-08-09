@@ -24,10 +24,18 @@ class ReplyKeyboardRemove implements ReplyMarkupInterface {
     }
 
     /**
-     * @return string
      * @throws JsonException
+     *
+     * @return string
      */
     public function __toString(): string {
-        return json_encode($this->attributes, JSON_THROW_ON_ERROR | JSON_UNESCAPED_UNICODE);
+        return json_encode($this->attributes, \JSON_THROW_ON_ERROR | \JSON_UNESCAPED_UNICODE);
+    }
+
+    /**
+     * @return array
+     */
+    public function jsonSerialize(): array {
+        return $this->attributes;
     }
 }

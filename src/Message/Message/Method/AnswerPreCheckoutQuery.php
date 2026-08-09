@@ -14,7 +14,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'pre_checkout_query_id' and 'ok' fields,
  * then chain optional builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#answerprecheckoutquery
+ * @see https://core.telegram.org/bots/api#answerprecheckoutquery
  */
 class AnswerPreCheckoutQuery extends Method implements MethodInterface {
     /**
@@ -46,6 +46,7 @@ class AnswerPreCheckoutQuery extends Method implements MethodInterface {
      *   just bought the last of our amazing black T-shirts while you were busy filling out your
      *   payment details. Please choose a different color or garment!"). Telegram will display this
      *   message to the user.
+     *
      * @return $this
      */
     public function errorMessage(string $errorMessage): static {

@@ -11,7 +11,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'user_id', 'month_count', and
  * 'star_count' fields, then chain optional builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#giftpremiumsubscription
+ * @see https://core.telegram.org/bots/api#giftpremiumsubscription
  */
 class GiftPremiumSubscription extends Method implements MethodInterface {
     /**
@@ -42,6 +42,7 @@ class GiftPremiumSubscription extends Method implements MethodInterface {
      *
      * @param string $text Text that will be shown along with the service message about the
      *   subscription; 0-128 characters
+     *
      * @return $this
      */
     public function text(string $text): static {
@@ -57,6 +58,7 @@ class GiftPremiumSubscription extends Method implements MethodInterface {
      * @param string $textParseMode Mode for parsing entities in the text. See formatting options
      *   for more details. Entities other than “bold”, “italic”, “underline”, “strikethrough”,
      *   “spoiler”, “custom_emoji”, and “date_time” are ignored.
+     *
      * @return $this
      */
     public function textParseMode(string $textParseMode): static {
@@ -73,6 +75,7 @@ class GiftPremiumSubscription extends Method implements MethodInterface {
      *   text. It can be specified instead of text_parse_mode . Entities other than “bold”,
      *   “italic”, “underline”, “strikethrough”, “spoiler”, “custom_emoji”, and “date_time” are
      *   ignored.
+     *
      * @return $this
      */
     public function textEntities(array $textEntities): static {
@@ -90,6 +93,7 @@ class GiftPremiumSubscription extends Method implements MethodInterface {
      *   special entities that appear in the gift text. It can be specified instead of
      *   text_parse_mode . Entities other than “bold”, “italic”, “underline”, “strikethrough”,
      *   “spoiler”, “custom_emoji”, and “date_time” are ignored.
+     *
      * @return $this
      */
     public function addTextEntity(mixed $textEntity): static {

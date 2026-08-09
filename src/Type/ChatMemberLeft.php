@@ -7,7 +7,7 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Type ChatMemberLeft
  *
- * @link https://core.telegram.org/bots/api#chatmemberleft
+ * @see https://core.telegram.org/bots/api#chatmemberleft
  *
  * Represents a chat member that isn't currently a member of the chat, but may join it themselves.
  */

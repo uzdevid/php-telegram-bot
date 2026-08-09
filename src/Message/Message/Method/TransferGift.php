@@ -14,7 +14,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * 'owned_gift_id', and 'new_owner_chat_id' fields, then chain optional builder methods before
  * dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#transfergift
+ * @see https://core.telegram.org/bots/api#transfergift
  */
 class TransferGift extends Method implements MethodInterface {
     /**
@@ -44,6 +44,7 @@ class TransferGift extends Method implements MethodInterface {
      * @param int $starCount The amount of Telegram Stars that will be paid for the transfer from
      *   the business account balance. If positive, then the can_transfer_stars business bot right
      *   is required.
+     *
      * @return $this
      */
     public function starCount(int $starCount): static {

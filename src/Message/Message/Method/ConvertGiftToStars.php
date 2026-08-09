@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'business_connection_id' and
  * 'owned_gift_id' fields and dispatch the request directly.
  *
- * @link https://core.telegram.org/bots/api#convertgifttostars
+ * @see https://core.telegram.org/bots/api#convertgifttostars
  */
 class ConvertGiftToStars extends Method implements MethodInterface {
     /**

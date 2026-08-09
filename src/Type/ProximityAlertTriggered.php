@@ -7,7 +7,7 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Type ProximityAlertTriggered
  *
- * @link https://core.telegram.org/bots/api#proximityalerttriggered
+ * @see https://core.telegram.org/bots/api#proximityalerttriggered
  *
  * This object represents the content of a service message, sent whenever a user in the chat triggers a proximity alert set by another user.
  */

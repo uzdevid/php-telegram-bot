@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'invite_link' field, then chain optional
  * builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#editchatsubscriptioninvitelink
+ * @see https://core.telegram.org/bots/api#editchatsubscriptioninvitelink
  */
 class EditChatSubscriptionInviteLink extends Method implements MethodInterface {
     /**
@@ -32,10 +32,12 @@ class EditChatSubscriptionInviteLink extends Method implements MethodInterface {
 
     /**
      * Unique identifier for the target chat or username of the target channel in the format
+     *
      * @username
      *
      * @param int|string $chatId Unique identifier for the target chat or username of the target
      *   channel in the format @username
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -47,6 +49,7 @@ class EditChatSubscriptionInviteLink extends Method implements MethodInterface {
      * Invite link name; 0-32 characters
      *
      * @param string $name Invite link name; 0-32 characters
+     *
      * @return $this
      */
     public function name(string $name): static {

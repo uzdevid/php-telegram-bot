@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'from_chat_id' and 'message_id' fields,
  * then chain optional builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#forwardmessage
+ * @see https://core.telegram.org/bots/api#forwardmessage
  */
 class ForwardMessage extends Method implements MethodInterface {
     /**
@@ -39,6 +39,7 @@ class ForwardMessage extends Method implements MethodInterface {
      *
      * @param int|string $chatId Unique identifier for the target chat or username of the target
      *   bot, supergroup or channel in the format @username
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -52,6 +53,7 @@ class ForwardMessage extends Method implements MethodInterface {
      *
      * @param int $messageThreadId Unique identifier for the target message thread (topic) of a
      *   forum; for forum supergroups and private chats of bots with forum topic mode enabled only
+     *
      * @return $this
      */
     public function messageThreadId(int $messageThreadId): static {
@@ -65,6 +67,7 @@ class ForwardMessage extends Method implements MethodInterface {
      *
      * @param int $directMessagesTopicId Identifier of the direct messages topic to which the
      *   message will be forwarded; required if the message is forwarded to a direct messages chat
+     *
      * @return $this
      */
     public function directMessagesTopicId(int $directMessagesTopicId): static {
@@ -76,6 +79,7 @@ class ForwardMessage extends Method implements MethodInterface {
      * New start timestamp for the forwarded video in the message
      *
      * @param int $videoStartTimestamp New start timestamp for the forwarded video in the message
+     *
      * @return $this
      */
     public function videoStartTimestamp(int $videoStartTimestamp): static {
@@ -88,6 +92,7 @@ class ForwardMessage extends Method implements MethodInterface {
      *
      * @param bool $disableNotification Sends the message silently . Users will receive a
      *   notification with no sound.
+     *
      * @return $this
      */
     public function disableNotification(bool $disableNotification): static {
@@ -100,6 +105,7 @@ class ForwardMessage extends Method implements MethodInterface {
      *
      * @param bool $protectContent Protects the contents of the forwarded message from forwarding
      *   and saving
+     *
      * @return $this
      */
     public function protectContent(bool $protectContent): static {
@@ -113,6 +119,7 @@ class ForwardMessage extends Method implements MethodInterface {
      *
      * @param string $messageEffectId Unique identifier of the message effect to be added to the
      *   message; only available when forwarding to private chats
+     *
      * @return $this
      */
     public function messageEffectId(string $messageEffectId): static {
@@ -126,6 +133,7 @@ class ForwardMessage extends Method implements MethodInterface {
      *
      * @param mixed $suggestedPostParameters A JSON-serialized object containing the parameters of
      *   the suggested post to send; for direct messages chats only
+     *
      * @return $this
      */
     public function suggestedPostParameters(mixed $suggestedPostParameters): static {

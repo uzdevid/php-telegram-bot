@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace UzDevid\Telegram\Bot;
 
@@ -23,44 +25,73 @@ final class Server implements ServerInterface {
     private bool $isHandled = false;
 
     /**
+     * Cache of already-hydrated Update objects for the current payload, keyed by class
+     * name. Avoids re-running the Hydrator (reflection + attribute resolution) every time
+     * a chained onMessage()/onCallbackQuery()/onInlineQuery() call is made for the same
+     * update type (a common pattern when routing multiple handlers per update).
+     *
+     * @var array<class-string, object>
+     */
+    private array $typeCache = [];
+
+    /**
      * @param ContainerInterface $container
      * @param Hydrator $hydrator
      */
     public function __construct(
         private readonly ContainerInterface $container,
-        private readonly Hydrator           $hydrator
+        private readonly Hydrator $hydrator,
     ) {
     }
 
     /**
      * @param array $payload
+     *
      * @return ServerInterface
      */
     public function withPayload(array $payload): ServerInterface {
         $new = clone $this;
         $new->payload = Helper::reformat($payload);
+        $new->typeCache = [];
         return $new;
     }
 
     /**
+     * @template T of object
+     *
+     * @param class-string<T> $class
+     *
+     * @return T
+     */
+    private function hydrate(string $class): object {
+        return $this->typeCache[$class] ??= $this->hydrator->create($class, $this->payload);
+    }
+
+    /**
      * @param class-string<MessageHandlerInterface> $handlerClass
-     * @return ServerInterface
+     *
      * @throws NotSupportedException
      * @throws ContainerExceptionInterface
      * @throws NotFoundExceptionInterface
+     *
+     * @return ServerInterface
      */
     public function onMessage(string $handlerClass): ServerInterface {
-        if ($this->isHandled) return $this;
-
-        if (!$this->match('message')) return $this;
-
-        $type = $this->hydrator->create(MessageUpdate::class, $this->payload);
-
-        if (is_subclass_of($handlerClass, FilterMessageTypeInterface::class) && !$type->is(call_user_func([$handlerClass, 'allowedType']))) {
+        if ($this->isHandled) {
             return $this;
         }
 
-        if (is_subclass_of($handlerClass, FilterMessageTypesInterface::class) && !$type->isOneOf(call_user_func([$handlerClass, 'allowedTypes']))) {
+        if (!$this->match('message')) {
+            return $this;
+        }
+
+        $type = $this->hydrate(MessageUpdate::class);
+
+        if (is_subclass_of($handlerClass, FilterMessageTypeInterface::class) && !$type->is(\call_user_func([$handlerClass, 'allowedType']))) {
+            return $this;
+        }
+
+        if (is_subclass_of($handlerClass, FilterMessageTypesInterface::class) && !$type->isOneOf(\call_user_func([$handlerClass, 'allowedTypes']))) {
             return $this;
         }
 
@@ -80,16 +111,22 @@ final class Server implements ServerInterface {
 
     /**
      * @param class-string<CallbackQueryHandlerInterface> $handlerClass
-     * @return ServerInterface
+     *
      * @throws ContainerExceptionInterface
      * @throws NotFoundExceptionInterface
+     *
+     * @return ServerInterface
      */
     public function onCallbackQuery(string $handlerClass): ServerInterface {
-        if ($this->isHandled) return $this;
+        if ($this->isHandled) {
+            return $this;
+        }
 
-        if (!$this->match('callbackQuery')) return $this;
+        if (!$this->match('callbackQuery')) {
+            return $this;
+        }
 
-        $type = $this->hydrator->create(CallbackQueryUpdate::class, $this->payload);
+        $type = $this->hydrate(CallbackQueryUpdate::class);
 
         /** @var CallbackQueryHandlerInterface $handler */
         $handler = $this->container->get($handlerClass);
@@ -107,16 +144,22 @@ final class Server implements ServerInterface {
 
     /**
      * @param class-string<InlineQueryHandlerInterface> $handlerClass
-     * @return ServerInterface
+     *
      * @throws ContainerExceptionInterface
      * @throws NotFoundExceptionInterface
+     *
+     * @return ServerInterface
      */
     public function onInlineQuery(string $handlerClass): ServerInterface {
-        if ($this->isHandled) return $this;
+        if ($this->isHandled) {
+            return $this;
+        }
 
-        if (!$this->match('inlineQuery')) return $this;
+        if (!$this->match('inlineQuery')) {
+            return $this;
+        }
 
-        $type = $this->hydrator->create(InlineQueryUpdate::class, $this->payload);
+        $type = $this->hydrate(InlineQueryUpdate::class);
 
         /** @var InlineQueryHandlerInterface $handler */
         $handler = $this->container->get($handlerClass);
@@ -134,19 +177,25 @@ final class Server implements ServerInterface {
 
     /**
      * @param class-string<RequestInterface> $handlerClass
-     * @return ServerInterface
+     *
      * @throws ContainerExceptionInterface
      * @throws NotFoundExceptionInterface
+     *
+     * @return ServerInterface
      */
     public function onRequest(string $handlerClass): ServerInterface {
-        if ($this->isHandled) return $this;
+        if ($this->isHandled) {
+            return $this;
+        }
 
         /** @var RequestInterface $handler */
         $handler = $this->container->get($handlerClass);
 
         $name = $handler->getName();
 
-        if (!$this->match($name)) return $this;
+        if (!$this->match($name)) {
+            return $this;
+        }
 
         $handler->buildRequest($this->payload);
 
@@ -159,9 +208,10 @@ final class Server implements ServerInterface {
 
     /**
      * @param string $updateName
+     *
      * @return bool
      */
     private function match(string $updateName): bool {
-        return array_key_exists($updateName, $this->payload);
+        return \array_key_exists($updateName, $this->payload);
     }
 }

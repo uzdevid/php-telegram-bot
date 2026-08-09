@@ -41,6 +41,7 @@ class InlineButton implements ButtonInterface {
 
     /**
      * @param WebAppInfo $webAppInfo
+     *
      * @return $this
      */
     public function webApp(WebAppInfo $webAppInfo): static {

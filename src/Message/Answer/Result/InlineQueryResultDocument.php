@@ -21,6 +21,7 @@ class InlineQueryResultDocument extends AnswerType implements AnswerInterface {
 
     /**
      * @param string $title
+     *
      * @return $this
      */
     public function title(string $title): static {
@@ -30,6 +31,7 @@ class InlineQueryResultDocument extends AnswerType implements AnswerInterface {
 
     /**
      * @param string $caption
+     *
      * @return $this
      */
     public function caption(string $caption): static {
@@ -39,6 +41,7 @@ class InlineQueryResultDocument extends AnswerType implements AnswerInterface {
 
     /**
      * @param array $content
+     *
      * @return $this
      */
     public function inputMessageContent(array $content): static {
@@ -48,6 +51,7 @@ class InlineQueryResultDocument extends AnswerType implements AnswerInterface {
 
     /**
      * @param string $mode
+     *
      * @return $this
      */
     public function parseMode(string $mode): static {
@@ -57,6 +61,7 @@ class InlineQueryResultDocument extends AnswerType implements AnswerInterface {
 
     /**
      * @param string $type
+     *
      * @return $this
      */
     public function mimeType(string $type): static {
@@ -72,7 +77,7 @@ class InlineQueryResultDocument extends AnswerType implements AnswerInterface {
      * @return static
      */
     public function addReplyMarkup(ReplyMarkupInterface $replyMarkup): static {
-        $this->addAttribute('reply_markup', (string)$replyMarkup);
+        $this->addAttribute('reply_markup', $replyMarkup);
         return $this;
     }
 }

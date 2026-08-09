@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'custom_emoji_ids' field and dispatch the
  * request directly.
  *
- * @link https://core.telegram.org/bots/api#getcustomemojistickers
+ * @see https://core.telegram.org/bots/api#getcustomemojistickers
  */
 class GetCustomEmojiStickers extends Method implements MethodInterface {
     /**

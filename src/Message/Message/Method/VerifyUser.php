@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'user_id' field, then chain optional
  * builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#verifyuser
+ * @see https://core.telegram.org/bots/api#verifyuser
  */
 class VerifyUser extends Method implements MethodInterface {
     /**
@@ -36,6 +36,7 @@ class VerifyUser extends Method implements MethodInterface {
      * @param string $customDescription Custom description for the verification; 0-70 characters.
      *   Must be empty if the organization isn't allowed to provide a custom verification
      *   description.
+     *
      * @return $this
      */
     public function customDescription(string $customDescription): static {

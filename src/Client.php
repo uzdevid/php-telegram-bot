@@ -12,7 +12,6 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
 /**
  * Class Bot
  *
- * @package UzDevid\Telegram\Bot
  */
 readonly class Client implements ClientInterface {
     private int $chatId;
@@ -24,8 +23,8 @@ readonly class Client implements ClientInterface {
      * @param HttpClientInterface $client
      */
     public function __construct(
-        private ClientConfig        $config,
-        private HttpClientInterface $client
+        private ClientConfig $config,
+        private HttpClientInterface $client,
     ) {
     }
 
@@ -48,9 +47,10 @@ readonly class Client implements ClientInterface {
     }
 
     /**
-     * @return mixed
      * @throws GuzzleException
      * @throws JsonException
+     *
+     * @return mixed
      */
     public function send(): mixed {
         $params = [];
@@ -63,9 +63,10 @@ readonly class Client implements ClientInterface {
     }
 
     /**
-     * @return mixed
      * @throws GuzzleException
      * @throws JsonException
+     *
+     * @return mixed
      */
     public function edit(): mixed {
         $params = [];
@@ -88,7 +89,7 @@ readonly class Client implements ClientInterface {
     public function sendRequest(array $params) {
         $payload = array_merge($params, $this->method->getPayload());
 
-        $url = sprintf($this->config->getEndpoint(), $this->config->getToken(), $this->method->methodName());
+        $url = \sprintf($this->config->getEndpoint(), $this->config->getToken(), $this->method->methodName());
 
         $response = $this->client->post($url, [
             'json' => $payload,
@@ -97,7 +98,7 @@ readonly class Client implements ClientInterface {
             ],
         ]);
 
-        $data = json_decode($response->getBody()->getContents(), true, 512, JSON_THROW_ON_ERROR);
+        $data = json_decode($response->getBody()->getContents(), true, 512, \JSON_THROW_ON_ERROR);
 
         $response = Helper::reformat($data);
 

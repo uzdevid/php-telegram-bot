@@ -14,7 +14,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'user_id' field, then chain optional
  * builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#banchatmember
+ * @see https://core.telegram.org/bots/api#banchatmember
  */
 class BanChatMember extends Method implements MethodInterface {
     /**
@@ -37,6 +37,7 @@ class BanChatMember extends Method implements MethodInterface {
      *
      * @param int|string $chatId Unique identifier for the target group or username of the target
      *   supergroup or channel in the format @username
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -52,6 +53,7 @@ class BanChatMember extends Method implements MethodInterface {
      * @param int $untilDate Date when the user will be unbanned; Unix time. If user is banned for
      *   more than 366 days or less than 30 seconds from the current time they are considered to be
      *   banned forever. Applied for supergroups and channels only.
+     *
      * @return $this
      */
     public function untilDate(int $untilDate): static {
@@ -67,6 +69,7 @@ class BanChatMember extends Method implements MethodInterface {
      * @param bool $revokeMessages Pass True to delete all messages from the chat for the user that
      *   is being removed. If False , the user will be able to see messages in the group that were
      *   sent before the user was removed. Always True for supergroups and channels.
+     *
      * @return $this
      */
     public function revokeMessages(bool $revokeMessages = true): static {

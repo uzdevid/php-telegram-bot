@@ -10,6 +10,7 @@ trait Credentials {
 
     /**
      * @param string $url
+     *
      * @return $this
      */
     public function endpoint(string $url): static {
@@ -19,6 +20,7 @@ trait Credentials {
 
     /**
      * @param string $token
+     *
      * @return $this
      */
     public function token(string $token): static {
@@ -27,7 +29,8 @@ trait Credentials {
     }
 
     /**
-     * @param string|int $chatId
+     * @param int|string $chatId
+     *
      * @return $this
      */
     public function chatId(string|int $chatId): static {
@@ -37,6 +40,7 @@ trait Credentials {
 
     /**
      * @param string $username
+     *
      * @return $this
      */
     public function username(string $username): static {

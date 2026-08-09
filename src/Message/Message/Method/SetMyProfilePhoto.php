@@ -11,7 +11,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'photo' field and dispatch the request
  * directly.
  *
- * @link https://core.telegram.org/bots/api#setmyprofilephoto
+ * @see https://core.telegram.org/bots/api#setmyprofilephoto
  */
 class SetMyProfilePhoto extends Method implements MethodInterface {
     /**

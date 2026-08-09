@@ -7,7 +7,7 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Type ChatLocation
  *
- * @link https://core.telegram.org/bots/api#chatlocation
+ * @see https://core.telegram.org/bots/api#chatlocation
  *
  * Represents a location to which a chat is connected.
  */

@@ -13,7 +13,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method, chain any optional builder methods, and then dispatch the
  * request.
  *
- * @link https://core.telegram.org/bots/api#setmydefaultadministratorrights
+ * @see https://core.telegram.org/bots/api#setmydefaultadministratorrights
  */
 class SetMyDefaultAdministratorRights extends Method implements MethodInterface {
     public function methodName(): string {
@@ -26,6 +26,7 @@ class SetMyDefaultAdministratorRights extends Method implements MethodInterface 
      *
      * @param mixed $rights A JSON-serialized object describing new default administrator rights. If
      *   not specified, the default administrator rights will be cleared.
+     *
      * @return $this
      */
     public function rights(mixed $rights): static {
@@ -40,6 +41,7 @@ class SetMyDefaultAdministratorRights extends Method implements MethodInterface 
      * @param bool $forChannels Pass True to change the default administrator rights of the bot in
      *   channels. Otherwise, the default administrator rights of the bot for groups and supergroups
      *   will be changed.
+     *
      * @return $this
      */
     public function forChannels(bool $forChannels = true): static {

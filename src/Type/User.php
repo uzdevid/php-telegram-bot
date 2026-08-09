@@ -7,13 +7,11 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Type User
  *
- * @link https://core.telegram.org/bots/api#user
+ * @see https://core.telegram.org/bots/api#user
  *
  * This object represents a Telegram user or bot.
  */
 class User extends Type {
-
-
     public int $id;
     public bool $isBot;
     public string $firstName;

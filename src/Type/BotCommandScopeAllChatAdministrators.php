@@ -7,7 +7,7 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Type BotCommandScopeAllChatAdministrators
  *
- * @link https://core.telegram.org/bots/api#BotCommandScopeAllChatAdministrators
+ * @see https://core.telegram.org/bots/api#BotCommandScopeAllChatAdministrators
  *
  * This object represents a bot command.
  */

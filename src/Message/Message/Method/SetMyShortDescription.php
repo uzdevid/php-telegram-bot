@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method, chain any optional builder methods, and then dispatch the
  * request.
  *
- * @link https://core.telegram.org/bots/api#setmyshortdescription
+ * @see https://core.telegram.org/bots/api#setmyshortdescription
  */
 class SetMyShortDescription extends Method implements MethodInterface {
     public function methodName(): string {
@@ -25,6 +25,7 @@ class SetMyShortDescription extends Method implements MethodInterface {
      *
      * @param string $shortDescription New short description for the bot; 0-120 characters. Pass an
      *   empty string to remove the dedicated short description for the given language.
+     *
      * @return $this
      */
     public function shortDescription(string $shortDescription): static {
@@ -39,6 +40,7 @@ class SetMyShortDescription extends Method implements MethodInterface {
      * @param string $languageCode A two-letter ISO 639-1 language code. If empty, the short
      *   description will be applied to all users for whose language there is no dedicated short
      *   description.
+     *
      * @return $this
      */
     public function languageCode(string $languageCode): static {

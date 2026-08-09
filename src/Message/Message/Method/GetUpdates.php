@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method, chain any optional builder methods, and then dispatch the
  * request.
  *
- * @link https://core.telegram.org/bots/api#getupdates
+ * @see https://core.telegram.org/bots/api#getupdates
  */
 class GetUpdates extends Method implements MethodInterface {
     public function methodName(): string {
@@ -33,6 +33,7 @@ class GetUpdates extends Method implements MethodInterface {
      *   confirmed as soon as getUpdates is called with an offset higher than its update_id . The
      *   negative offset can be specified to retrieve updates starting from -offset update from the
      *   end of the updates queue. All previous updates will be forgotten.
+     *
      * @return $this
      */
     public function offset(int $offset): static {
@@ -46,6 +47,7 @@ class GetUpdates extends Method implements MethodInterface {
      *
      * @param int $limit Limits the number of updates to be retrieved. Values between 1-100 are
      *   accepted. Defaults to 100.
+     *
      * @return $this
      */
     public function limit(int $limit): static {
@@ -59,6 +61,7 @@ class GetUpdates extends Method implements MethodInterface {
      *
      * @param int $timeout Timeout in seconds for long polling. Defaults to 0, i.e. usual short
      *   polling. Should be positive, short polling should be used for testing purposes only.
+     *
      * @return $this
      */
     public function timeout(int $timeout): static {
@@ -82,6 +85,7 @@ class GetUpdates extends Method implements MethodInterface {
      *   and message_reaction_count (default). If not specified, the previous setting will be used.
      *   Please note that this parameter doesn't affect updates created before the call to
      *   getUpdates, so unwanted updates may be received for a short period of time.
+     *
      * @return $this
      */
     public function allowedUpdates(array $allowedUpdates): static {
@@ -106,6 +110,7 @@ class GetUpdates extends Method implements MethodInterface {
      *   specified, the previous setting will be used. Please note that this parameter doesn't
      *   affect updates created before the call to getUpdates, so unwanted updates may be received
      *   for a short period of time.
+     *
      * @return $this
      */
     public function addAllowedUpdate(string $allowedUpdate): static {

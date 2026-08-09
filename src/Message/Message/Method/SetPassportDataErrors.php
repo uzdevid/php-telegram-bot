@@ -13,7 +13,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'user_id' and 'errors' fields and
  * dispatch the request directly.
  *
- * @link https://core.telegram.org/bots/api#setpassportdataerrors
+ * @see https://core.telegram.org/bots/api#setpassportdataerrors
  */
 class SetPassportDataErrors extends Method implements MethodInterface {
     /**

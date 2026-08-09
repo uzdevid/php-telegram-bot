@@ -7,12 +7,11 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Type Poll
  *
- * @link https://core.telegram.org/bots/api#poll
+ * @see https://core.telegram.org/bots/api#poll
  *
  * This object contains information about a poll.
  */
 class Poll extends Type {
-
     public string $id;
     public string $question;
     public PollOption $options;

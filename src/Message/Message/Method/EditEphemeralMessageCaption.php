@@ -15,7 +15,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * 'ephemeral_message_id' fields, then chain optional builder methods before dispatching the
  * request.
  *
- * @link https://core.telegram.org/bots/api#editephemeralmessagecaption
+ * @see https://core.telegram.org/bots/api#editephemeralmessagecaption
  */
 class EditEphemeralMessageCaption extends Method implements MethodInterface {
     /**
@@ -37,10 +37,12 @@ class EditEphemeralMessageCaption extends Method implements MethodInterface {
 
     /**
      * Unique identifier for the target chat or username of the target supergroup in the format
+     *
      * @username
      *
      * @param int|string $chatId Unique identifier for the target chat or username of the target
      *   supergroup in the format @username
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -52,6 +54,7 @@ class EditEphemeralMessageCaption extends Method implements MethodInterface {
      * New caption of the message, 0-1024 characters after entities parsing
      *
      * @param string $caption New caption of the message, 0-1024 characters after entities parsing
+     *
      * @return $this
      */
     public function caption(string $caption): static {
@@ -64,6 +67,7 @@ class EditEphemeralMessageCaption extends Method implements MethodInterface {
      *
      * @param string $parseMode Mode for parsing entities in the message caption. See formatting
      *   options for more details.
+     *
      * @return $this
      */
     public function parseMode(string $parseMode): static {
@@ -77,6 +81,7 @@ class EditEphemeralMessageCaption extends Method implements MethodInterface {
      *
      * @param array $captionEntities A JSON-serialized list of special entities that appear in the
      *   caption, which can be specified instead of parse_mode
+     *
      * @return $this
      */
     public function captionEntities(array $captionEntities): static {
@@ -91,6 +96,7 @@ class EditEphemeralMessageCaption extends Method implements MethodInterface {
      * @param MessageEntityInterface $captionEntity Adds one item to the caption_entities list. A
      *   JSON-serialized list of special entities that appear in the caption, which can be specified
      *   instead of parse_mode
+     *
      * @return $this
      */
     public function addCaptionEntity(MessageEntityInterface $captionEntity): static {
@@ -102,6 +108,7 @@ class EditEphemeralMessageCaption extends Method implements MethodInterface {
      * A JSON-serialized object for an inline keyboard
      *
      * @param mixed $replyMarkup A JSON-serialized object for an inline keyboard
+     *
      * @return $this
      */
     public function replyMarkup(mixed $replyMarkup): static {

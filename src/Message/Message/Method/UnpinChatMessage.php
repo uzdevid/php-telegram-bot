@@ -14,7 +14,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method, chain any optional builder methods, and then dispatch the
  * request.
  *
- * @link https://core.telegram.org/bots/api#unpinchatmessage
+ * @see https://core.telegram.org/bots/api#unpinchatmessage
  */
 class UnpinChatMessage extends Method implements MethodInterface {
     public function methodName(): string {
@@ -26,6 +26,7 @@ class UnpinChatMessage extends Method implements MethodInterface {
      *
      * @param string $businessConnectionId Unique identifier of the business connection on behalf of
      *   which the message will be unpinned
+     *
      * @return $this
      */
     public function businessConnectionId(string $businessConnectionId): static {
@@ -35,10 +36,12 @@ class UnpinChatMessage extends Method implements MethodInterface {
 
     /**
      * Unique identifier for the target chat or username of the target channel in the format
+     *
      * @username
      *
      * @param int|string $chatId Unique identifier for the target chat or username of the target
      *   channel in the format @username
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -53,6 +56,7 @@ class UnpinChatMessage extends Method implements MethodInterface {
      * @param int $messageId Identifier of the message to unpin. Required if business_connection_id
      *   is specified. If not specified, the most recent pinned message (by sending date) will be
      *   unpinned.
+     *
      * @return $this
      */
     public function messageId(int $messageId): static {

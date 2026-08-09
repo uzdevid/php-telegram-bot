@@ -17,7 +17,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'from_chat_id' and 'message_ids' fields,
  * then chain optional builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#copymessages
+ * @see https://core.telegram.org/bots/api#copymessages
  */
 class CopyMessages extends Method implements MethodInterface {
     /**
@@ -45,6 +45,7 @@ class CopyMessages extends Method implements MethodInterface {
      *
      * @param int|string $chatId Unique identifier for the target chat or username of the target
      *   bot, supergroup or channel in the format @username
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -58,6 +59,7 @@ class CopyMessages extends Method implements MethodInterface {
      *
      * @param int $messageThreadId Unique identifier for the target message thread (topic) of a
      *   forum; for forum supergroups and private chats of bots with forum topic mode enabled only
+     *
      * @return $this
      */
     public function messageThreadId(int $messageThreadId): static {
@@ -71,6 +73,7 @@ class CopyMessages extends Method implements MethodInterface {
      *
      * @param int $directMessagesTopicId Identifier of the direct messages topic to which the
      *   messages will be sent; required if the messages are sent to a direct messages chat
+     *
      * @return $this
      */
     public function directMessagesTopicId(int $directMessagesTopicId): static {
@@ -83,6 +86,7 @@ class CopyMessages extends Method implements MethodInterface {
      *
      * @param bool $disableNotification Sends the messages silently . Users will receive a
      *   notification with no sound.
+     *
      * @return $this
      */
     public function disableNotification(bool $disableNotification): static {
@@ -95,6 +99,7 @@ class CopyMessages extends Method implements MethodInterface {
      *
      * @param bool $protectContent Protects the contents of the sent messages from forwarding and
      *   saving
+     *
      * @return $this
      */
     public function protectContent(bool $protectContent): static {
@@ -106,6 +111,7 @@ class CopyMessages extends Method implements MethodInterface {
      * Pass True to copy the messages without their captions
      *
      * @param bool $removeCaption Pass True to copy the messages without their captions
+     *
      * @return $this
      */
     public function removeCaption(bool $removeCaption = true): static {

@@ -15,7 +15,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * 'from_story_id', and 'active_period' fields, then chain optional builder methods before
  * dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#repoststory
+ * @see https://core.telegram.org/bots/api#repoststory
  */
 class RepostStory extends Method implements MethodInterface {
     /**
@@ -45,6 +45,7 @@ class RepostStory extends Method implements MethodInterface {
      * Pass True to keep the story accessible after it expires
      *
      * @param bool $postToChatPage Pass True to keep the story accessible after it expires
+     *
      * @return $this
      */
     public function postToChatPage(bool $postToChatPage = true): static {
@@ -57,6 +58,7 @@ class RepostStory extends Method implements MethodInterface {
      *
      * @param bool $protectContent Pass True if the content of the story must be protected from
      *   forwarding and screenshotting
+     *
      * @return $this
      */
     public function protectContent(bool $protectContent = true): static {

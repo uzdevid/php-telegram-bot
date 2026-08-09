@@ -16,6 +16,7 @@ class PhotoResult extends AnswerType implements AnswerInterface {
 
     /**
      * @param string $url
+     *
      * @return $this
      */
     public function photoUrl(string $url): static {
@@ -25,6 +26,7 @@ class PhotoResult extends AnswerType implements AnswerInterface {
 
     /**
      * @param string $url
+     *
      * @return $this
      */
     public function thumbnailUrl(string $url): static {

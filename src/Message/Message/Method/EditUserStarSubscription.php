@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'user_id', 'telegram_payment_charge_id',
  * and 'is_canceled' fields and dispatch the request directly.
  *
- * @link https://core.telegram.org/bots/api#edituserstarsubscription
+ * @see https://core.telegram.org/bots/api#edituserstarsubscription
  */
 class EditUserStarSubscription extends Method implements MethodInterface {
     /**

@@ -7,7 +7,7 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Type Video
  *
- * @link https://core.telegram.org/bots/api#video
+ * @see https://core.telegram.org/bots/api#video
  *
  * This object represents a video file.
  */

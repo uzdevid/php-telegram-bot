@@ -13,7 +13,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'message_id' field, then chain optional
  * builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#approvesuggestedpost
+ * @see https://core.telegram.org/bots/api#approvesuggestedpost
  */
 class ApproveSuggestedPost extends Method implements MethodInterface {
     /**
@@ -34,6 +34,7 @@ class ApproveSuggestedPost extends Method implements MethodInterface {
      * Unique identifier for the target direct messages chat
      *
      * @param int $chatId Unique identifier for the target direct messages chat
+     *
      * @return $this
      */
     public function chatId(int $chatId): static {
@@ -49,6 +50,7 @@ class ApproveSuggestedPost extends Method implements MethodInterface {
      * @param int $sendDate Point in time (Unix timestamp) when the post is expected to be
      *   published; omit if the date has already been specified when the suggested post was created.
      *   If specified, then the date must be not more than 2678400 seconds (30 days) in the future.
+     *
      * @return $this
      */
     public function sendDate(int $sendDate): static {

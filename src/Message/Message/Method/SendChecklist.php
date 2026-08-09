@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'business_connection_id' and 'checklist'
  * fields, then chain optional builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#sendchecklist
+ * @see https://core.telegram.org/bots/api#sendchecklist
  */
 class SendChecklist extends Method implements MethodInterface {
     /**
@@ -38,6 +38,7 @@ class SendChecklist extends Method implements MethodInterface {
      *
      * @param int|string $chatId Unique identifier for the target chat or username of the target bot
      *   in the format @username
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -50,6 +51,7 @@ class SendChecklist extends Method implements MethodInterface {
      *
      * @param bool $disableNotification Sends the message silently. Users will receive a
      *   notification with no sound.
+     *
      * @return $this
      */
     public function disableNotification(bool $disableNotification): static {
@@ -62,6 +64,7 @@ class SendChecklist extends Method implements MethodInterface {
      *
      * @param bool $protectContent Protects the contents of the sent message from forwarding and
      *   saving
+     *
      * @return $this
      */
     public function protectContent(bool $protectContent): static {
@@ -74,6 +77,7 @@ class SendChecklist extends Method implements MethodInterface {
      *
      * @param string $messageEffectId Unique identifier of the message effect to be added to the
      *   message
+     *
      * @return $this
      */
     public function messageEffectId(string $messageEffectId): static {
@@ -86,6 +90,7 @@ class SendChecklist extends Method implements MethodInterface {
      *
      * @param mixed $replyParameters A JSON-serialized object for description of the message to
      *   reply to
+     *
      * @return $this
      */
     public function replyParameters(mixed $replyParameters): static {
@@ -97,6 +102,7 @@ class SendChecklist extends Method implements MethodInterface {
      * A JSON-serialized object for an inline keyboard
      *
      * @param mixed $replyMarkup A JSON-serialized object for an inline keyboard
+     *
      * @return $this
      */
     public function replyMarkup(mixed $replyMarkup): static {

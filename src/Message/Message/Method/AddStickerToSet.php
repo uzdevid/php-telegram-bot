@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'user_id', 'name', and 'sticker' fields
  * and dispatch the request directly.
  *
- * @link https://core.telegram.org/bots/api#addstickertoset
+ * @see https://core.telegram.org/bots/api#addstickertoset
  */
 class AddStickerToSet extends Method implements MethodInterface {
     /**

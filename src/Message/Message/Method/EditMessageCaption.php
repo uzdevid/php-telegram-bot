@@ -15,7 +15,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method, chain any optional builder methods, and then dispatch the
  * request.
  *
- * @link https://core.telegram.org/bots/api#editmessagecaption
+ * @see https://core.telegram.org/bots/api#editmessagecaption
  */
 class EditMessageCaption extends Method implements MethodInterface {
     public function methodName(): string {
@@ -28,6 +28,7 @@ class EditMessageCaption extends Method implements MethodInterface {
      *
      * @param string $businessConnectionId Unique identifier of the business connection on behalf of
      *   which the message to be edited was sent
+     *
      * @return $this
      */
     public function businessConnectionId(string $businessConnectionId): static {
@@ -41,7 +42,9 @@ class EditMessageCaption extends Method implements MethodInterface {
      *
      * @param int|string $chatId Required if inline_message_id is not specified. Unique identifier
      *   for the target chat or username of the target bot, supergroup or channel in the format
+     *
      *   @username .
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -54,6 +57,7 @@ class EditMessageCaption extends Method implements MethodInterface {
      *
      * @param int $messageId Required if inline_message_id is not specified. Identifier of the
      *   message to edit.
+     *
      * @return $this
      */
     public function messageId(int $messageId): static {
@@ -66,6 +70,7 @@ class EditMessageCaption extends Method implements MethodInterface {
      *
      * @param string $inlineMessageId Required if chat_id and message_id are not specified.
      *   Identifier of the inline message.
+     *
      * @return $this
      */
     public function inlineMessageId(string $inlineMessageId): static {
@@ -77,6 +82,7 @@ class EditMessageCaption extends Method implements MethodInterface {
      * New caption of the message, 0-1024 characters after entities parsing
      *
      * @param string $caption New caption of the message, 0-1024 characters after entities parsing
+     *
      * @return $this
      */
     public function caption(string $caption): static {
@@ -89,6 +95,7 @@ class EditMessageCaption extends Method implements MethodInterface {
      *
      * @param string $parseMode Mode for parsing entities in the message caption. See formatting
      *   options for more details.
+     *
      * @return $this
      */
     public function parseMode(string $parseMode): static {
@@ -102,6 +109,7 @@ class EditMessageCaption extends Method implements MethodInterface {
      *
      * @param array $captionEntities A JSON-serialized list of special entities that appear in the
      *   caption, which can be specified instead of parse_mode
+     *
      * @return $this
      */
     public function captionEntities(array $captionEntities): static {
@@ -116,6 +124,7 @@ class EditMessageCaption extends Method implements MethodInterface {
      * @param MessageEntityInterface $captionEntity Adds one item to the caption_entities list. A
      *   JSON-serialized list of special entities that appear in the caption, which can be specified
      *   instead of parse_mode
+     *
      * @return $this
      */
     public function addCaptionEntity(MessageEntityInterface $captionEntity): static {
@@ -129,6 +138,7 @@ class EditMessageCaption extends Method implements MethodInterface {
      *
      * @param bool $showCaptionAboveMedia Pass True if the caption must be shown above the message
      *   media. Supported only for animation, photo and video messages.
+     *
      * @return $this
      */
     public function showCaptionAboveMedia(bool $showCaptionAboveMedia = true): static {
@@ -140,6 +150,7 @@ class EditMessageCaption extends Method implements MethodInterface {
      * A JSON-serialized object for an inline keyboard
      *
      * @param mixed $replyMarkup A JSON-serialized object for an inline keyboard
+     *
      * @return $this
      */
     public function replyMarkup(mixed $replyMarkup): static {

@@ -7,7 +7,7 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Type ChatPhoto
  *
- * @link https://core.telegram.org/bots/api#chatphoto
+ * @see https://core.telegram.org/bots/api#chatphoto
  *
  * This object represents a chat photo.
  */

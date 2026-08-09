@@ -13,7 +13,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'user_id' and 'permissions' fields, then
  * chain optional builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#restrictchatmember
+ * @see https://core.telegram.org/bots/api#restrictchatmember
  */
 class RestrictChatMember extends Method implements MethodInterface {
     /**
@@ -35,10 +35,12 @@ class RestrictChatMember extends Method implements MethodInterface {
 
     /**
      * Unique identifier for the target chat or username of the target supergroup in the format
+     *
      * @username
      *
      * @param int|string $chatId Unique identifier for the target chat or username of the target
      *   supergroup in the format @username
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -58,6 +60,7 @@ class RestrictChatMember extends Method implements MethodInterface {
      *   permissions will imply the can_send_messages , can_send_audios , can_send_documents ,
      *   can_send_photos , can_send_videos , can_send_video_notes , and can_send_voice_notes
      *   permissions; the can_send_polls permission will imply the can_send_messages permission.
+     *
      * @return $this
      */
     public function useIndependentChatPermissions(bool $useIndependentChatPermissions = true): static {
@@ -73,6 +76,7 @@ class RestrictChatMember extends Method implements MethodInterface {
      * @param int $untilDate Date when restrictions will be lifted for the user; Unix time. If user
      *   is restricted for more than 366 days or less than 30 seconds from the current time, they
      *   are considered to be restricted forever.
+     *
      * @return $this
      */
     public function untilDate(int $untilDate): static {

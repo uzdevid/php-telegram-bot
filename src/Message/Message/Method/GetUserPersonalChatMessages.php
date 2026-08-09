@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'user_id' and 'limit' fields and dispatch
  * the request directly.
  *
- * @link https://core.telegram.org/bots/api#getuserpersonalchatmessages
+ * @see https://core.telegram.org/bots/api#getuserpersonalchatmessages
  */
 class GetUserPersonalChatMessages extends Method implements MethodInterface {
     /**

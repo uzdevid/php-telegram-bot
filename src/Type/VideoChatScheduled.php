@@ -7,7 +7,7 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Type VideoChatScheduled
  *
- * @link https://core.telegram.org/bots/api#videochatscheduled
+ * @see https://core.telegram.org/bots/api#videochatscheduled
  *
  * This object represents a service message about a video chat scheduled in the chat.
  */

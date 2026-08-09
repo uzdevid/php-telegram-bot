@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'user_id' field, then chain optional
  * builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#getgamehighscores
+ * @see https://core.telegram.org/bots/api#getgamehighscores
  */
 class GetGameHighScores extends Method implements MethodInterface {
     /**
@@ -34,6 +34,7 @@ class GetGameHighScores extends Method implements MethodInterface {
      *
      * @param int $chatId Required if inline_message_id is not specified. Unique identifier for the
      *   target chat.
+     *
      * @return $this
      */
     public function chatId(int $chatId): static {
@@ -46,6 +47,7 @@ class GetGameHighScores extends Method implements MethodInterface {
      *
      * @param int $messageId Required if inline_message_id is not specified. Identifier of the sent
      *   message.
+     *
      * @return $this
      */
     public function messageId(int $messageId): static {
@@ -58,6 +60,7 @@ class GetGameHighScores extends Method implements MethodInterface {
      *
      * @param string $inlineMessageId Required if chat_id and message_id are not specified.
      *   Identifier of the inline message.
+     *
      * @return $this
      */
     public function inlineMessageId(string $inlineMessageId): static {

@@ -16,7 +16,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'user_id' field, then chain optional
  * builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#unbanchatmember
+ * @see https://core.telegram.org/bots/api#unbanchatmember
  */
 class UnbanChatMember extends Method implements MethodInterface {
     /**
@@ -39,6 +39,7 @@ class UnbanChatMember extends Method implements MethodInterface {
      *
      * @param int|string $chatId Unique identifier for the target group or username of the target
      *   supergroup or channel in the format @username
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -50,6 +51,7 @@ class UnbanChatMember extends Method implements MethodInterface {
      * Do nothing if the user is not banned
      *
      * @param bool $onlyIfBanned Do nothing if the user is not banned
+     *
      * @return $this
      */
     public function onlyIfBanned(bool $onlyIfBanned): static {

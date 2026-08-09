@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace UzDevid\Telegram\Bot\Config;
 
@@ -9,7 +11,7 @@ readonly class ClientConfig {
      */
     public function __construct(
         private string $token,
-        private string $endpoint = 'https://api.telegram.org/bot%s/%s'
+        private string $endpoint = 'https://api.telegram.org/bot%s/%s',
     ) {
     }
 

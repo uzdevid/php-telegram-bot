@@ -15,7 +15,6 @@ interface InlineQueryHandlerInterface {
     /**
      * @param InlineQueryUpdate $update
      *
-     * @return void
      */
     public function handle(InlineQueryUpdate $update): void;
 }

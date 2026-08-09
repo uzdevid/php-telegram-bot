@@ -7,7 +7,7 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Type KeyboardButtonRequestUser
  *
- * @link https://core.telegram.org/bots/api#keyboardbuttonrequestuser
+ * @see https://core.telegram.org/bots/api#keyboardbuttonrequestuser
  *
  * This object defines the criteria used to request a suitable user.
  * The identifier of the selected user will be shared with the bot when the corresponding button is pressed.

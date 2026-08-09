@@ -13,7 +13,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'web_app_query_id' and 'result' fields
  * and dispatch the request directly.
  *
- * @link https://core.telegram.org/bots/api#answerwebappquery
+ * @see https://core.telegram.org/bots/api#answerwebappquery
  */
 class AnswerWebAppQuery extends Method implements MethodInterface {
     /**

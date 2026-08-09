@@ -7,7 +7,7 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Type Document
  *
- * @link https://core.telegram.org/bots/api#document
+ * @see https://core.telegram.org/bots/api#document
  *
  * This object represents a general file (as opposed to photos, voice messages and audio files).
  */

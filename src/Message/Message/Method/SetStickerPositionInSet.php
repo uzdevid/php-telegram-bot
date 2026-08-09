@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'sticker' and 'position' fields and
  * dispatch the request directly.
  *
- * @link https://core.telegram.org/bots/api#setstickerpositioninset
+ * @see https://core.telegram.org/bots/api#setstickerpositioninset
  */
 class SetStickerPositionInSet extends Method implements MethodInterface {
     /**

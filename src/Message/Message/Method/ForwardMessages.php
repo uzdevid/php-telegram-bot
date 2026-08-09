@@ -14,7 +14,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'from_chat_id' and 'message_ids' fields,
  * then chain optional builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#forwardmessages
+ * @see https://core.telegram.org/bots/api#forwardmessages
  */
 class ForwardMessages extends Method implements MethodInterface {
     /**
@@ -42,6 +42,7 @@ class ForwardMessages extends Method implements MethodInterface {
      *
      * @param int|string $chatId Unique identifier for the target chat or username of the target
      *   bot, supergroup or channel in the format @username
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -55,6 +56,7 @@ class ForwardMessages extends Method implements MethodInterface {
      *
      * @param int $messageThreadId Unique identifier for the target message thread (topic) of a
      *   forum; for forum supergroups and private chats of bots with forum topic mode enabled only
+     *
      * @return $this
      */
     public function messageThreadId(int $messageThreadId): static {
@@ -69,6 +71,7 @@ class ForwardMessages extends Method implements MethodInterface {
      * @param int $directMessagesTopicId Identifier of the direct messages topic to which the
      *   messages will be forwarded; required if the messages are forwarded to a direct messages
      *   chat
+     *
      * @return $this
      */
     public function directMessagesTopicId(int $directMessagesTopicId): static {
@@ -81,6 +84,7 @@ class ForwardMessages extends Method implements MethodInterface {
      *
      * @param bool $disableNotification Sends the messages silently . Users will receive a
      *   notification with no sound.
+     *
      * @return $this
      */
     public function disableNotification(bool $disableNotification): static {
@@ -93,6 +97,7 @@ class ForwardMessages extends Method implements MethodInterface {
      *
      * @param bool $protectContent Protects the contents of the forwarded messages from forwarding
      *   and saving
+     *
      * @return $this
      */
     public function protectContent(bool $protectContent): static {

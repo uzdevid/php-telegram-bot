@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'user_id', 'name', 'title', and
  * 'stickers' fields, then chain optional builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#createnewstickerset
+ * @see https://core.telegram.org/bots/api#createnewstickerset
  */
 class CreateNewStickerSet extends Method implements MethodInterface {
     /**
@@ -46,6 +46,7 @@ class CreateNewStickerSet extends Method implements MethodInterface {
      *
      * @param string $stickerType Type of stickers in the set, pass “regular”, “mask”, or
      *   “custom_emoji”. By default, a regular sticker set is created.
+     *
      * @return $this
      */
     public function stickerType(string $stickerType): static {
@@ -62,6 +63,7 @@ class CreateNewStickerSet extends Method implements MethodInterface {
      *   the color of text when used in messages, the accent color if used as emoji status, white on
      *   chat photos, or another appropriate color based on context; for custom emoji sticker sets
      *   only
+     *
      * @return $this
      */
     public function needsRepainting(bool $needsRepainting = true): static {

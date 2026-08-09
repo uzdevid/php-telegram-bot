@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'name', 'user_id', and 'format' fields,
  * then chain optional builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#setstickersetthumbnail
+ * @see https://core.telegram.org/bots/api#setstickersetthumbnail
  */
 class SetStickerSetThumbnail extends Method implements MethodInterface {
     /**
@@ -58,6 +58,7 @@ class SetStickerSetThumbnail extends Method implements MethodInterface {
      *   upload a new one using multipart/form-data. More information on Sending Files » . Animated
      *   and video sticker set thumbnails can't be uploaded via HTTP URL. If omitted, then the
      *   thumbnail is dropped and the first sticker is used as the thumbnail.
+     *
      * @return $this
      */
     public function thumbnail(string $thumbnail): static {

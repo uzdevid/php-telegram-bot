@@ -7,7 +7,7 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Type Venue
  *
- * @link https://core.telegram.org/bots/api#venue
+ * @see https://core.telegram.org/bots/api#venue
  *
  * This object represents a venue.
  */

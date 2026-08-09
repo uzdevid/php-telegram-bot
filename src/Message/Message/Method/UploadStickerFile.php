@@ -13,7 +13,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'user_id', 'sticker', and
  * 'sticker_format' fields and dispatch the request directly.
  *
- * @link https://core.telegram.org/bots/api#uploadstickerfile
+ * @see https://core.telegram.org/bots/api#uploadstickerfile
  */
 class UploadStickerFile extends Method implements MethodInterface {
     /**

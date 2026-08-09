@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method, chain any optional builder methods, and then dispatch the
  * request.
  *
- * @link https://core.telegram.org/bots/api#getchatadministrators
+ * @see https://core.telegram.org/bots/api#getchatadministrators
  */
 class GetChatAdministrators extends Method implements MethodInterface {
     public function methodName(): string {
@@ -25,6 +25,7 @@ class GetChatAdministrators extends Method implements MethodInterface {
      *
      * @param int|string $chatId Unique identifier for the target chat or username of the target
      *   supergroup or channel in the format @username
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -38,6 +39,7 @@ class GetChatAdministrators extends Method implements MethodInterface {
      *
      * @param bool $returnBots Pass True to additionally receive all bots that are administrators of
      *   the chat. By default, bots other than the current bot are omitted.
+     *
      * @return $this
      */
     public function returnBots(bool $returnBots = true): static {

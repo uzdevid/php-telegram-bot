@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'sticker' field, then chain optional
  * builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#setstickerkeywords
+ * @see https://core.telegram.org/bots/api#setstickerkeywords
  */
 class SetStickerKeywords extends Method implements MethodInterface {
     /**
@@ -35,6 +35,7 @@ class SetStickerKeywords extends Method implements MethodInterface {
      *
      * @param array $keywords A JSON-serialized list of 0-20 search keywords for the sticker with
      *   total length of up to 64 characters
+     *
      * @return $this
      */
     public function keywords(array $keywords): static {
@@ -48,6 +49,7 @@ class SetStickerKeywords extends Method implements MethodInterface {
      *
      * @param string $keyword Adds one item to the keywords list. A JSON-serialized list of 0-20
      *   search keywords for the sticker with total length of up to 64 characters
+     *
      * @return $this
      */
     public function addKeyword(string $keyword): static {

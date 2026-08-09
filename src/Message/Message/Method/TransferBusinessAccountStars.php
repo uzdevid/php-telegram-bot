@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'business_connection_id' and 'star_count'
  * fields and dispatch the request directly.
  *
- * @link https://core.telegram.org/bots/api#transferbusinessaccountstars
+ * @see https://core.telegram.org/bots/api#transferbusinessaccountstars
  */
 class TransferBusinessAccountStars extends Method implements MethodInterface {
     /**

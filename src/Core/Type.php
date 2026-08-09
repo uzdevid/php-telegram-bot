@@ -2,4 +2,5 @@
 
 namespace UzDevid\Telegram\Bot\Core;
 
-abstract class Type { }
+abstract class Type {
+}

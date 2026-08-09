@@ -20,7 +20,7 @@ use Yiisoft\Hydrator\Hydrator;
  * Typical usage: instantiate the method with the required 'user_id' field, then chain optional
  * builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#getchatmember
+ * @see https://core.telegram.org/bots/api#getchatmember
  */
 class GetChatMember extends Method implements MethodInterface {
     /**
@@ -38,7 +38,7 @@ class GetChatMember extends Method implements MethodInterface {
      * @return string
      */
     public function methodName(): string {
-        return "getChatMember";
+        return 'getChatMember';
     }
 
     /**
@@ -47,6 +47,7 @@ class GetChatMember extends Method implements MethodInterface {
      *
      * @param int|string $chatId Unique identifier for the target chat or username of the target
      *   supergroup or channel in the format @username
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -57,7 +58,8 @@ class GetChatMember extends Method implements MethodInterface {
     /**
      * Hydrates the successful Bot API response into the corresponding return type instance.
      *
-     * @param array $data Raw Telegram Bot API response payload.
+     * @param array $data raw Telegram Bot API response payload
+     *
      * @return
      *   ChatMemberMember|ChatMemberOwner|ChatMemberAdministrator|ChatMemberRestricted|ChatMemberLeft|ChatMemberBanned
      */

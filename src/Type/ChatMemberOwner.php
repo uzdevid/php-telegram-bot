@@ -7,7 +7,7 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Type ChatMemberOwner
  *
- * @link https://core.telegram.org/bots/api#chatmemberowner
+ * @see https://core.telegram.org/bots/api#chatmemberowner
  *
  * Represents a chat member that owns the chat and has all administrator privileges.
  */

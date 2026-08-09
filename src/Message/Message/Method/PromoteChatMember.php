@@ -13,7 +13,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'user_id' field, then chain optional
  * builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#promotechatmember
+ * @see https://core.telegram.org/bots/api#promotechatmember
  */
 class PromoteChatMember extends Method implements MethodInterface {
     /**
@@ -32,10 +32,12 @@ class PromoteChatMember extends Method implements MethodInterface {
 
     /**
      * Unique identifier for the target chat or username of the target channel in the format
+     *
      * @username
      *
      * @param int|string $chatId Unique identifier for the target chat or username of the target
      *   channel in the format @username
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -47,6 +49,7 @@ class PromoteChatMember extends Method implements MethodInterface {
      * Pass True if the administrator's presence in the chat is hidden
      *
      * @param bool $isAnonymous Pass True if the administrator's presence in the chat is hidden
+     *
      * @return $this
      */
     public function isAnonymous(bool $isAnonymous = true): static {
@@ -63,6 +66,7 @@ class PromoteChatMember extends Method implements MethodInterface {
      *   boost list, see hidden supergroup and channel members, report spam messages, ignore slow
      *   mode, and send messages to the chat without paying Telegram Stars. Implied by any other
      *   administrator privilege.
+     *
      * @return $this
      */
     public function canManageChat(bool $canManageChat = true): static {
@@ -75,6 +79,7 @@ class PromoteChatMember extends Method implements MethodInterface {
      *
      * @param bool $canDeleteMessages Pass True if the administrator can delete messages of other
      *   users
+     *
      * @return $this
      */
     public function canDeleteMessages(bool $canDeleteMessages = true): static {
@@ -86,6 +91,7 @@ class PromoteChatMember extends Method implements MethodInterface {
      * Pass True if the administrator can manage video chats
      *
      * @param bool $canManageVideoChats Pass True if the administrator can manage video chats
+     *
      * @return $this
      */
     public function canManageVideoChats(bool $canManageVideoChats = true): static {
@@ -101,6 +107,7 @@ class PromoteChatMember extends Method implements MethodInterface {
      * @param bool $canRestrictMembers Pass True if the administrator can restrict, ban or unban
      *   chat members, or access supergroup statistics. For backward compatibility, defaults to True
      *   for promotions of channel administrators.
+     *
      * @return $this
      */
     public function canRestrictMembers(bool $canRestrictMembers = true): static {
@@ -116,6 +123,7 @@ class PromoteChatMember extends Method implements MethodInterface {
      * @param bool $canPromoteMembers Pass True if the administrator can add new administrators with
      *   a subset of their own privileges or demote administrators that they have promoted, directly
      *   or indirectly (promoted by administrators that were appointed by him)
+     *
      * @return $this
      */
     public function canPromoteMembers(bool $canPromoteMembers = true): static {
@@ -128,6 +136,7 @@ class PromoteChatMember extends Method implements MethodInterface {
      *
      * @param bool $canChangeInfo Pass True if the administrator can change chat title, photo and
      *   other settings
+     *
      * @return $this
      */
     public function canChangeInfo(bool $canChangeInfo = true): static {
@@ -139,6 +148,7 @@ class PromoteChatMember extends Method implements MethodInterface {
      * Pass True if the administrator can invite new users to the chat
      *
      * @param bool $canInviteUsers Pass True if the administrator can invite new users to the chat
+     *
      * @return $this
      */
     public function canInviteUsers(bool $canInviteUsers = true): static {
@@ -150,6 +160,7 @@ class PromoteChatMember extends Method implements MethodInterface {
      * Pass True if the administrator can post stories to the chat
      *
      * @param bool $canPostStories Pass True if the administrator can post stories to the chat
+     *
      * @return $this
      */
     public function canPostStories(bool $canPostStories = true): static {
@@ -163,6 +174,7 @@ class PromoteChatMember extends Method implements MethodInterface {
      *
      * @param bool $canEditStories Pass True if the administrator can edit stories posted by other
      *   users, post stories to the chat page, pin chat stories, and access the chat's story archive
+     *
      * @return $this
      */
     public function canEditStories(bool $canEditStories = true): static {
@@ -175,6 +187,7 @@ class PromoteChatMember extends Method implements MethodInterface {
      *
      * @param bool $canDeleteStories Pass True if the administrator can delete stories posted by
      *   other users
+     *
      * @return $this
      */
     public function canDeleteStories(bool $canDeleteStories = true): static {
@@ -188,6 +201,7 @@ class PromoteChatMember extends Method implements MethodInterface {
      *
      * @param bool $canPostMessages Pass True if the administrator can post messages in the channel,
      *   approve suggested posts, or access channel statistics; for channels only
+     *
      * @return $this
      */
     public function canPostMessages(bool $canPostMessages = true): static {
@@ -201,6 +215,7 @@ class PromoteChatMember extends Method implements MethodInterface {
      *
      * @param bool $canEditMessages Pass True if the administrator can edit messages of other users
      *   and can pin messages; for channels only
+     *
      * @return $this
      */
     public function canEditMessages(bool $canEditMessages = true): static {
@@ -213,6 +228,7 @@ class PromoteChatMember extends Method implements MethodInterface {
      *
      * @param bool $canPinMessages Pass True if the administrator can pin messages; for supergroups
      *   only
+     *
      * @return $this
      */
     public function canPinMessages(bool $canPinMessages = true): static {
@@ -226,6 +242,7 @@ class PromoteChatMember extends Method implements MethodInterface {
      *
      * @param bool $canManageTopics Pass True if the user is allowed to create, rename, close, and
      *   reopen forum topics; for supergroups only
+     *
      * @return $this
      */
     public function canManageTopics(bool $canManageTopics = true): static {
@@ -239,6 +256,7 @@ class PromoteChatMember extends Method implements MethodInterface {
      *
      * @param bool $canManageDirectMessages Pass True if the administrator can manage direct
      *   messages within the channel and decline suggested posts; for channels only
+     *
      * @return $this
      */
     public function canManageDirectMessages(bool $canManageDirectMessages = true): static {
@@ -252,6 +270,7 @@ class PromoteChatMember extends Method implements MethodInterface {
      *
      * @param bool $canManageTags Pass True if the administrator can edit the tags of regular
      *   members; for groups and supergroups only
+     *
      * @return $this
      */
     public function canManageTags(bool $canManageTags = true): static {

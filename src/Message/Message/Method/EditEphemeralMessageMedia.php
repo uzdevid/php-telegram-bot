@@ -14,7 +14,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * 'ephemeral_message_id', and 'media' fields, then chain optional builder methods before
  * dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#editephemeralmessagemedia
+ * @see https://core.telegram.org/bots/api#editephemeralmessagemedia
  */
 class EditEphemeralMessageMedia extends Method implements MethodInterface {
     /**
@@ -39,10 +39,12 @@ class EditEphemeralMessageMedia extends Method implements MethodInterface {
 
     /**
      * Unique identifier for the target chat or username of the target supergroup in the format
+     *
      * @username
      *
      * @param int|string $chatId Unique identifier for the target chat or username of the target
      *   supergroup in the format @username
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -54,6 +56,7 @@ class EditEphemeralMessageMedia extends Method implements MethodInterface {
      * A JSON-serialized object for an inline keyboard
      *
      * @param mixed $replyMarkup A JSON-serialized object for an inline keyboard
+     *
      * @return $this
      */
     public function replyMarkup(mixed $replyMarkup): static {

@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'photo' field, then chain optional
  * builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#sendphoto
+ * @see https://core.telegram.org/bots/api#sendphoto
  */
 class SendPhoto extends Method implements MethodInterface {
     /**
@@ -38,6 +38,7 @@ class SendPhoto extends Method implements MethodInterface {
      *
      * @param string $businessConnectionId Unique identifier of the business connection on behalf of
      *   which the message will be sent
+     *
      * @return $this
      */
     public function businessConnectionId(string $businessConnectionId): static {
@@ -51,6 +52,7 @@ class SendPhoto extends Method implements MethodInterface {
      *
      * @param int|string $chatId Unique identifier for the target chat or username of the target
      *   bot, supergroup or channel in the format @username
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -64,6 +66,7 @@ class SendPhoto extends Method implements MethodInterface {
      *
      * @param int $messageThreadId Unique identifier for the target message thread (topic) of a
      *   forum; for forum supergroups and private chats of bots with forum topic mode enabled only
+     *
      * @return $this
      */
     public function messageThreadId(int $messageThreadId): static {
@@ -77,6 +80,7 @@ class SendPhoto extends Method implements MethodInterface {
      *
      * @param int $directMessagesTopicId Identifier of the direct messages topic to which the
      *   message will be sent; required if the message is sent to a direct messages chat
+     *
      * @return $this
      */
     public function directMessagesTopicId(int $directMessagesTopicId): static {
@@ -93,6 +97,7 @@ class SendPhoto extends Method implements MethodInterface {
      *   will receive the message; for group and supergroup chats only. It is not guaranteed that
      *   the user will receive the message, especially if they are offline. See ephemeral message
      *   sending for more details.
+     *
      * @return $this
      */
     public function receiverUserId(int $receiverUserId): static {
@@ -106,6 +111,7 @@ class SendPhoto extends Method implements MethodInterface {
      *
      * @param string $callbackQueryId For outgoing ephemeral messages, identifier of the callback
      *   query which triggered the message if any
+     *
      * @return $this
      */
     public function callbackQueryId(string $callbackQueryId): static {
@@ -119,6 +125,7 @@ class SendPhoto extends Method implements MethodInterface {
      *
      * @param string $caption Photo caption (may also be used when resending photos by file_id ),
      *   0-1024 characters after entities parsing
+     *
      * @return $this
      */
     public function caption(string $caption): static {
@@ -131,6 +138,7 @@ class SendPhoto extends Method implements MethodInterface {
      *
      * @param string $parseMode Mode for parsing entities in the photo caption. See formatting
      *   options for more details.
+     *
      * @return $this
      */
     public function parseMode(string $parseMode): static {
@@ -144,6 +152,7 @@ class SendPhoto extends Method implements MethodInterface {
      *
      * @param array $captionEntities A JSON-serialized list of special entities that appear in the
      *   caption, which can be specified instead of parse_mode
+     *
      * @return $this
      */
     public function captionEntities(array $captionEntities): static {
@@ -158,6 +167,7 @@ class SendPhoto extends Method implements MethodInterface {
      * @param MessageEntityInterface $captionEntity Adds one item to the caption_entities list. A
      *   JSON-serialized list of special entities that appear in the caption, which can be specified
      *   instead of parse_mode
+     *
      * @return $this
      */
     public function addCaptionEntity(MessageEntityInterface $captionEntity): static {
@@ -170,6 +180,7 @@ class SendPhoto extends Method implements MethodInterface {
      *
      * @param bool $showCaptionAboveMedia Pass True if the caption must be shown above the message
      *   media
+     *
      * @return $this
      */
     public function showCaptionAboveMedia(bool $showCaptionAboveMedia = true): static {
@@ -181,6 +192,7 @@ class SendPhoto extends Method implements MethodInterface {
      * Pass True if the photo needs to be covered with a spoiler animation
      *
      * @param bool $hasSpoiler Pass True if the photo needs to be covered with a spoiler animation
+     *
      * @return $this
      */
     public function hasSpoiler(bool $hasSpoiler = true): static {
@@ -193,6 +205,7 @@ class SendPhoto extends Method implements MethodInterface {
      *
      * @param bool $disableNotification Sends the message silently . Users will receive a
      *   notification with no sound.
+     *
      * @return $this
      */
     public function disableNotification(bool $disableNotification): static {
@@ -205,6 +218,7 @@ class SendPhoto extends Method implements MethodInterface {
      *
      * @param bool $protectContent Protects the contents of the sent message from forwarding and
      *   saving
+     *
      * @return $this
      */
     public function protectContent(bool $protectContent): static {
@@ -219,6 +233,7 @@ class SendPhoto extends Method implements MethodInterface {
      * @param bool $allowPaidBroadcast Pass True to allow up to 1000 messages per second, ignoring
      *   broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be
      *   withdrawn from the bot's balance.
+     *
      * @return $this
      */
     public function allowPaidBroadcast(bool $allowPaidBroadcast = true): static {
@@ -231,6 +246,7 @@ class SendPhoto extends Method implements MethodInterface {
      *
      * @param string $messageEffectId Unique identifier of the message effect to be added to the
      *   message; for private chats only
+     *
      * @return $this
      */
     public function messageEffectId(string $messageEffectId): static {
@@ -246,6 +262,7 @@ class SendPhoto extends Method implements MethodInterface {
      * @param mixed $suggestedPostParameters A JSON-serialized object containing the parameters of
      *   the suggested post to send; for direct messages chats only. If the message is sent as a
      *   reply to another suggested post, then that suggested post is automatically declined.
+     *
      * @return $this
      */
     public function suggestedPostParameters(mixed $suggestedPostParameters): static {
@@ -257,6 +274,7 @@ class SendPhoto extends Method implements MethodInterface {
      * Description of the message to reply to
      *
      * @param mixed $replyParameters Description of the message to reply to
+     *
      * @return $this
      */
     public function replyParameters(mixed $replyParameters): static {
@@ -271,6 +289,7 @@ class SendPhoto extends Method implements MethodInterface {
      * @param mixed $replyMarkup Additional interface options. A JSON-serialized object for an
      *   inline keyboard , custom reply keyboard , instructions to remove a reply keyboard or to
      *   force a reply from the user.
+     *
      * @return $this
      */
     public function replyMarkup(mixed $replyMarkup): static {

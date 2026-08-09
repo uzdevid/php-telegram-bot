@@ -67,6 +67,27 @@ $server
     ->onMessage(StartMessageHandler::class);
 ```
 
+### Storing User State
+
+`UzDevid\Telegram\Bot\State\StateStorageInterface` lets you persist per-user state (e.g. a
+registration flow step) behind a pluggable interface — implement it on top of a session, cache,
+database, etc. A ready-to-use `SessionStateStorage` implementation is included.
+
+```php
+use UzDevid\Telegram\Bot\State\SessionStateStorage;
+
+$state = new SessionStateStorage();
+$state->set('user:123:registration:step', 'awaiting_phone');
+
+if ($state->has('user:123:registration:step')) {
+    $step = $state->get('user:123:registration:step');
+}
+
+$state->delete('user:123:registration:step');
+```
+
+See **[Storing User State](docs/en/use-state.md)** for details and custom implementation examples.
+
 ## Documentation
 
 Complete documentation is available in the `docs/` directory, organized by language:

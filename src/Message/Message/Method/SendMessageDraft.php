@@ -15,7 +15,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'draft_id' field, then chain optional
  * builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#sendmessagedraft
+ * @see https://core.telegram.org/bots/api#sendmessagedraft
  */
 class SendMessageDraft extends Method implements MethodInterface {
     /**
@@ -37,6 +37,7 @@ class SendMessageDraft extends Method implements MethodInterface {
      * Unique identifier for the target private chat
      *
      * @param int $chatId Unique identifier for the target private chat
+     *
      * @return $this
      */
     public function chatId(int $chatId): static {
@@ -48,6 +49,7 @@ class SendMessageDraft extends Method implements MethodInterface {
      * Unique identifier for the target message thread
      *
      * @param int $messageThreadId Unique identifier for the target message thread
+     *
      * @return $this
      */
     public function messageThreadId(int $messageThreadId): static {
@@ -61,6 +63,7 @@ class SendMessageDraft extends Method implements MethodInterface {
      *
      * @param string $text Text of the message to be sent, 0-4096 characters after entities parsing.
      *   Pass an empty text to show a “Thinking…” placeholder.
+     *
      * @return $this
      */
     public function text(string $text): static {
@@ -73,6 +76,7 @@ class SendMessageDraft extends Method implements MethodInterface {
      *
      * @param string $parseMode Mode for parsing entities in the message text. See formatting
      *   options for more details.
+     *
      * @return $this
      */
     public function parseMode(string $parseMode): static {
@@ -86,6 +90,7 @@ class SendMessageDraft extends Method implements MethodInterface {
      *
      * @param array $entities A JSON-serialized list of special entities that appear in message
      *   text, which can be specified instead of parse_mode
+     *
      * @return $this
      */
     public function entities(array $entities): static {
@@ -100,6 +105,7 @@ class SendMessageDraft extends Method implements MethodInterface {
      * @param MessageEntityInterface $entity Adds one item to the entities list. A JSON-serialized
      *   list of special entities that appear in message text, which can be specified instead of
      *   parse_mode
+     *
      * @return $this
      */
     public function addEntity(MessageEntityInterface $entity): static {

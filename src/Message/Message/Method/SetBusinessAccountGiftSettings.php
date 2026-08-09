@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'business_connection_id',
  * 'show_gift_button', and 'accepted_gift_types' fields and dispatch the request directly.
  *
- * @link https://core.telegram.org/bots/api#setbusinessaccountgiftsettings
+ * @see https://core.telegram.org/bots/api#setbusinessaccountgiftsettings
  */
 class SetBusinessAccountGiftSettings extends Method implements MethodInterface {
     /**
@@ -24,7 +24,7 @@ class SetBusinessAccountGiftSettings extends Method implements MethodInterface {
      *   business account must always be shown in the input field
      * @param mixed $acceptedGiftTypes Types of gifts accepted by the business account
      */
-    public function __construct(string $businessConnectionId, bool $showGiftButton = true, mixed $acceptedGiftTypes) {
+    public function __construct(string $businessConnectionId, bool $showGiftButton, mixed $acceptedGiftTypes) {
         parent::__construct();
         $this->addAttribute('business_connection_id', $businessConnectionId);
         $this->addAttribute('show_gift_button', $showGiftButton);

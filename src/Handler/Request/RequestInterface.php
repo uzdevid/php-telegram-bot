@@ -10,12 +10,8 @@ interface RequestInterface {
 
     /**
      * @param array $payload
-     * @return void
      */
     public function buildRequest(array $payload): void;
 
-    /**
-     * @return void
-     */
     public function handle(): void;
 }

@@ -11,7 +11,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'sticker' field and dispatch the request
  * directly.
  *
- * @link https://core.telegram.org/bots/api#deletestickerfromset
+ * @see https://core.telegram.org/bots/api#deletestickerfromset
  */
 class DeleteStickerFromSet extends Method implements MethodInterface {
     /**

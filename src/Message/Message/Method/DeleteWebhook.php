@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method, chain any optional builder methods, and then dispatch the
  * request.
  *
- * @link https://core.telegram.org/bots/api#deletewebhook
+ * @see https://core.telegram.org/bots/api#deletewebhook
  */
 class DeleteWebhook extends Method implements MethodInterface {
     public function methodName(): string {
@@ -23,6 +23,7 @@ class DeleteWebhook extends Method implements MethodInterface {
      * Pass True to drop all pending updates
      *
      * @param bool $dropPendingUpdates Pass True to drop all pending updates
+     *
      * @return $this
      */
     public function dropPendingUpdates(bool $dropPendingUpdates = true): static {

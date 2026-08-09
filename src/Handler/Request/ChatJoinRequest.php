@@ -17,15 +17,10 @@ abstract class ChatJoinRequest implements RequestInterface {
 
     /**
      * @param array $payload
-     * @return void
      */
     public function buildRequest(array $payload): void {
-        $this->request = (new Hydrator)->create(ChatJoinRequestUpdate::class, $payload);
+        $this->request = (new Hydrator())->create(ChatJoinRequestUpdate::class, $payload);
     }
 
-    /**
-     *
-     * @return void
-     */
     abstract public function handle(): void;
 }

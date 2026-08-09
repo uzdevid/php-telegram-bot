@@ -7,7 +7,7 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Type EncryptedPassportElement
  *
- * @link https://core.telegram.org/bots/api#encryptedpassportelement
+ * @see https://core.telegram.org/bots/api#encryptedpassportelement
  *
  * Describes documents or other Telegram Passport elements shared with the bot by the user.
  */

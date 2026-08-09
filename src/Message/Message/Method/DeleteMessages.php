@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'message_ids' field, then chain optional
  * builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#deletemessages
+ * @see https://core.telegram.org/bots/api#deletemessages
  */
 class DeleteMessages extends Method implements MethodInterface {
     /**
@@ -36,6 +36,7 @@ class DeleteMessages extends Method implements MethodInterface {
      *
      * @param int|string $chatId Unique identifier for the target chat or username of the target
      *   bot, supergroup or channel in the format @username
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {

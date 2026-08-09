@@ -2,7 +2,6 @@
 
 namespace UzDevid\Telegram\Bot\Scenario;
 
-
 class Scenario {
     protected array $scenarios = [];
 
@@ -10,12 +9,13 @@ class Scenario {
      * @param array $payload
      */
     public function __construct(
-        protected array $payload
+        protected array $payload,
     ) {
     }
 
     /**
      * @param string $name
+     *
      * @return Scenario
      */
     public function add(string $name): Scenario {

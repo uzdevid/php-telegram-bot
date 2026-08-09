@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'user_id' field and dispatch the request
  * directly.
  *
- * @link https://core.telegram.org/bots/api#removeuserverification
+ * @see https://core.telegram.org/bots/api#removeuserverification
  */
 class RemoveUserVerification extends Method implements MethodInterface {
     /**

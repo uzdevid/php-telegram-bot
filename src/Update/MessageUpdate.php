@@ -23,18 +23,20 @@ final class MessageUpdate {
         'newChatPhoto',              'pinnedMessage',             'deleteChatPhoto',            'groupChatCreated',
         'supergroupChatCreated',     'channelChatCreated',        'migrateToChatId',            'migrateFromChatId',
         'webAppData',                'connectedWebsite',          'proximityAlertTriggered',    'videoChatScheduled',
-        'videoChatStarted',          'videoChatEnded',            'videoChatParticipantsInvited','passportData',
+        'videoChatStarted',          'videoChatEnded',            'videoChatParticipantsInvited', 'passportData',
         'usersShared',               'chatShared',                'boostAdded',                 'chatBackgroundSet',
         'forumTopicCreated',         'forumTopicEdited',          'forumTopicClosed',           'forumTopicReopened',
         'generalForumTopicHidden',   'generalForumTopicUnhidden', 'giveawayCreated',            'giveaway',
-        'giveawayWinners',           'giveawayCompleted',         'refundedPayment',            'messageAutoDeleteTimerChanged'
+        'giveawayWinners',           'giveawayCompleted',         'refundedPayment',            'messageAutoDeleteTimerChanged',
     ];
     // @formatter:on
 
     /**
      * @param string $type
-     * @return bool
+     *
      * @throws NotSupportedException
+     *
+     * @return bool
      */
     public function is(string $type): bool {
         return $this->getType() === Helper::snakeToCamel($type);
@@ -42,16 +44,19 @@ final class MessageUpdate {
 
     /**
      * @param array $allowedTypes
-     * @return bool
+     *
      * @throws NotSupportedException
+     *
+     * @return bool
      */
     public function isOneOf(array $allowedTypes): bool {
-        return in_array($this->getType(), array_map(static fn($type) => Helper::snakeToCamel($type), $allowedTypes), true);
+        return \in_array($this->getType(), array_map(static fn ($type) => Helper::snakeToCamel($type), $allowedTypes), true);
     }
 
     /**
-     * @return string
      * @throws NotSupportedException
+     *
+     * @return string
      */
     public function getType(): string {
         $intersect = array_intersect_key(get_object_vars($this->message), array_flip($this->messageTypes));

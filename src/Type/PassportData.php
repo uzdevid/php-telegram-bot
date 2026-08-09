@@ -7,7 +7,7 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Type PassportData
  *
- * @link https://core.telegram.org/bots/api#passportdata
+ * @see https://core.telegram.org/bots/api#passportdata
  *
  * Describes Telegram Passport data shared with the bot by the user.
  */

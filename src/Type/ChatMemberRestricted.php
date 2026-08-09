@@ -7,7 +7,7 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Type ChatMemberRestricted
  *
- * @link https://core.telegram.org/bots/api#chatmemberrestricted
+ * @see https://core.telegram.org/bots/api#chatmemberrestricted
  *
  * Represents a chat member that is under certain restrictions in the chat. Supergroups only.
  */

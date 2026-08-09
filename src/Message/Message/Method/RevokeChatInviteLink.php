@@ -14,7 +14,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'invite_link' field, then chain optional
  * builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#revokechatinvitelink
+ * @see https://core.telegram.org/bots/api#revokechatinvitelink
  */
 class RevokeChatInviteLink extends Method implements MethodInterface {
     /**
@@ -33,10 +33,12 @@ class RevokeChatInviteLink extends Method implements MethodInterface {
 
     /**
      * Unique identifier of the target chat or username of the target channel in the format
+     *
      * @username
      *
      * @param int|string $chatId Unique identifier of the target chat or username of the target
      *   channel in the format @username
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {

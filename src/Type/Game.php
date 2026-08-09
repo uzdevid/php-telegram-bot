@@ -7,7 +7,7 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Type Game
  *
- * @link https://core.telegram.org/bots/api#game
+ * @see https://core.telegram.org/bots/api#game
  *
  * This object represents a game. Use BotFather to create and edit games, their short names will act as unique identifiers.
  */

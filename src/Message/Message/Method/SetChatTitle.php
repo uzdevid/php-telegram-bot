@@ -13,7 +13,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'title' field, then chain optional
  * builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#setchattitle
+ * @see https://core.telegram.org/bots/api#setchattitle
  */
 class SetChatTitle extends Method implements MethodInterface {
     /**
@@ -32,10 +32,12 @@ class SetChatTitle extends Method implements MethodInterface {
 
     /**
      * Unique identifier for the target chat or username of the target channel in the format
+     *
      * @username
      *
      * @param int|string $chatId Unique identifier for the target chat or username of the target
      *   channel in the format @username
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {

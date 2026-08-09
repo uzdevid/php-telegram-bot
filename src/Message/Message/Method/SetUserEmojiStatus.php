@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'user_id' field, then chain optional
  * builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#setuseremojistatus
+ * @see https://core.telegram.org/bots/api#setuseremojistatus
  */
 class SetUserEmojiStatus extends Method implements MethodInterface {
     /**
@@ -35,6 +35,7 @@ class SetUserEmojiStatus extends Method implements MethodInterface {
      *
      * @param string $emojiStatusCustomEmojiId Custom emoji identifier of the emoji status to set.
      *   Pass an empty string to remove the status.
+     *
      * @return $this
      */
     public function emojiStatusCustomEmojiId(string $emojiStatusCustomEmojiId): static {
@@ -46,6 +47,7 @@ class SetUserEmojiStatus extends Method implements MethodInterface {
      * Expiration date of the emoji status, if any
      *
      * @param int $emojiStatusExpirationDate Expiration date of the emoji status, if any
+     *
      * @return $this
      */
     public function emojiStatusExpirationDate(int $emojiStatusExpirationDate): static {

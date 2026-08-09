@@ -11,7 +11,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'user_id' and 'is_access_restricted'
  * fields, then chain optional builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#setmanagedbotaccesssettings
+ * @see https://core.telegram.org/bots/api#setmanagedbotaccesssettings
  */
 class SetManagedBotAccessSettings extends Method implements MethodInterface {
     /**
@@ -40,6 +40,7 @@ class SetManagedBotAccessSettings extends Method implements MethodInterface {
      * @param array $addedUserIds Adds one item to the added_user_ids list. A JSON-serialized list
      *   of up to 10 identifiers of users who will have access to the bot in addition to its owner.
      *   Ignored if is_access_restricted is False .
+     *
      * @return $this
      */
     public function addedUserIds(array $addedUserIds): static {
@@ -55,6 +56,7 @@ class SetManagedBotAccessSettings extends Method implements MethodInterface {
      * @param int $addedUserId Adds one item to the added_user_ids list. A JSON-serialized list of
      *   up to 10 identifiers of users who will have access to the bot in addition to its owner.
      *   Ignored if is_access_restricted is False .
+     *
      * @return $this
      */
     public function addAddedUserId(int $addedUserId): static {

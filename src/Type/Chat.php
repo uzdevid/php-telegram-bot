@@ -7,7 +7,7 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Type Chat
  *
- * @link https://core.telegram.org/bots/api#chat
+ * @see https://core.telegram.org/bots/api#chat
  *
  * This object represents a chat.
  */
@@ -19,9 +19,10 @@ class Chat extends Type {
     public string $firstName;
     public string $lastName;
     public bool $isForum;
-    public bool $chatPhoto;
+    public ChatPhoto $photo;
     public array $activeUsernames;
     public string $emojiStatusCustomEmojiId;
+    public int $emojiStatusExpirationDate;
     public string $bio;
     public bool $hasPrivateForwards;
     public bool $hasRestrictedVoiceAndVideoMessages;
@@ -29,15 +30,17 @@ class Chat extends Type {
     public bool $joinByRequest;
     public string $description;
     public string $inviteLink;
-    public int $pinnedMessage;
-    public int $permissions;
+    public Message $pinnedMessage;
+    public ChatPermissions $permissions;
     public int $slowModeDelay;
+    public int $unrestrictBoostCount;
     public int $messageAutoDeleteTime;
     public bool $hasAggressiveAntiSpamEnabled;
     public bool $hasHiddenMembers;
     public bool $hasProtectedContent;
+    public bool $hasVisibleHistory;
     public string $stickerSetName;
     public bool $canSetStickerSet;
-    public bool $linkedChatId;
-    public bool $location;
+    public int $linkedChatId;
+    public ChatLocation $location;
 }

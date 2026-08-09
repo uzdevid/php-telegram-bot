@@ -7,7 +7,7 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Type BotCommandScopeAllGroupChats
  *
- * @link https://core.telegram.org/bots/api#BotCommandScopeAllGroupChats
+ * @see https://core.telegram.org/bots/api#BotCommandScopeAllGroupChats
  *
  * This object represents a bot command.
  */

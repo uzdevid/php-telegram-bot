@@ -1,0 +1,826 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Call to an undefined method GuzzleHttp\\\\ClientInterface\\:\\:post\\(\\)\\.$#"
+			count: 1
+			path: src/Client.php
+
+		-
+			message: "#^Class UzDevid\\\\Telegram\\\\Bot\\\\Client has an uninitialized readonly property \\$chatId\\. Assign it in the constructor\\.$#"
+			count: 1
+			path: src/Client.php
+
+		-
+			message: "#^Class UzDevid\\\\Telegram\\\\Bot\\\\Client has an uninitialized readonly property \\$messageId\\. Assign it in the constructor\\.$#"
+			count: 1
+			path: src/Client.php
+
+		-
+			message: "#^Class UzDevid\\\\Telegram\\\\Bot\\\\Client has an uninitialized readonly property \\$method\\. Assign it in the constructor\\.$#"
+			count: 1
+			path: src/Client.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Client\\:\\:sendRequest\\(\\) has no return type specified\\.$#"
+			count: 1
+			path: src/Client.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Client\\:\\:sendRequest\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Client.php
+
+		-
+			message: "#^Readonly property UzDevid\\\\Telegram\\\\Bot\\\\Client\\:\\:\\$chatId is assigned outside of the constructor\\.$#"
+			count: 1
+			path: src/Client.php
+
+		-
+			message: "#^Readonly property UzDevid\\\\Telegram\\\\Bot\\\\Client\\:\\:\\$messageId is assigned outside of the constructor\\.$#"
+			count: 1
+			path: src/Client.php
+
+		-
+			message: "#^Readonly property UzDevid\\\\Telegram\\\\Bot\\\\Client\\:\\:\\$method is assigned outside of the constructor\\.$#"
+			count: 1
+			path: src/Client.php
+
+		-
+			message: "#^Trait UzDevid\\\\Telegram\\\\Bot\\\\Core\\\\Credentials is used zero times and is not analysed\\.$#"
+			count: 1
+			path: src/Core/Credentials.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Core\\\\Helper\\:\\:reformat\\(\\) has parameter \\$payload with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core/Helper.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Core\\\\Helper\\:\\:reformat\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Core/Helper.php
+
+		-
+			message: "#^Parameter \\#1 \\$string of function ltrim expects string, string\\|null given\\.$#"
+			count: 2
+			path: src/Core/Helper.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Handler\\\\Message\\\\FilterMessageTypesInterface\\:\\:allowedTypes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Handler/Message/FilterMessageTypesInterface.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Handler\\\\Request\\\\ChatJoinRequest\\:\\:buildRequest\\(\\) has parameter \\$payload with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Handler/Request/ChatJoinRequest.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Handler\\\\Request\\\\PreCheckoutQuery\\:\\:buildRequest\\(\\) has parameter \\$payload with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Handler/Request/PreCheckoutQuery.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Handler\\\\Request\\\\RequestInterface\\:\\:buildRequest\\(\\) has parameter \\$payload with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Handler/Request/RequestInterface.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Answer\\\\AnswerType\\:\\:__construct\\(\\) has parameter \\$attributes with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Answer/AnswerType.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Answer\\\\AnswerType\\:\\:getAttributes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Answer/AnswerType.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Answer\\\\AnswerType\\:\\:getPayload\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Answer/AnswerType.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Answer\\\\AnswerType\\:\\:mergeAttribute\\(\\) has parameter \\$values with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Answer/AnswerType.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Answer\\\\AnswerType\\:\\:setAttributes\\(\\) has parameter \\$attributes with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Answer/AnswerType.php
+
+		-
+			message: "#^Property UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Answer\\\\AnswerType\\:\\:\\$attributes type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Answer/AnswerType.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Answer\\\\Result\\\\InlineQueryResultDocument\\:\\:inputMessageContent\\(\\) has parameter \\$content with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Answer/Result/InlineQueryResultDocument.php
+
+		-
+			message: "#^Class UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Entity\\\\MessageEntity has PHPDoc tag @property for property \\$params with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Entity/MessageEntity.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Entity\\\\MessageEntity\\:\\:__construct\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Entity/MessageEntity.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Entity\\\\MessageEntity\\:\\:getParams\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Entity/MessageEntity.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Entity\\\\MessageEntity\\:\\:setParams\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Entity/MessageEntity.php
+
+		-
+			message: "#^Property UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Entity\\\\MessageEntity\\:\\:\\$_params type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Entity/MessageEntity.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Entity\\\\MessageEntityInterface\\:\\:getParams\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Entity/MessageEntityInterface.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Entity\\\\MessageEntityInterface\\:\\:setParams\\(\\) has parameter \\$params with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Entity/MessageEntityInterface.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\ButtonInterface\\:\\:getAttributes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/ButtonInterface.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Force\\\\ForceReply\\:\\:getAttributes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Force/ForceReply.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Force\\\\ForceReply\\:\\:jsonSerialize\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Force/ForceReply.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Force\\\\ForceReply\\:\\:mergeAttribute\\(\\) has parameter \\$values with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Force/ForceReply.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Force\\\\ForceReply\\:\\:setAttributes\\(\\) has parameter \\$attributes with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Force/ForceReply.php
+
+		-
+			message: "#^Property UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Force\\\\ForceReply\\:\\:\\$attributes type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Force/ForceReply.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Inline\\\\InlineButton\\:\\:__construct\\(\\) has parameter \\$attributes with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Inline/InlineButton.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Inline\\\\InlineButton\\:\\:getAttributes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Inline/InlineButton.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Inline\\\\InlineButton\\:\\:mergeAttribute\\(\\) has parameter \\$values with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Inline/InlineButton.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Inline\\\\InlineButton\\:\\:setAttributes\\(\\) has parameter \\$attributes with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Inline/InlineButton.php
+
+		-
+			message: "#^Property UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Inline\\\\InlineButton\\:\\:\\$attributes type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Inline/InlineButton.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Inline\\\\InlineRow\\:\\:__construct\\(\\) has parameter \\$attributes with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Inline/InlineRow.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Inline\\\\InlineRow\\:\\:getAttributes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Inline/InlineRow.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Inline\\\\InlineRow\\:\\:getButtons\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Inline/InlineRow.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Inline\\\\InlineRow\\:\\:mergeAttribute\\(\\) has parameter \\$values with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Inline/InlineRow.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Inline\\\\InlineRow\\:\\:setAttributes\\(\\) has parameter \\$attributes with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Inline/InlineRow.php
+
+		-
+			message: "#^Property UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Inline\\\\InlineRow\\:\\:\\$attributes type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Inline/InlineRow.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Keyboard\\:\\:__construct\\(\\) has parameter \\$attributes with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Keyboard.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Keyboard\\:\\:getAttributes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Keyboard.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Keyboard\\:\\:jsonSerialize\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Keyboard.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Keyboard\\:\\:mergeAttribute\\(\\) has parameter \\$values with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Keyboard.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Keyboard\\:\\:setAttributes\\(\\) has parameter \\$attributes with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Keyboard.php
+
+		-
+			message: "#^Property UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Keyboard\\:\\:\\$attributes type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Keyboard.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Reply\\\\ReplyButton\\:\\:__construct\\(\\) has parameter \\$attributes with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Reply/ReplyButton.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Reply\\\\ReplyButton\\:\\:getAttributes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Reply/ReplyButton.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Reply\\\\ReplyButton\\:\\:mergeAttribute\\(\\) has parameter \\$values with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Reply/ReplyButton.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Reply\\\\ReplyButton\\:\\:setAttributes\\(\\) has parameter \\$attributes with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Reply/ReplyButton.php
+
+		-
+			message: "#^Property UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Reply\\\\ReplyButton\\:\\:\\$attributes type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Reply/ReplyButton.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Reply\\\\ReplyKeyboardRemove\\:\\:getAttributes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Reply/ReplyKeyboardRemove.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Reply\\\\ReplyKeyboardRemove\\:\\:jsonSerialize\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Reply/ReplyKeyboardRemove.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Reply\\\\ReplyKeyboardRemove\\:\\:mergeAttribute\\(\\) has parameter \\$values with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Reply/ReplyKeyboardRemove.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Reply\\\\ReplyKeyboardRemove\\:\\:setAttributes\\(\\) has parameter \\$attributes with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Reply/ReplyKeyboardRemove.php
+
+		-
+			message: "#^Property UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Reply\\\\ReplyKeyboardRemove\\:\\:\\$attributes type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Reply/ReplyKeyboardRemove.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Reply\\\\ReplyRow\\:\\:__construct\\(\\) has parameter \\$attributes with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Reply/ReplyRow.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Reply\\\\ReplyRow\\:\\:getAttributes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Reply/ReplyRow.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Reply\\\\ReplyRow\\:\\:getButtons\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Reply/ReplyRow.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Reply\\\\ReplyRow\\:\\:mergeAttribute\\(\\) has parameter \\$values with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Reply/ReplyRow.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Reply\\\\ReplyRow\\:\\:setAttributes\\(\\) has parameter \\$attributes with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Reply/ReplyRow.php
+
+		-
+			message: "#^Property UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\Reply\\\\ReplyRow\\:\\:\\$attributes type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/Reply/ReplyRow.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Keyboard\\\\RowInterface\\:\\:getButtons\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Keyboard/RowInterface.php
+
+		-
+			message: "#^Class UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method has PHPDoc tag @property for property \\$payload with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\:\\:__construct\\(\\) has parameter \\$attributes with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\:\\:getAttributes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\:\\:getPayload\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\:\\:mergeAttribute\\(\\) has parameter \\$values with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\:\\:response\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\:\\:response\\(\\) should return string but returns array\\.$#"
+			count: 1
+			path: src/Message/Message/Method.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\:\\:setAttributes\\(\\) has parameter \\$attributes with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method.php
+
+		-
+			message: "#^Property UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\:\\:\\$attributes type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method.php
+
+		-
+			message: "#^Call to an undefined method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Answer\\\\AnswerInterface\\:\\:getPayload\\(\\)\\.$#"
+			count: 1
+			path: src/Message/Message/Method/Answer.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\Answer\\:\\:__attributeConstruct\\(\\) has parameter \\$attributes with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/Answer.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\Answer\\:\\:getAttributes\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/Answer.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\Answer\\:\\:getPayload\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/Answer.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\Answer\\:\\:mergeAttribute\\(\\) has parameter \\$values with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/Answer.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\Answer\\:\\:response\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/Answer.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\Answer\\:\\:setAttributes\\(\\) has parameter \\$attributes with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/Answer.php
+
+		-
+			message: "#^Property UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\Answer\\:\\:\\$attributes type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/Answer.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\AnswerShippingQuery\\:\\:shippingOptions\\(\\) has parameter \\$shippingOptions with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/AnswerShippingQuery.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\CopyMessage\\:\\:captionEntities\\(\\) has parameter \\$captionEntities with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/CopyMessage.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\CopyMessages\\:\\:__construct\\(\\) has parameter \\$messageIds with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/CopyMessages.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\CreateInvoiceLink\\:\\:__construct\\(\\) has parameter \\$prices with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/CreateInvoiceLink.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\CreateInvoiceLink\\:\\:suggestedTipAmounts\\(\\) has parameter \\$suggestedTipAmounts with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/CreateInvoiceLink.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\CreateNewStickerSet\\:\\:__construct\\(\\) has parameter \\$stickers with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/CreateNewStickerSet.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\DeleteBusinessMessages\\:\\:__construct\\(\\) has parameter \\$messageIds with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/DeleteBusinessMessages.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\DeleteMessages\\:\\:__construct\\(\\) has parameter \\$messageIds with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/DeleteMessages.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\EditEphemeralMessageCaption\\:\\:captionEntities\\(\\) has parameter \\$captionEntities with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/EditEphemeralMessageCaption.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\EditEphemeralMessageText\\:\\:entities\\(\\) has parameter \\$entities with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/EditEphemeralMessageText.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\EditMessageCaption\\:\\:captionEntities\\(\\) has parameter \\$captionEntities with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/EditMessageCaption.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\EditMessageText\\:\\:entities\\(\\) has parameter \\$entities with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/EditMessageText.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\EditStory\\:\\:areas\\(\\) has parameter \\$areas with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/EditStory.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\EditStory\\:\\:captionEntities\\(\\) has parameter \\$captionEntities with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/EditStory.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\ForwardMessages\\:\\:__construct\\(\\) has parameter \\$messageIds with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/ForwardMessages.php
+
+		-
+			message: "#^Match expression does not handle remaining value\\: mixed$#"
+			count: 1
+			path: src/Message/Message/Method/GetChatMember.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\GetChatMember\\:\\:response\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/GetChatMember.php
+
+		-
+			message: "#^PHPDoc tag @return has invalid value \\(\\)\\: Unexpected token \"\\\\n     \\* \", expected type at offset 189 on line 6$#"
+			count: 1
+			path: src/Message/Message/Method/GetChatMember.php
+
+		-
+			message: "#^Return type \\(UzDevid\\\\Telegram\\\\Bot\\\\Type\\\\ChatMemberAdministrator\\|UzDevid\\\\Telegram\\\\Bot\\\\Type\\\\ChatMemberBanned\\|UzDevid\\\\Telegram\\\\Bot\\\\Type\\\\ChatMemberLeft\\|UzDevid\\\\Telegram\\\\Bot\\\\Type\\\\ChatMemberMember\\|UzDevid\\\\Telegram\\\\Bot\\\\Type\\\\ChatMemberOwner\\|UzDevid\\\\Telegram\\\\Bot\\\\Type\\\\ChatMemberRestricted\\) of method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\GetChatMember\\:\\:response\\(\\) should be compatible with return type \\(string\\) of method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\:\\:response\\(\\)$#"
+			count: 1
+			path: src/Message/Message/Method/GetChatMember.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\GetCustomEmojiStickers\\:\\:__construct\\(\\) has parameter \\$customEmojiIds with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/GetCustomEmojiStickers.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\GetFile\\:\\:response\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/GetFile.php
+
+		-
+			message: "#^Return type \\(UzDevid\\\\Telegram\\\\Bot\\\\Type\\\\File\\) of method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\GetFile\\:\\:response\\(\\) should be compatible with return type \\(string\\) of method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\:\\:response\\(\\)$#"
+			count: 1
+			path: src/Message/Message/Method/GetFile.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\GetUpdates\\:\\:allowedUpdates\\(\\) has parameter \\$allowedUpdates with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/GetUpdates.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\GetUserProfilePhotos\\:\\:response\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/GetUserProfilePhotos.php
+
+		-
+			message: "#^Return type \\(UzDevid\\\\Telegram\\\\Bot\\\\Type\\\\UserProfilePhotos\\) of method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\GetUserProfilePhotos\\:\\:response\\(\\) should be compatible with return type \\(string\\) of method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\:\\:response\\(\\)$#"
+			count: 1
+			path: src/Message/Message/Method/GetUserProfilePhotos.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\GiftPremiumSubscription\\:\\:textEntities\\(\\) has parameter \\$textEntities with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/GiftPremiumSubscription.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\PostStory\\:\\:areas\\(\\) has parameter \\$areas with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/PostStory.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\PostStory\\:\\:captionEntities\\(\\) has parameter \\$captionEntities with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/PostStory.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\SendAnimation\\:\\:captionEntities\\(\\) has parameter \\$captionEntities with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/SendAnimation.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\SendAudio\\:\\:captionEntities\\(\\) has parameter \\$captionEntities with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/SendAudio.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\SendDocument\\:\\:captionEntities\\(\\) has parameter \\$captionEntities with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/SendDocument.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\SendGift\\:\\:textEntities\\(\\) has parameter \\$textEntities with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/SendGift.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\SendInvoice\\:\\:__construct\\(\\) has parameter \\$prices with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/SendInvoice.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\SendInvoice\\:\\:suggestedTipAmounts\\(\\) has parameter \\$suggestedTipAmounts with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/SendInvoice.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\SendLivePhoto\\:\\:captionEntities\\(\\) has parameter \\$captionEntities with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/SendLivePhoto.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\SendMediaGroup\\:\\:__construct\\(\\) has parameter \\$media with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/SendMediaGroup.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\SendMessage\\:\\:entities\\(\\) has parameter \\$entities with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/SendMessage.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\SendMessageDraft\\:\\:entities\\(\\) has parameter \\$entities with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/SendMessageDraft.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\SendPaidMedia\\:\\:__construct\\(\\) has parameter \\$media with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/SendPaidMedia.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\SendPaidMedia\\:\\:captionEntities\\(\\) has parameter \\$captionEntities with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/SendPaidMedia.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\SendPhoto\\:\\:captionEntities\\(\\) has parameter \\$captionEntities with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/SendPhoto.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\SendPoll\\:\\:__construct\\(\\) has parameter \\$options with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/SendPoll.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\SendPoll\\:\\:correctOptionIds\\(\\) has parameter \\$correctOptionIds with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/SendPoll.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\SendPoll\\:\\:countryCodes\\(\\) has parameter \\$countryCodes with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/SendPoll.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\SendPoll\\:\\:descriptionEntities\\(\\) has parameter \\$descriptionEntities with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/SendPoll.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\SendPoll\\:\\:explanationEntities\\(\\) has parameter \\$explanationEntities with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/SendPoll.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\SendPoll\\:\\:questionEntities\\(\\) has parameter \\$questionEntities with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/SendPoll.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\SendVideo\\:\\:captionEntities\\(\\) has parameter \\$captionEntities with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/SendVideo.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\SendVoice\\:\\:captionEntities\\(\\) has parameter \\$captionEntities with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/SendVoice.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\SetManagedBotAccessSettings\\:\\:addedUserIds\\(\\) has parameter \\$addedUserIds with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/SetManagedBotAccessSettings.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\SetMessageReaction\\:\\:reaction\\(\\) has parameter \\$reaction with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/SetMessageReaction.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\SetMyCommands\\:\\:__construct\\(\\) has parameter \\$commands with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/SetMyCommands.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\SetPassportDataErrors\\:\\:__construct\\(\\) has parameter \\$errors with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/SetPassportDataErrors.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\SetStickerEmojiList\\:\\:__construct\\(\\) has parameter \\$emojiList with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/SetStickerEmojiList.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\SetStickerKeywords\\:\\:keywords\\(\\) has parameter \\$keywords with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/SetStickerKeywords.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\Method\\\\SetWebhook\\:\\:allowedUpdates\\(\\) has parameter \\$allowedUpdates with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/Method/SetWebhook.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\MethodInterface\\:\\:getPayload\\(\\) return type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/MethodInterface.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Message\\\\Message\\\\MethodInterface\\:\\:response\\(\\) has parameter \\$data with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Message/Message/MethodInterface.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Scenario\\\\Scenario\\:\\:__construct\\(\\) has parameter \\$payload with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Scenario/Scenario.php
+
+		-
+			message: "#^PHPDoc tag @return with type UzDevid\\\\Telegram\\\\Bot\\\\Scenario\\\\Scenario is not subtype of native type static\\(UzDevid\\\\Telegram\\\\Bot\\\\Scenario\\\\Scenario\\)\\.$#"
+			count: 1
+			path: src/Scenario/Scenario.php
+
+		-
+			message: "#^Property UzDevid\\\\Telegram\\\\Bot\\\\Scenario\\\\Scenario\\:\\:\\$scenarios type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Scenario/Scenario.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Server\\:\\:hydrate\\(\\) should return T of object but returns object\\.$#"
+			count: 1
+			path: src/Server.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Server\\:\\:withPayload\\(\\) has parameter \\$payload with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Server.php
+
+		-
+			message: "#^Property UzDevid\\\\Telegram\\\\Bot\\\\Server\\:\\:\\$payload type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Server.php
+
+		-
+			message: "#^Property UzDevid\\\\Telegram\\\\Bot\\\\Type\\\\Chat\\:\\:\\$activeUsernames type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Type/Chat.php
+
+		-
+			message: "#^Property UzDevid\\\\Telegram\\\\Bot\\\\Type\\\\ChatMemberUpdated\\:\\:\\$newChatMember type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Type/ChatMemberUpdated.php
+
+		-
+			message: "#^Property UzDevid\\\\Telegram\\\\Bot\\\\Type\\\\ChatMemberUpdated\\:\\:\\$oldChatMember type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Type/ChatMemberUpdated.php
+
+		-
+			message: "#^Property UzDevid\\\\Telegram\\\\Bot\\\\Type\\\\EncryptedPassportElement\\:\\:\\$files type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Type/EncryptedPassportElement.php
+
+		-
+			message: "#^Property UzDevid\\\\Telegram\\\\Bot\\\\Type\\\\EncryptedPassportElement\\:\\:\\$translation type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Type/EncryptedPassportElement.php
+
+		-
+			message: "#^Property UzDevid\\\\Telegram\\\\Bot\\\\Type\\\\Message\\:\\:\\$captionEntities type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Type/Message.php
+
+		-
+			message: "#^Property UzDevid\\\\Telegram\\\\Bot\\\\Type\\\\Message\\:\\:\\$entities type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Type/Message.php
+
+		-
+			message: "#^Property UzDevid\\\\Telegram\\\\Bot\\\\Type\\\\Message\\:\\:\\$newChatMembers type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Type/Message.php
+
+		-
+			message: "#^Property UzDevid\\\\Telegram\\\\Bot\\\\Type\\\\Message\\:\\:\\$newChatPhoto type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Type/Message.php
+
+		-
+			message: "#^Property UzDevid\\\\Telegram\\\\Bot\\\\Type\\\\Message\\:\\:\\$photo type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Type/Message.php
+
+		-
+			message: "#^Property UzDevid\\\\Telegram\\\\Bot\\\\Type\\\\PollAnswer\\:\\:\\$optionIds type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Type/PollAnswer.php
+
+		-
+			message: "#^Method UzDevid\\\\Telegram\\\\Bot\\\\Update\\\\MessageUpdate\\:\\:isOneOf\\(\\) has parameter \\$allowedTypes with no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Update/MessageUpdate.php
+
+		-
+			message: "#^Property UzDevid\\\\Telegram\\\\Bot\\\\Update\\\\MessageUpdate\\:\\:\\$messageTypes type has no value type specified in iterable type array\\.$#"
+			count: 1
+			path: src/Update/MessageUpdate.php

@@ -17,7 +17,7 @@ use Yiisoft\Hydrator\Hydrator;
  * Typical usage: instantiate the method with the required 'file_id' field and dispatch the request
  * directly.
  *
- * @link https://core.telegram.org/bots/api#getfile
+ * @see https://core.telegram.org/bots/api#getfile
  */
 class GetFile extends Method implements MethodInterface {
     /**
@@ -35,13 +35,14 @@ class GetFile extends Method implements MethodInterface {
      * @return string
      */
     public function methodName(): string {
-        return "getFile";
+        return 'getFile';
     }
 
     /**
      * Hydrates the successful Bot API response into a File instance.
      *
-     * @param array $data Raw Telegram Bot API response payload.
+     * @param array $data raw Telegram Bot API response payload
+     *
      * @return File
      */
     public function response(array $data): File {

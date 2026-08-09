@@ -7,7 +7,7 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Type ChatInviteLink
  *
- * @link https://core.telegram.org/bots/api#chatinvitelink
+ * @see https://core.telegram.org/bots/api#chatinvitelink
  *
  * Represents an invite link for a chat.
  */

@@ -7,7 +7,6 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Class Response
  *
- * @package UzDevid\Telegram\Bot\objects
  */
 class Response extends Type {
     public int $messageId;

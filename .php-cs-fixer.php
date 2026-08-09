@@ -2,11 +2,14 @@
 
 $finder = PhpCsFixer\Finder::create()
     ->in(__DIR__ . '/src')
-    ->in(__DIR__ . '/tests')
     ->exclude('vendor')
     ->notPath('bootstrap')
     ->notPath('bootstrap.cache.php')
     ->notPath('.git');
+
+if (is_dir(__DIR__ . '/tests')) {
+    $finder->in(__DIR__ . '/tests');
+}
 
 $config = new PhpCsFixer\Config();
 
@@ -15,13 +18,16 @@ return $config
     ->setRules([
         '@PSR12' => true,
         '@PHP82Migration' => true,
-        'strict_types' => true,
-        'declare_strict_types' => true,
+        'declare_strict_types' => false,
+        'braces_position' => [
+            'classes_opening_brace' => 'same_line',
+            'functions_opening_brace' => 'same_line',
+        ],
         'array_syntax' => ['syntax' => 'short'],
         'combine_consecutive_issets' => true,
         'combine_consecutive_unsets' => true,
         'concat_space' => ['spacing' => 'one'],
-        'is_null' => ['use_yoda_style' => false],
+        'is_null' => true,
         'list_syntax' => ['syntax' => 'short'],
         'logical_operators' => true,
         'method_chaining_indentation' => true,
@@ -50,7 +56,6 @@ return $config
                 'use',
             ],
         ],
-        'no_homoglyphic_characters' => true,
         'no_leading_import_slash' => true,
         'no_leading_namespace_whitespace' => true,
         'no_mixed_echo_print' => true,
@@ -59,7 +64,7 @@ return $config
         'no_short_bool_cast' => true,
         'no_singleline_whitespace_before_semicolons' => true,
         'no_spaces_around_offset' => true,
-        'no_trailing_comma_in_single_line' => true,
+        'no_trailing_comma_in_singleline' => true,
         'no_trailing_whitespace' => true,
         'no_trailing_whitespace_in_comment' => true,
         'no_unneeded_braces' => true,
@@ -107,7 +112,6 @@ return $config
         'psr_autoloading' => true,
         'return_assignment' => true,
         'return_type_declaration' => true,
-        'semicolon_after_class_body' => true,
         'single_import_per_statement' => true,
         'single_line_after_imports' => true,
         'single_line_comment_style' => [
@@ -119,7 +123,7 @@ return $config
         'standardize_not_equals' => true,
         'statement_indentation' => true,
         'static_lambda' => true,
-        'ternary_operator_whitespace' => true,
+        'ternary_operator_spaces' => true,
         'ternary_to_elvis_operator' => true,
         'ternary_to_null_coalescing' => true,
         'trailing_comma_in_multiline' => [
@@ -127,7 +131,6 @@ return $config
         ],
         'type_declaration_spaces' => true,
         'types_spaces' => true,
-        'unicode_escape' => true,
         'unary_operator_spaces' => true,
         'use_arrow_functions' => true,
         'whitespace_after_comma_in_array' => true,

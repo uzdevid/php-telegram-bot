@@ -13,7 +13,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'business_connection_id' and
  * 'owned_gift_id' fields, then chain optional builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#upgradegift
+ * @see https://core.telegram.org/bots/api#upgradegift
  */
 class UpgradeGift extends Method implements MethodInterface {
     /**
@@ -39,6 +39,7 @@ class UpgradeGift extends Method implements MethodInterface {
      *
      * @param bool $keepOriginalDetails Pass True to keep the original gift text, sender and
      *   receiver in the upgraded gift
+     *
      * @return $this
      */
     public function keepOriginalDetails(bool $keepOriginalDetails = true): static {
@@ -55,6 +56,7 @@ class UpgradeGift extends Method implements MethodInterface {
      *   business account balance. If gift.prepaid_upgrade_star_count > 0 , then pass 0, otherwise,
      *   the can_transfer_stars business bot right is required and gift.upgrade_star_count must be
      *   passed.
+     *
      * @return $this
      */
     public function starCount(int $starCount): static {

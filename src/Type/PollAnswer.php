@@ -7,7 +7,7 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Type PollAnswer
  *
- * @link https://core.telegram.org/bots/api#pollanswer
+ * @see https://core.telegram.org/bots/api#pollanswer
  *
  * This object represents an answer of a user in a non-anonymous poll.
  */

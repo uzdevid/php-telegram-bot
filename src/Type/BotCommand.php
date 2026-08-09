@@ -7,7 +7,7 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Type BotCommand
  *
- * @link https://core.telegram.org/bots/api#botcommand
+ * @see https://core.telegram.org/bots/api#botcommand
  *
  * This object represents a bot command.
  */

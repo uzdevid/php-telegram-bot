@@ -15,7 +15,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method, chain any optional builder methods, and then dispatch the
  * request.
  *
- * @link https://core.telegram.org/bots/api#unpinallchatmessages
+ * @see https://core.telegram.org/bots/api#unpinallchatmessages
  */
 class UnpinAllChatMessages extends Method implements MethodInterface {
     public function methodName(): string {
@@ -24,10 +24,12 @@ class UnpinAllChatMessages extends Method implements MethodInterface {
 
     /**
      * Unique identifier for the target chat or username of the target channel in the format
+     *
      * @username
      *
      * @param int|string $chatId Unique identifier for the target chat or username of the target
      *   channel in the format @username
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {

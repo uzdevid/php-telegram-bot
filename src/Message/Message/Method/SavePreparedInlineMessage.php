@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'user_id' and 'result' fields, then chain
  * optional builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#savepreparedinlinemessage
+ * @see https://core.telegram.org/bots/api#savepreparedinlinemessage
  */
 class SavePreparedInlineMessage extends Method implements MethodInterface {
     /**
@@ -36,6 +36,7 @@ class SavePreparedInlineMessage extends Method implements MethodInterface {
      * Pass True if the message can be sent to private chats with users
      *
      * @param bool $allowUserChats Pass True if the message can be sent to private chats with users
+     *
      * @return $this
      */
     public function allowUserChats(bool $allowUserChats = true): static {
@@ -47,6 +48,7 @@ class SavePreparedInlineMessage extends Method implements MethodInterface {
      * Pass True if the message can be sent to private chats with bots
      *
      * @param bool $allowBotChats Pass True if the message can be sent to private chats with bots
+     *
      * @return $this
      */
     public function allowBotChats(bool $allowBotChats = true): static {
@@ -59,6 +61,7 @@ class SavePreparedInlineMessage extends Method implements MethodInterface {
      *
      * @param bool $allowGroupChats Pass True if the message can be sent to group and supergroup
      *   chats
+     *
      * @return $this
      */
     public function allowGroupChats(bool $allowGroupChats = true): static {
@@ -70,6 +73,7 @@ class SavePreparedInlineMessage extends Method implements MethodInterface {
      * Pass True if the message can be sent to channel chats
      *
      * @param bool $allowChannelChats Pass True if the message can be sent to channel chats
+     *
      * @return $this
      */
     public function allowChannelChats(bool $allowChannelChats = true): static {

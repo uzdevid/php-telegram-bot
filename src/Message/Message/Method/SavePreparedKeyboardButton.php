@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'user_id' and 'button' fields and
  * dispatch the request directly.
  *
- * @link https://core.telegram.org/bots/api#savepreparedkeyboardbutton
+ * @see https://core.telegram.org/bots/api#savepreparedkeyboardbutton
  */
 class SavePreparedKeyboardButton extends Method implements MethodInterface {
     /**

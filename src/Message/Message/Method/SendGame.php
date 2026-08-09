@@ -11,7 +11,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'game_short_name' field, then chain
  * optional builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#sendgame
+ * @see https://core.telegram.org/bots/api#sendgame
  */
 class SendGame extends Method implements MethodInterface {
     /**
@@ -34,6 +34,7 @@ class SendGame extends Method implements MethodInterface {
      *
      * @param string $businessConnectionId Unique identifier of the business connection on behalf of
      *   which the message will be sent
+     *
      * @return $this
      */
     public function businessConnectionId(string $businessConnectionId): static {
@@ -48,6 +49,7 @@ class SendGame extends Method implements MethodInterface {
      * @param int|string $chatId Unique identifier for the target chat or username of the target bot
      *   in the format @username . Games can't be sent to channel direct messages chats and channel
      *   chats.
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -61,6 +63,7 @@ class SendGame extends Method implements MethodInterface {
      *
      * @param int $messageThreadId Unique identifier for the target message thread (topic) of a
      *   forum; for forum supergroups and private chats of bots with forum topic mode enabled only
+     *
      * @return $this
      */
     public function messageThreadId(int $messageThreadId): static {
@@ -73,6 +76,7 @@ class SendGame extends Method implements MethodInterface {
      *
      * @param bool $disableNotification Sends the message silently . Users will receive a
      *   notification with no sound.
+     *
      * @return $this
      */
     public function disableNotification(bool $disableNotification): static {
@@ -85,6 +89,7 @@ class SendGame extends Method implements MethodInterface {
      *
      * @param bool $protectContent Protects the contents of the sent message from forwarding and
      *   saving
+     *
      * @return $this
      */
     public function protectContent(bool $protectContent): static {
@@ -99,6 +104,7 @@ class SendGame extends Method implements MethodInterface {
      * @param bool $allowPaidBroadcast Pass True to allow up to 1000 messages per second, ignoring
      *   broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be
      *   withdrawn from the bot's balance.
+     *
      * @return $this
      */
     public function allowPaidBroadcast(bool $allowPaidBroadcast = true): static {
@@ -111,6 +117,7 @@ class SendGame extends Method implements MethodInterface {
      *
      * @param string $messageEffectId Unique identifier of the message effect to be added to the
      *   message; for private chats only
+     *
      * @return $this
      */
     public function messageEffectId(string $messageEffectId): static {
@@ -122,6 +129,7 @@ class SendGame extends Method implements MethodInterface {
      * Description of the message to reply to
      *
      * @param mixed $replyParameters Description of the message to reply to
+     *
      * @return $this
      */
     public function replyParameters(mixed $replyParameters): static {
@@ -136,6 +144,7 @@ class SendGame extends Method implements MethodInterface {
      * @param mixed $replyMarkup A JSON-serialized object for an inline keyboard . If empty, one
      *   'Play game_title' button will be shown. If not empty, the first button must launch the
      *   game.
+     *
      * @return $this
      */
     public function replyMarkup(mixed $replyMarkup): static {

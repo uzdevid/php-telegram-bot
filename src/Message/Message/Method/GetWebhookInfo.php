@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  *
  * Typical usage: dispatch the request directly when the related Telegram Bot API action is needed.
  *
- * @link https://core.telegram.org/bots/api#getwebhookinfo
+ * @see https://core.telegram.org/bots/api#getwebhookinfo
  */
 class GetWebhookInfo extends Method implements MethodInterface {
     public function methodName(): string {

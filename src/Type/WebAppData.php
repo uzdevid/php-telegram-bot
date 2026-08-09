@@ -7,7 +7,7 @@ use UzDevid\Telegram\Bot\Core\Type;
 /**
  * Type WebAppData
  *
- * @link https://core.telegram.org/bots/api#webappdata
+ * @see https://core.telegram.org/bots/api#webappdata
  *
  * Describes data sent from a Web App to the bot.
  */

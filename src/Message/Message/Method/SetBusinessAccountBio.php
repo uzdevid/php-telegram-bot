@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'business_connection_id' field, then
  * chain optional builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#setbusinessaccountbio
+ * @see https://core.telegram.org/bots/api#setbusinessaccountbio
  */
 class SetBusinessAccountBio extends Method implements MethodInterface {
     /**
@@ -34,6 +34,7 @@ class SetBusinessAccountBio extends Method implements MethodInterface {
      * The new value of the bio for the business account; 0-140 characters
      *
      * @param string $bio The new value of the bio for the business account; 0-140 characters
+     *
      * @return $this
      */
     public function bio(string $bio): static {

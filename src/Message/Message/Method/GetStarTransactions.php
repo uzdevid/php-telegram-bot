@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method, chain any optional builder methods, and then dispatch the
  * request.
  *
- * @link https://core.telegram.org/bots/api#getstartransactions
+ * @see https://core.telegram.org/bots/api#getstartransactions
  */
 class GetStarTransactions extends Method implements MethodInterface {
     public function methodName(): string {
@@ -23,6 +23,7 @@ class GetStarTransactions extends Method implements MethodInterface {
      * Number of transactions to skip in the response
      *
      * @param int $offset Number of transactions to skip in the response
+     *
      * @return $this
      */
     public function offset(int $offset): static {
@@ -36,6 +37,7 @@ class GetStarTransactions extends Method implements MethodInterface {
      *
      * @param int $limit The maximum number of transactions to be retrieved. Values between 1-100
      *   are accepted. Defaults to 100.
+     *
      * @return $this
      */
     public function limit(int $limit): static {

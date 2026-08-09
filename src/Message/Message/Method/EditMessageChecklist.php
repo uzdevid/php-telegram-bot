@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'business_connection_id', 'message_id',
  * and 'checklist' fields, then chain optional builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#editmessagechecklist
+ * @see https://core.telegram.org/bots/api#editmessagechecklist
  */
 class EditMessageChecklist extends Method implements MethodInterface {
     /**
@@ -40,6 +40,7 @@ class EditMessageChecklist extends Method implements MethodInterface {
      *
      * @param int|string $chatId Unique identifier for the target chat or username of the target bot
      *   in the format @username
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -52,6 +53,7 @@ class EditMessageChecklist extends Method implements MethodInterface {
      *
      * @param mixed $replyMarkup A JSON-serialized object for the new inline keyboard for the
      *   message
+     *
      * @return $this
      */
     public function replyMarkup(mixed $replyMarkup): static {

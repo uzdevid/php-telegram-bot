@@ -16,7 +16,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'from_chat_id' and 'message_id' fields,
  * then chain optional builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#copymessage
+ * @see https://core.telegram.org/bots/api#copymessage
  */
 class CopyMessage extends Method implements MethodInterface {
     /**
@@ -43,6 +43,7 @@ class CopyMessage extends Method implements MethodInterface {
      *
      * @param int|string $chatId Unique identifier for the target chat or username of the target
      *   bot, supergroup or channel in the format @username
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -56,6 +57,7 @@ class CopyMessage extends Method implements MethodInterface {
      *
      * @param int $messageThreadId Unique identifier for the target message thread (topic) of a
      *   forum; for forum supergroups and private chats of bots with forum topic mode enabled only
+     *
      * @return $this
      */
     public function messageThreadId(int $messageThreadId): static {
@@ -69,6 +71,7 @@ class CopyMessage extends Method implements MethodInterface {
      *
      * @param int $directMessagesTopicId Identifier of the direct messages topic to which the
      *   message will be sent; required if the message is sent to a direct messages chat
+     *
      * @return $this
      */
     public function directMessagesTopicId(int $directMessagesTopicId): static {
@@ -80,6 +83,7 @@ class CopyMessage extends Method implements MethodInterface {
      * New start timestamp for the copied video in the message
      *
      * @param int $videoStartTimestamp New start timestamp for the copied video in the message
+     *
      * @return $this
      */
     public function videoStartTimestamp(int $videoStartTimestamp): static {
@@ -93,6 +97,7 @@ class CopyMessage extends Method implements MethodInterface {
      *
      * @param string $caption New caption for media, 0-1024 characters after entities parsing. If
      *   not specified, the original caption is kept.
+     *
      * @return $this
      */
     public function caption(string $caption): static {
@@ -105,6 +110,7 @@ class CopyMessage extends Method implements MethodInterface {
      *
      * @param string $parseMode Mode for parsing entities in the new caption. See formatting options
      *   for more details.
+     *
      * @return $this
      */
     public function parseMode(string $parseMode): static {
@@ -118,6 +124,7 @@ class CopyMessage extends Method implements MethodInterface {
      *
      * @param array $captionEntities A JSON-serialized list of special entities that appear in the
      *   new caption, which can be specified instead of parse_mode
+     *
      * @return $this
      */
     public function captionEntities(array $captionEntities): static {
@@ -132,6 +139,7 @@ class CopyMessage extends Method implements MethodInterface {
      * @param MessageEntityInterface $captionEntity Adds one item to the caption_entities list. A
      *   JSON-serialized list of special entities that appear in the new caption, which can be
      *   specified instead of parse_mode
+     *
      * @return $this
      */
     public function addCaptionEntity(MessageEntityInterface $captionEntity): static {
@@ -145,6 +153,7 @@ class CopyMessage extends Method implements MethodInterface {
      *
      * @param bool $showCaptionAboveMedia Pass True if the caption must be shown above the message
      *   media. Ignored if a new caption isn't specified.
+     *
      * @return $this
      */
     public function showCaptionAboveMedia(bool $showCaptionAboveMedia = true): static {
@@ -157,6 +166,7 @@ class CopyMessage extends Method implements MethodInterface {
      *
      * @param bool $disableNotification Sends the message silently . Users will receive a
      *   notification with no sound.
+     *
      * @return $this
      */
     public function disableNotification(bool $disableNotification): static {
@@ -169,6 +179,7 @@ class CopyMessage extends Method implements MethodInterface {
      *
      * @param bool $protectContent Protects the contents of the sent message from forwarding and
      *   saving
+     *
      * @return $this
      */
     public function protectContent(bool $protectContent): static {
@@ -183,6 +194,7 @@ class CopyMessage extends Method implements MethodInterface {
      * @param bool $allowPaidBroadcast Pass True to allow up to 1000 messages per second, ignoring
      *   broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be
      *   withdrawn from the bot's balance.
+     *
      * @return $this
      */
     public function allowPaidBroadcast(bool $allowPaidBroadcast = true): static {
@@ -196,6 +208,7 @@ class CopyMessage extends Method implements MethodInterface {
      *
      * @param string $messageEffectId Unique identifier of the message effect to be added to the
      *   message; only available when copying to private chats
+     *
      * @return $this
      */
     public function messageEffectId(string $messageEffectId): static {
@@ -211,6 +224,7 @@ class CopyMessage extends Method implements MethodInterface {
      * @param mixed $suggestedPostParameters A JSON-serialized object containing the parameters of
      *   the suggested post to send; for direct messages chats only. If the message is sent as a
      *   reply to another suggested post, then that suggested post is automatically declined.
+     *
      * @return $this
      */
     public function suggestedPostParameters(mixed $suggestedPostParameters): static {
@@ -222,6 +236,7 @@ class CopyMessage extends Method implements MethodInterface {
      * Description of the message to reply to
      *
      * @param mixed $replyParameters Description of the message to reply to
+     *
      * @return $this
      */
     public function replyParameters(mixed $replyParameters): static {
@@ -236,6 +251,7 @@ class CopyMessage extends Method implements MethodInterface {
      * @param mixed $replyMarkup Additional interface options. A JSON-serialized object for an
      *   inline keyboard , custom reply keyboard , instructions to remove a reply keyboard or to
      *   force a reply from the user.
+     *
      * @return $this
      */
     public function replyMarkup(mixed $replyMarkup): static {

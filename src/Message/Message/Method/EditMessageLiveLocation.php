@@ -14,7 +14,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'latitude' and 'longitude' fields, then
  * chain optional builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#editmessagelivelocation
+ * @see https://core.telegram.org/bots/api#editmessagelivelocation
  */
 class EditMessageLiveLocation extends Method implements MethodInterface {
     /**
@@ -40,6 +40,7 @@ class EditMessageLiveLocation extends Method implements MethodInterface {
      *
      * @param string $businessConnectionId Unique identifier of the business connection on behalf of
      *   which the message to be edited was sent
+     *
      * @return $this
      */
     public function businessConnectionId(string $businessConnectionId): static {
@@ -53,7 +54,9 @@ class EditMessageLiveLocation extends Method implements MethodInterface {
      *
      * @param int|string $chatId Required if inline_message_id is not specified. Unique identifier
      *   for the target chat or username of the target bot, supergroup or channel in the format
+     *
      *   @username .
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -66,6 +69,7 @@ class EditMessageLiveLocation extends Method implements MethodInterface {
      *
      * @param int $messageId Required if inline_message_id is not specified. Identifier of the
      *   message to edit.
+     *
      * @return $this
      */
     public function messageId(int $messageId): static {
@@ -78,6 +82,7 @@ class EditMessageLiveLocation extends Method implements MethodInterface {
      *
      * @param string $inlineMessageId Required if chat_id and message_id are not specified.
      *   Identifier of the inline message.
+     *
      * @return $this
      */
     public function inlineMessageId(string $inlineMessageId): static {
@@ -97,6 +102,7 @@ class EditMessageLiveLocation extends Method implements MethodInterface {
      *   updated forever. Otherwise, the new value must not exceed the current live_period by more
      *   than a day, and the live location expiration date must remain within the next 90 days. If
      *   not specified, then live_period remains unchanged.
+     *
      * @return $this
      */
     public function livePeriod(int $livePeriod): static {
@@ -109,6 +115,7 @@ class EditMessageLiveLocation extends Method implements MethodInterface {
      *
      * @param float $horizontalAccuracy The radius of uncertainty for the location, measured in
      *   meters; 0-1500
+     *
      * @return $this
      */
     public function horizontalAccuracy(float $horizontalAccuracy): static {
@@ -121,6 +128,7 @@ class EditMessageLiveLocation extends Method implements MethodInterface {
      *
      * @param int $heading Direction in which the user is moving, in degrees. Must be between 1 and
      *   360 if specified.
+     *
      * @return $this
      */
     public function heading(int $heading): static {
@@ -134,6 +142,7 @@ class EditMessageLiveLocation extends Method implements MethodInterface {
      *
      * @param int $proximityAlertRadius The maximum distance for proximity alerts about approaching
      *   another chat member, in meters. Must be between 1 and 100000 if specified.
+     *
      * @return $this
      */
     public function proximityAlertRadius(int $proximityAlertRadius): static {
@@ -145,6 +154,7 @@ class EditMessageLiveLocation extends Method implements MethodInterface {
      * A JSON-serialized object for a new inline keyboard
      *
      * @param mixed $replyMarkup A JSON-serialized object for a new inline keyboard
+     *
      * @return $this
      */
     public function replyMarkup(mixed $replyMarkup): static {

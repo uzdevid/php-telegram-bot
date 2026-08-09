@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'business_connection_id' and 'first_name'
  * fields, then chain optional builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#setbusinessaccountname
+ * @see https://core.telegram.org/bots/api#setbusinessaccountname
  */
 class SetBusinessAccountName extends Method implements MethodInterface {
     /**
@@ -38,6 +38,7 @@ class SetBusinessAccountName extends Method implements MethodInterface {
      *
      * @param string $lastName The new value of the last name for the business account; 0-64
      *   characters
+     *
      * @return $this
      */
     public function lastName(string $lastName): static {

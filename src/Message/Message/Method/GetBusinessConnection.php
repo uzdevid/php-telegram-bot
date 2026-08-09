@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'business_connection_id' field and
  * dispatch the request directly.
  *
- * @link https://core.telegram.org/bots/api#getbusinessconnection
+ * @see https://core.telegram.org/bots/api#getbusinessconnection
  */
 class GetBusinessConnection extends Method implements MethodInterface {
     /**

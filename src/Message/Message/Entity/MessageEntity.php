@@ -7,14 +7,13 @@ use UzDevid\Telegram\Bot\Type\User;
 /**
  * Class MessageEntity
  *
- * @package UzDevid\Telegram\Bot\message\messages\entity
  * @see https://core.telegram.org/bots/api#messageentity
  *
  * This object represents one special entity in a text message. For example, hashtags, usernames, URLs, etc.
  *
  * @property array $params
  */
-class MessageEntity {
+class MessageEntity implements MessageEntityInterface {
     public const TYPE_MENTION = 'mention';
     public const TYPE_HASHTAG = 'hashtag';
     public const TYPE_CASHTAG = 'cashtag';
@@ -59,7 +58,6 @@ class MessageEntity {
     /**
      * @param array $params
      *
-     * @return void
      */
     public function setParams(array $params): void {
         $this->_params = $params;
@@ -69,7 +67,6 @@ class MessageEntity {
      * @param string $name
      * @param mixed $value
      *
-     * @return void
      */
     public function addParams(string $name, mixed $value): void {
         $this->_params[$name] = $value;

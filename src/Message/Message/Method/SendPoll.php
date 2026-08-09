@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'question' and 'options' fields, then
  * chain optional builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#sendpoll
+ * @see https://core.telegram.org/bots/api#sendpoll
  */
 class SendPoll extends Method implements MethodInterface {
     /**
@@ -36,6 +36,7 @@ class SendPoll extends Method implements MethodInterface {
      *
      * @param string $businessConnectionId Unique identifier of the business connection on behalf of
      *   which the message will be sent
+     *
      * @return $this
      */
     public function businessConnectionId(string $businessConnectionId): static {
@@ -50,6 +51,7 @@ class SendPoll extends Method implements MethodInterface {
      * @param int|string $chatId Unique identifier for the target chat or username of the target
      *   bot, supergroup or channel in the format @username . Polls can't be sent to channel direct
      *   messages chats.
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -63,6 +65,7 @@ class SendPoll extends Method implements MethodInterface {
      *
      * @param int $messageThreadId Unique identifier for the target message thread (topic) of a
      *   forum; for forum supergroups and private chats of bots with forum topic mode enabled only
+     *
      * @return $this
      */
     public function messageThreadId(int $messageThreadId): static {
@@ -76,6 +79,7 @@ class SendPoll extends Method implements MethodInterface {
      *
      * @param string $questionParseMode Mode for parsing entities in the question. See formatting
      *   options for more details. Currently, only custom emoji entities are allowed.
+     *
      * @return $this
      */
     public function questionParseMode(string $questionParseMode): static {
@@ -89,6 +93,7 @@ class SendPoll extends Method implements MethodInterface {
      *
      * @param array $questionEntities A JSON-serialized list of special entities that appear in the
      *   poll question. It can be specified instead of question_parse_mode .
+     *
      * @return $this
      */
     public function questionEntities(array $questionEntities): static {
@@ -103,6 +108,7 @@ class SendPoll extends Method implements MethodInterface {
      * @param MessageEntityInterface $questionEntity Adds one item to the question_entities list. A
      *   JSON-serialized list of special entities that appear in the poll question. It can be
      *   specified instead of question_parse_mode .
+     *
      * @return $this
      */
     public function addQuestionEntity(MessageEntityInterface $questionEntity): static {
@@ -114,6 +120,7 @@ class SendPoll extends Method implements MethodInterface {
      * True , if the poll needs to be anonymous, defaults to True
      *
      * @param bool $isAnonymous True , if the poll needs to be anonymous, defaults to True
+     *
      * @return $this
      */
     public function isAnonymous(bool $isAnonymous = true): static {
@@ -125,6 +132,7 @@ class SendPoll extends Method implements MethodInterface {
      * Poll type, “quiz” or “regular”, defaults to “regular”
      *
      * @param string $type Poll type, “quiz” or “regular”, defaults to “regular”
+     *
      * @return $this
      */
     public function type(string $type): static {
@@ -137,6 +145,7 @@ class SendPoll extends Method implements MethodInterface {
      *
      * @param bool $allowsMultipleAnswers Pass True if the poll allows multiple answers, defaults to
      *   False
+     *
      * @return $this
      */
     public function allowsMultipleAnswers(bool $allowsMultipleAnswers = true): static {
@@ -150,6 +159,7 @@ class SendPoll extends Method implements MethodInterface {
      *
      * @param bool $allowsRevoting Pass True if the poll allows to change chosen answer options,
      *   defaults to False for quizzes and to True for regular polls
+     *
      * @return $this
      */
     public function allowsRevoting(bool $allowsRevoting = true): static {
@@ -161,6 +171,7 @@ class SendPoll extends Method implements MethodInterface {
      * Pass True if the poll options must be shown in random order
      *
      * @param bool $shuffleOptions Pass True if the poll options must be shown in random order
+     *
      * @return $this
      */
     public function shuffleOptions(bool $shuffleOptions = true): static {
@@ -174,6 +185,7 @@ class SendPoll extends Method implements MethodInterface {
      *
      * @param bool $allowAddingOptions Pass True if answer options can be added to the poll after
      *   creation; not supported for anonymous polls and quizzes
+     *
      * @return $this
      */
     public function allowAddingOptions(bool $allowAddingOptions = true): static {
@@ -186,6 +198,7 @@ class SendPoll extends Method implements MethodInterface {
      *
      * @param bool $hideResultsUntilCloses Pass True if poll results must be shown only after the
      *   poll closes
+     *
      * @return $this
      */
     public function hideResultsUntilCloses(bool $hideResultsUntilCloses = true): static {
@@ -199,6 +212,7 @@ class SendPoll extends Method implements MethodInterface {
      *
      * @param bool $membersOnly Pass True if voting is limited to users who have been members of the
      *   chat where the poll is being sent for more than 24 hours; for channel chats only
+     *
      * @return $this
      */
     public function membersOnly(bool $membersOnly = true): static {
@@ -216,6 +230,7 @@ class SendPoll extends Method implements MethodInterface {
      *   country codes indicating the countries from which users can vote in the poll; for channel
      *   chats only. Use “FT” as a country code to allow users with anonymous numbers to vote. If
      *   omitted or empty, then users from any country can participate in the poll.
+     *
      * @return $this
      */
     public function countryCodes(array $countryCodes): static {
@@ -234,6 +249,7 @@ class SendPoll extends Method implements MethodInterface {
      *   can vote in the poll; for channel chats only. Use “FT” as a country code to allow users
      *   with anonymous numbers to vote. If omitted or empty, then users from any country can
      *   participate in the poll.
+     *
      * @return $this
      */
     public function addCountryCode(string $countryCode): static {
@@ -247,6 +263,7 @@ class SendPoll extends Method implements MethodInterface {
      *
      * @param array $correctOptionIds A JSON-serialized list of monotonically increasing 0-based
      *   identifiers of the correct answer options, required for polls in quiz mode
+     *
      * @return $this
      */
     public function correctOptionIds(array $correctOptionIds): static {
@@ -261,6 +278,7 @@ class SendPoll extends Method implements MethodInterface {
      * @param int $correctOptionId Adds one item to the correct_option_ids list. A JSON-serialized
      *   list of monotonically increasing 0-based identifiers of the correct answer options,
      *   required for polls in quiz mode
+     *
      * @return $this
      */
     public function addCorrectOptionId(int $correctOptionId): static {
@@ -275,6 +293,7 @@ class SendPoll extends Method implements MethodInterface {
      * @param string $explanation Text that is shown when a user chooses an incorrect answer or taps
      *   on the lamp icon in a quiz-style poll, 0-200 characters with at most 2 line feeds after
      *   entities parsing
+     *
      * @return $this
      */
     public function explanation(string $explanation): static {
@@ -287,6 +306,7 @@ class SendPoll extends Method implements MethodInterface {
      *
      * @param string $explanationParseMode Mode for parsing entities in the explanation. See
      *   formatting options for more details.
+     *
      * @return $this
      */
     public function explanationParseMode(string $explanationParseMode): static {
@@ -300,6 +320,7 @@ class SendPoll extends Method implements MethodInterface {
      *
      * @param array $explanationEntities A JSON-serialized list of special entities that appear in
      *   the poll explanation. It can be specified instead of explanation_parse_mode .
+     *
      * @return $this
      */
     public function explanationEntities(array $explanationEntities): static {
@@ -314,6 +335,7 @@ class SendPoll extends Method implements MethodInterface {
      * @param MessageEntityInterface $explanationEntity Adds one item to the explanation_entities
      *   list. A JSON-serialized list of special entities that appear in the poll explanation. It
      *   can be specified instead of explanation_parse_mode .
+     *
      * @return $this
      */
     public function addExplanationEntity(MessageEntityInterface $explanationEntity): static {
@@ -325,6 +347,7 @@ class SendPoll extends Method implements MethodInterface {
      * Media added to the quiz explanation
      *
      * @param mixed $explanationMedia Media added to the quiz explanation
+     *
      * @return $this
      */
     public function explanationMedia(mixed $explanationMedia): static {
@@ -338,6 +361,7 @@ class SendPoll extends Method implements MethodInterface {
      *
      * @param int $openPeriod Amount of time in seconds the poll will be active after creation,
      *   5-2628000. Can't be used together with close_date .
+     *
      * @return $this
      */
     public function openPeriod(int $openPeriod): static {
@@ -352,6 +376,7 @@ class SendPoll extends Method implements MethodInterface {
      * @param int $closeDate Point in time (Unix timestamp) when the poll will be automatically
      *   closed. Must be at least 5 and no more than 2628000 seconds in the future. Can't be used
      *   together with open_period .
+     *
      * @return $this
      */
     public function closeDate(int $closeDate): static {
@@ -364,6 +389,7 @@ class SendPoll extends Method implements MethodInterface {
      *
      * @param bool $isClosed Pass True if the poll needs to be immediately closed. This can be
      *   useful for poll preview.
+     *
      * @return $this
      */
     public function isClosed(bool $isClosed = true): static {
@@ -376,6 +402,7 @@ class SendPoll extends Method implements MethodInterface {
      *
      * @param string $description Description of the poll to be sent, 0-1024 characters after
      *   entities parsing
+     *
      * @return $this
      */
     public function description(string $description): static {
@@ -388,6 +415,7 @@ class SendPoll extends Method implements MethodInterface {
      *
      * @param string $descriptionParseMode Mode for parsing entities in the poll description. See
      *   formatting options for more details.
+     *
      * @return $this
      */
     public function descriptionParseMode(string $descriptionParseMode): static {
@@ -401,6 +429,7 @@ class SendPoll extends Method implements MethodInterface {
      *
      * @param array $descriptionEntities A JSON-serialized list of special entities that appear in
      *   the poll description, which can be specified instead of description_parse_mode
+     *
      * @return $this
      */
     public function descriptionEntities(array $descriptionEntities): static {
@@ -415,6 +444,7 @@ class SendPoll extends Method implements MethodInterface {
      * @param MessageEntityInterface $descriptionEntity Adds one item to the description_entities
      *   list. A JSON-serialized list of special entities that appear in the poll description, which
      *   can be specified instead of description_parse_mode
+     *
      * @return $this
      */
     public function addDescriptionEntity(MessageEntityInterface $descriptionEntity): static {
@@ -426,6 +456,7 @@ class SendPoll extends Method implements MethodInterface {
      * Media added to the poll description
      *
      * @param mixed $media Media added to the poll description
+     *
      * @return $this
      */
     public function media(mixed $media): static {
@@ -438,6 +469,7 @@ class SendPoll extends Method implements MethodInterface {
      *
      * @param bool $disableNotification Sends the message silently . Users will receive a
      *   notification with no sound.
+     *
      * @return $this
      */
     public function disableNotification(bool $disableNotification): static {
@@ -450,6 +482,7 @@ class SendPoll extends Method implements MethodInterface {
      *
      * @param bool $protectContent Protects the contents of the sent message from forwarding and
      *   saving
+     *
      * @return $this
      */
     public function protectContent(bool $protectContent): static {
@@ -464,6 +497,7 @@ class SendPoll extends Method implements MethodInterface {
      * @param bool $allowPaidBroadcast Pass True to allow up to 1000 messages per second, ignoring
      *   broadcasting limits for a fee of 0.1 Telegram Stars per message. The relevant Stars will be
      *   withdrawn from the bot's balance.
+     *
      * @return $this
      */
     public function allowPaidBroadcast(bool $allowPaidBroadcast = true): static {
@@ -476,6 +510,7 @@ class SendPoll extends Method implements MethodInterface {
      *
      * @param string $messageEffectId Unique identifier of the message effect to be added to the
      *   message; for private chats only
+     *
      * @return $this
      */
     public function messageEffectId(string $messageEffectId): static {
@@ -487,6 +522,7 @@ class SendPoll extends Method implements MethodInterface {
      * Description of the message to reply to
      *
      * @param mixed $replyParameters Description of the message to reply to
+     *
      * @return $this
      */
     public function replyParameters(mixed $replyParameters): static {
@@ -501,6 +537,7 @@ class SendPoll extends Method implements MethodInterface {
      * @param mixed $replyMarkup Additional interface options. A JSON-serialized object for an
      *   inline keyboard , custom reply keyboard , instructions to remove a reply keyboard or to
      *   force a reply from the user.
+     *
      * @return $this
      */
     public function replyMarkup(mixed $replyMarkup): static {

@@ -14,7 +14,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'message_id' field, then chain optional
  * builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#pinchatmessage
+ * @see https://core.telegram.org/bots/api#pinchatmessage
  */
 class PinChatMessage extends Method implements MethodInterface {
     /**
@@ -36,6 +36,7 @@ class PinChatMessage extends Method implements MethodInterface {
      *
      * @param string $businessConnectionId Unique identifier of the business connection on behalf of
      *   which the message will be pinned
+     *
      * @return $this
      */
     public function businessConnectionId(string $businessConnectionId): static {
@@ -45,10 +46,12 @@ class PinChatMessage extends Method implements MethodInterface {
 
     /**
      * Unique identifier for the target chat or username of the target channel in the format
+     *
      * @username
      *
      * @param int|string $chatId Unique identifier for the target chat or username of the target
      *   channel in the format @username
+     *
      * @return $this
      */
     public function chatId(int|string $chatId): static {
@@ -63,6 +66,7 @@ class PinChatMessage extends Method implements MethodInterface {
      * @param bool $disableNotification Pass True if it is not necessary to send a notification to
      *   all chat members about the new pinned message. Notifications are always disabled in
      *   channels and private chats.
+     *
      * @return $this
      */
     public function disableNotification(bool $disableNotification = true): static {

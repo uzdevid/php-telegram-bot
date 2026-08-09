@@ -13,7 +13,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'business_connection_id' and
  * 'message_ids' fields and dispatch the request directly.
  *
- * @link https://core.telegram.org/bots/api#deletebusinessmessages
+ * @see https://core.telegram.org/bots/api#deletebusinessmessages
  */
 class DeleteBusinessMessages extends Method implements MethodInterface {
     /**

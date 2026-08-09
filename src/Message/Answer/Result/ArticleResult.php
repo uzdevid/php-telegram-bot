@@ -15,6 +15,7 @@ class ArticleResult extends AnswerType implements AnswerInterface {
 
     /**
      * @param string $title
+     *
      * @return $this
      */
     public function title(string $title): static {
@@ -24,6 +25,7 @@ class ArticleResult extends AnswerType implements AnswerInterface {
 
     /**
      * @param string $text
+     *
      * @return $this
      */
     public function description(string $text): static {
@@ -33,6 +35,7 @@ class ArticleResult extends AnswerType implements AnswerInterface {
 
     /**
      * @param string $mode
+     *
      * @return $this
      */
     public function parseMode(string $mode): static {

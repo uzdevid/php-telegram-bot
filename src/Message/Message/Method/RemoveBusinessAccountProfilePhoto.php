@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'business_connection_id' field, then
  * chain optional builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#removebusinessaccountprofilephoto
+ * @see https://core.telegram.org/bots/api#removebusinessaccountprofilephoto
  */
 class RemoveBusinessAccountProfilePhoto extends Method implements MethodInterface {
     /**
@@ -38,6 +38,7 @@ class RemoveBusinessAccountProfilePhoto extends Method implements MethodInterfac
      * @param bool $isPublic Pass True to remove the public photo, which is visible even if the main
      *   photo is hidden by the business account's privacy settings. After the main photo is
      *   removed, the previous profile photo (if present) becomes the main photo.
+     *
      * @return $this
      */
     public function isPublic(bool $isPublic = true): static {

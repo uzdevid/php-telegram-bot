@@ -12,7 +12,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method, chain any optional builder methods, and then dispatch the
  * request.
  *
- * @link https://core.telegram.org/bots/api#deletemycommands
+ * @see https://core.telegram.org/bots/api#deletemycommands
  */
 class DeleteMyCommands extends Method implements MethodInterface {
     public function methodName(): string {
@@ -25,6 +25,7 @@ class DeleteMyCommands extends Method implements MethodInterface {
      *
      * @param mixed $scope A JSON-serialized object, describing scope of users for which the
      *   commands are relevant. Defaults to BotCommandScopeDefault .
+     *
      * @return $this
      */
     public function scope(mixed $scope): static {
@@ -39,6 +40,7 @@ class DeleteMyCommands extends Method implements MethodInterface {
      * @param string $languageCode A two-letter ISO 639-1 language code. If empty, commands will be
      *   applied to all users from the given scope, for whose language there are no dedicated
      *   commands.
+     *
      * @return $this
      */
     public function languageCode(string $languageCode): static {

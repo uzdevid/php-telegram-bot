@@ -13,7 +13,7 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
  * Typical usage: instantiate the method with the required 'business_connection_id', 'content', and
  * 'active_period' fields, then chain optional builder methods before dispatching the request.
  *
- * @link https://core.telegram.org/bots/api#poststory
+ * @see https://core.telegram.org/bots/api#poststory
  */
 class PostStory extends Method implements MethodInterface {
     /**
@@ -40,6 +40,7 @@ class PostStory extends Method implements MethodInterface {
      * Caption of the story, 0-2048 characters after entities parsing
      *
      * @param string $caption Caption of the story, 0-2048 characters after entities parsing
+     *
      * @return $this
      */
     public function caption(string $caption): static {
@@ -52,6 +53,7 @@ class PostStory extends Method implements MethodInterface {
      *
      * @param string $parseMode Mode for parsing entities in the story caption. See formatting
      *   options for more details.
+     *
      * @return $this
      */
     public function parseMode(string $parseMode): static {
@@ -65,6 +67,7 @@ class PostStory extends Method implements MethodInterface {
      *
      * @param array $captionEntities A JSON-serialized list of special entities that appear in the
      *   caption, which can be specified instead of parse_mode
+     *
      * @return $this
      */
     public function captionEntities(array $captionEntities): static {
@@ -79,6 +82,7 @@ class PostStory extends Method implements MethodInterface {
      * @param MessageEntityInterface $captionEntity Adds one item to the caption_entities list. A
      *   JSON-serialized list of special entities that appear in the caption, which can be specified
      *   instead of parse_mode
+     *
      * @return $this
      */
     public function addCaptionEntity(MessageEntityInterface $captionEntity): static {
@@ -90,6 +94,7 @@ class PostStory extends Method implements MethodInterface {
      * A JSON-serialized list of clickable areas to be shown on the story
      *
      * @param array $areas A JSON-serialized list of clickable areas to be shown on the story
+     *
      * @return $this
      */
     public function areas(array $areas): static {
@@ -103,6 +108,7 @@ class PostStory extends Method implements MethodInterface {
      *
      * @param mixed $area Adds one item to the areas list. A JSON-serialized list of clickable areas
      *   to be shown on the story
+     *
      * @return $this
      */
     public function addArea(mixed $area): static {
@@ -114,6 +120,7 @@ class PostStory extends Method implements MethodInterface {
      * Pass True to keep the story accessible after it expires
      *
      * @param bool $postToChatPage Pass True to keep the story accessible after it expires
+     *
      * @return $this
      */
     public function postToChatPage(bool $postToChatPage = true): static {
@@ -126,6 +133,7 @@ class PostStory extends Method implements MethodInterface {
      *
      * @param bool $protectContent Pass True if the content of the story must be protected from
      *   forwarding and screenshotting
+     *
      * @return $this
      */
     public function protectContent(bool $protectContent = true): static {
