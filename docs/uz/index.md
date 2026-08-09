@@ -13,10 +13,6 @@ PHP Telegram Bot hujjatlariga xush kelibsiz! Boshlash uchun quyidagi qo'llanmala
 - **[API usullari](api-methods.md)** — Barcha 185+ Telegram Bot API usul sinflariga umumiy nazar
 - **[Misollar](examples.md)** — Amaliy, ishlaydigan kod misollari
 
-### Hissa qo'shish
-- **[Hissa qo'shish qo'llanmasi](contributing.md)** — Yangi xususiyat yoki tuzatish qo'shish tartibi
-- **[Ko'p so'raladigan savollar](faq.md)** — Ko'p so'raladigan savollar
-
 ### Boshqa tillar
 - [English](../en/index.md)
 - [Русский](../ru/index.md)

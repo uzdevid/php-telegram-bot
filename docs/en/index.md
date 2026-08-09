@@ -13,10 +13,6 @@ Welcome to the PHP Telegram Bot documentation! Choose a guide below to get start
 - **[API Methods](api-methods.md)** — Overview of all 185+ Telegram Bot API method classes
 - **[Examples](examples.md)** — Practical, runnable code examples
 
-### Contributing
-- **[Contributing Guide](contributing.md)** — How to contribute new features or fixes
-- **[FAQ](faq.md)** — Frequently asked questions
-
 ### Other languages
 - [O'zbekcha](../uz/index.md)
 - [Русский](../ru/index.md)
