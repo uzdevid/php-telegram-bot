@@ -9,6 +9,9 @@ use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
 use UzDevid\Telegram\Bot\Type\Response;
 use Yiisoft\Hydrator\Hydrator;
 
+use const JSON_THROW_ON_ERROR;
+use const JSON_UNESCAPED_UNICODE;
+
 /**
  * Use this method to send answers to an inline query. On success, True is returned. No more than 50
  * results per query are allowed.
@@ -117,7 +120,10 @@ class Answer implements MethodInterface {
      * @return array
      */
     public function getPayload(): array {
-        $this->addAttribute('results', json_encode($this->getAttribute('results'), \JSON_THROW_ON_ERROR | \JSON_UNESCAPED_UNICODE));
+        $this->addAttribute(
+            'results',
+            json_encode($this->getAttribute('results'), JSON_THROW_ON_ERROR | JSON_UNESCAPED_UNICODE),
+        );
 
         return $this->attributes;
     }
