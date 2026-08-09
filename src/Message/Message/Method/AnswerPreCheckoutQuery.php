@@ -5,27 +5,51 @@ namespace UzDevid\Telegram\Bot\Message\Message\Method;
 use UzDevid\Telegram\Bot\Message\Message\Method;
 use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
 
+/**
+ * Once the user has confirmed their payment and shipping details, the Bot API sends the final
+ * confirmation in the form of an Update with the field pre_checkout_query . Use this method to
+ * respond to such pre-checkout queries. On success, True is returned. Note: The Bot API must
+ * receive an answer within 10 seconds after the pre-checkout query was sent.
+ *
+ * Typical usage: instantiate the method with the required 'pre_checkout_query_id' and 'ok' fields,
+ * then chain optional builder methods before dispatching the request.
+ *
+ * @link https://core.telegram.org/bots/api#answerprecheckoutquery
+ */
 class AnswerPreCheckoutQuery extends Method implements MethodInterface {
     /**
-     * @param string $preCheckoutQueryId
-     * @param bool $ok
-     * @param string|null $errorMessage
+     * Creates a new AnswerPreCheckoutQuery method and sets the required 'pre_checkout_query_id' and
+     * 'ok' fields.
+     *
+     * @param string $preCheckoutQueryId Unique identifier for the query to be answered
+     * @param bool $ok Specify True if everything is alright (goods are available, etc.) and the bot
+     *   is ready to proceed with the order. Use False if there are any problems.
      */
-    public function __construct(string $preCheckoutQueryId, bool $ok = true, string $errorMessage = null) {
+    public function __construct(string $preCheckoutQueryId, bool $ok) {
         parent::__construct();
-
         $this->addAttribute('pre_checkout_query_id', $preCheckoutQueryId);
         $this->addAttribute('ok', $ok);
+    }
 
-        if ($ok === false) {
-            $this->addAttribute('error_message', $errorMessage);
-        }
+    public function methodName(): string {
+        return 'answerPreCheckoutQuery';
     }
 
     /**
-     * @return string
+     * Required if ok is False . Error message in human readable form that explains the reason for
+     * failure to proceed with the checkout (e.g. "Sorry, somebody just bought the last of our
+     * amazing black T-shirts while you were busy filling out your payment details. Please choose a
+     * different color or garment!"). Telegram will display this message to the user.
+     *
+     * @param string $errorMessage Required if ok is False . Error message in human readable form
+     *   that explains the reason for failure to proceed with the checkout (e.g. "Sorry, somebody
+     *   just bought the last of our amazing black T-shirts while you were busy filling out your
+     *   payment details. Please choose a different color or garment!"). Telegram will display this
+     *   message to the user.
+     * @return $this
      */
-    public function methodName(): string {
-        return 'answerPreCheckoutQuery';
+    public function errorMessage(string $errorMessage): static {
+        $this->addAttribute('error_message', $errorMessage);
+        return $this;
     }
 }

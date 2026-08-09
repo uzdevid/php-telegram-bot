@@ -1,0 +1,35 @@
+<?php
+
+namespace UzDevid\Telegram\Bot\Message\Message\Method;
+
+use UzDevid\Telegram\Bot\Message\Message\Method;
+use UzDevid\Telegram\Bot\Message\Message\MethodInterface;
+
+/**
+ * Use this method to clear the list of pinned messages in a General forum topic. The bot must be an
+ * administrator in the chat for this to work and must have the can_pin_messages administrator right
+ * in the supergroup. Returns True on success.
+ *
+ * Typical usage: instantiate the method, chain any optional builder methods, and then dispatch the
+ * request.
+ *
+ * @link https://core.telegram.org/bots/api#unpinallgeneralforumtopicmessages
+ */
+class UnpinAllGeneralForumTopicMessages extends Method implements MethodInterface {
+    public function methodName(): string {
+        return 'unpinAllGeneralForumTopicMessages';
+    }
+
+    /**
+     * Unique identifier for the target chat or username of the target supergroup in the format
+     * @username
+     *
+     * @param int|string $chatId Unique identifier for the target chat or username of the target
+     *   supergroup in the format @username
+     * @return $this
+     */
+    public function chatId(int|string $chatId): static {
+        $this->addAttribute('chat_id', $chatId);
+        return $this;
+    }
+}

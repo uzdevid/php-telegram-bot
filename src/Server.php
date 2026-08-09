@@ -141,18 +141,14 @@ final class Server implements ServerInterface {
     public function onRequest(string $handlerClass): ServerInterface {
         if ($this->isHandled) return $this;
 
-        $name = $handlerClass->getName();
-
-        if (!$this->match($name)) return $this;
-
-        $handlerClass->getRequestClass();
-
-        $request = $this->hydrator->create($handlerClass->getRequestClass(), $this->payload);
-
         /** @var RequestInterface $handler */
         $handler = $this->container->get($handlerClass);
 
-        $handler->setRequest($request);
+        $name = $handler->getName();
+
+        if (!$this->match($name)) return $this;
+
+        $handler->buildRequest($this->payload);
 
         $handler->handle();
 
