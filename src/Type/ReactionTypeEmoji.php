@@ -14,7 +14,7 @@ use UzDevid\Telegram\Bot\Core\Type;
 class ReactionTypeEmoji extends Type {
     /**
      * @param string $type Type of the reaction, always “emoji”
-     * @param string $emoji Reaction emoji.
+     * @param string $emoji reaction emoji
      */
     public function __construct(
         public string $type,

@@ -1,6 +1,6 @@
 {
   "name": "uzdevid/php-telegram-bot",
-  "description": "Telegram messenjerida bot yaratish uchun PHP kutubxonasi",
+  "description": "An object-oriented PHP wrapper for the Telegram Bot API: a client for calling methods and a server for handling updates.",
   "type": "library",
   "keywords": [
     "php",
@@ -26,6 +26,11 @@
       "UzDevid\\Telegram\\Bot\\": "src"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "UzDevid\\Telegram\\Bot\\Tests\\": "tests"
+    }
+  },
   "require-dev": {
     "squizlabs/php_codesniffer": "3.13.5",
     "phpstan/phpstan": "^1.10",
@@ -40,5 +45,8 @@
       "@phpcs",
       "@phpstan"
     ]
+  },
+  "config": {
+    "sort-packages": true
   }
 }

@@ -18,8 +18,8 @@ namespace UzDevid\Telegram\Bot\State;
  */
 class SessionStateStorage implements StateStorageInterface {
     /**
-     * @param string $prefix Prefix used for all keys stored in $_SESSION, to avoid
-     *   colliding with other data the application keeps in the session.
+     * @param string $prefix prefix used for all keys stored in $_SESSION, to avoid
+     *   colliding with other data the application keeps in the session
      */
     public function __construct(
         private readonly string $prefix = 'telegram_bot_state.',
