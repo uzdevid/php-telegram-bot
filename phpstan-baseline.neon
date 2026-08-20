@@ -786,31 +786,6 @@ parameters:
 			path: src/Type/EncryptedPassportElement.php
 
 		-
-			message: "#^Property UzDevid\\\\Telegram\\\\Bot\\\\Type\\\\Message\\:\\:\\$captionEntities type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/Type/Message.php
-
-		-
-			message: "#^Property UzDevid\\\\Telegram\\\\Bot\\\\Type\\\\Message\\:\\:\\$entities type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/Type/Message.php
-
-		-
-			message: "#^Property UzDevid\\\\Telegram\\\\Bot\\\\Type\\\\Message\\:\\:\\$newChatMembers type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/Type/Message.php
-
-		-
-			message: "#^Property UzDevid\\\\Telegram\\\\Bot\\\\Type\\\\Message\\:\\:\\$newChatPhoto type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/Type/Message.php
-
-		-
-			message: "#^Property UzDevid\\\\Telegram\\\\Bot\\\\Type\\\\Message\\:\\:\\$photo type has no value type specified in iterable type array\\.$#"
-			count: 1
-			path: src/Type/Message.php
-
-		-
 			message: "#^Property UzDevid\\\\Telegram\\\\Bot\\\\Type\\\\PollAnswer\\:\\:\\$optionIds type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Type/PollAnswer.php

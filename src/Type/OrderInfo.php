@@ -12,8 +12,20 @@ use UzDevid\Telegram\Bot\Core\Type;
  * This object represents information about an order.
  */
 class OrderInfo extends Type {
+    /**
+     * Optional. User name
+     */
     public string $name;
+    /**
+     * Optional. User's phone number
+     */
     public string $phoneNumber;
+    /**
+     * Optional. User email
+     */
     public string $email;
+    /**
+     * Optional. User shipping address
+     */
     public ShippingAddress $shippingAddress;
 }

@@ -12,5 +12,8 @@ use UzDevid\Telegram\Bot\Core\Type;
  * This object represents a bot command.
  */
 class BotCommandScopeAllChatAdministrators extends Type {
+    /**
+     * Scope type, must be all_chat_administrators
+     */
     public string $type;
 }

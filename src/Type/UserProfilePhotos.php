@@ -12,6 +12,9 @@ use UzDevid\Telegram\Bot\Core\Type;
  * This object represent a user's profile pictures.
  */
 class UserProfilePhotos extends Type {
+    /**
+     * Total number of profile pictures the target user has
+     */
     public int $totalCount;
     public PhotoSize $photoSize;
 }

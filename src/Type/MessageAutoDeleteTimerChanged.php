@@ -14,5 +14,8 @@ use UzDevid\Telegram\Bot\Core\Type;
  * @property int $message_auto_delete_time
  */
 class MessageAutoDeleteTimerChanged extends Type {
+    /**
+     * New auto-delete time for messages in the chat; in seconds
+     */
     public int $message_auto_delete_time;
 }

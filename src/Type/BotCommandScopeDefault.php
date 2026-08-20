@@ -12,5 +12,8 @@ use UzDevid\Telegram\Bot\Core\Type;
  * This object represents a bot command.
  */
 class BotCommandScopeDefault extends Type {
+    /**
+     * Scope type, must be default
+     */
     public string $type;
 }

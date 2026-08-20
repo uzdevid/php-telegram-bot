@@ -13,7 +13,17 @@ use UzDevid\Telegram\Bot\Core\Type;
  * See the Telegram Passport Documentation for a complete description of the data decryption and authentication processes.
  */
 class EncryptedCredentials extends Type {
+    /**
+     * Base64-encoded encrypted JSON-serialized data with unique user's payload, data hashes and secrets required for
+     * EncryptedPassportElement decryption and authentication
+     */
     public string $data;
+    /**
+     * Base64-encoded data hash for data authentication
+     */
     public string $hash;
+    /**
+     * Base64-encoded secret, encrypted with the bot's public RSA key, required for data decryption
+     */
     public string $secret;
 }

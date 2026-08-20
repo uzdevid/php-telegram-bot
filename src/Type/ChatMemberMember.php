@@ -15,6 +15,12 @@ use UzDevid\Telegram\Bot\Core\Type;
  * @property User $user
  */
 class ChatMemberMember extends Type {
+    /**
+     * The member's status in the chat, always “member”
+     */
     public string $status;
+    /**
+     * Information about the user
+     */
     public User $user;
 }

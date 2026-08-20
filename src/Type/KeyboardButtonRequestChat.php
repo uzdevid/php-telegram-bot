@@ -14,12 +14,38 @@ use UzDevid\Telegram\Bot\Core\Type;
  * More about requesting chats (https://core.telegram.org/bots/features#chat-and-user-selection)
  */
 class KeyboardButtonRequestChat extends Type {
+    /**
+     * Signed 32-bit identifier of the request, which will be received back in the ChatShared object. Must be unique
+     * within the message.
+     */
     public int $requestId;
+    /**
+     * Pass True to request a channel chat, pass False to request a group or a supergroup chat
+     */
     public bool $chatIsChannel;
+    /**
+     * Optional. Pass True to request a forum supergroup, pass False to request a non-forum chat. If not specified, no
+     * additional restrictions are applied.
+     */
     public bool $chatIsForum;
+    /**
+     * Optional. Pass True to request a supergroup or a channel with a username, pass False to request a chat without a
+     * username. If not specified, no additional restrictions are applied.
+     */
     public bool $chatHasUsername;
+    /**
+     * Optional. Pass True to request a chat owned by the user. Otherwise, no additional restrictions are applied.
+     */
     public bool $chatIsCreated;
     public ChatAdministratorRights $chatAdministratorRights;
+    /**
+     * Optional. A JSON-serialized object listing the required administrator rights of the bot in the chat. The rights
+     * must be a subset of user_administrator_rights. If not specified, no additional restrictions are applied.
+     */
     public ChatAdministratorRights $botAdministratorRights;
+    /**
+     * Optional. Pass True to request a chat with the bot as a member. Otherwise, no additional restrictions are
+     * applied.
+     */
     public bool $botIsMember;
 }
